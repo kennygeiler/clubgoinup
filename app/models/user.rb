@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
       user.provider = auth.provider
       user.uid      = auth.uid
       user.image    = auth.info.image
-      user.user_friends = auth.info.user_friends
+      user.user_friends = auth
       user.name     = auth.info.name
       user.save
     end
