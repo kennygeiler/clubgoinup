@@ -2001,3 +2001,273 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 [0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.4ms)[0m  BEGIN
+  [1m[36mSQL (8.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "1oak"], ["city", "New York"], ["address", "453 west 17th street New York"], ["created_at", "2015-06-09 15:31:22.016922"], ["updated_at", "2015-06-09 15:31:22.016922"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "42 West"], ["city", "New York"], ["address", "220 West 42nd Street 12th Floor New York NY"], ["created_at", "2015-06-09 15:31:22.037483"], ["updated_at", "2015-06-09 15:31:22.037483"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "49 Grove"], ["city", "New York"], ["address", "49 GROVE ST(BTWN BLEECKER & GROVE ST) New York"], ["created_at", "2015-06-09 15:31:22.041022"], ["updated_at", "2015-06-09 15:31:22.041022"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "809 NYC"], ["city", "New York"], ["address", "809 Lounge 112 Dyckman Street New York, NY 10040 New York"], ["created_at", "2015-06-09 15:31:22.043089"], ["updated_at", "2015-06-09 15:31:22.043089"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "9A West Harlem"], ["city", "New York"], ["address", "2331 12th Avenue (133rd St) New York"], ["created_at", "2015-06-09 15:31:22.045049"], ["updated_at", "2015-06-09 15:31:22.045049"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Allure"], ["city", "New York"], ["address", "33-02 Queens Boulevard Long Island City"], ["created_at", "2015-06-09 15:31:22.047135"], ["updated_at", "2015-06-09 15:31:22.047135"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Amazura"], ["city", "New York"], ["address", "91-12 144th Pl Jamaica"], ["created_at", "2015-06-09 15:31:22.049247"], ["updated_at", "2015-06-09 15:31:22.049247"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Area Lounge"], ["city", "New York"], ["address", "89-25 130th Street Richmond Hill Richmond Hill"], ["created_at", "2015-06-09 15:31:22.052187"], ["updated_at", "2015-06-09 15:31:22.052187"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Attic Rooftop & Lounge,city"], ["city", "New York"], ["address", "251 West 48th Street New York"], ["created_at", "2015-06-09 15:31:22.054891"], ["updated_at", "2015-06-09 15:31:22.054891"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Ava Rooftop Lounge"], ["city", "New York"], ["address", "210 West 55th Street New York"], ["created_at", "2015-06-09 15:31:22.057760"], ["updated_at", "2015-06-09 15:31:22.057760"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Avenue Beach Club"], ["city", "New York"], ["address", "23 Ocean Ave Long Branch"], ["created_at", "2015-06-09 15:31:22.060806"], ["updated_at", "2015-06-09 15:31:22.060806"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Babys All Right"], ["city", "New York"], ["address", "146 Broadway Brooklyn"], ["created_at", "2015-06-09 15:31:22.065076"], ["updated_at", "2015-06-09 15:31:22.065076"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bamboo Lounge"], ["city", "New York"], ["address", "Bamboo 985 Morris Ave Bronx, NY 10456 New York"], ["created_at", "2015-06-09 15:31:22.067232"], ["updated_at", "2015-06-09 15:31:22.067232"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Baroque NYC"], ["city", "New York"], ["address", "19-44 Steinway Street Astoria"], ["created_at", "2015-06-09 15:31:22.070102"], ["updated_at", "2015-06-09 15:31:22.070102"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Brooklyn Terrace"], ["city", "New York"], ["address", "216 Duffield St, Brooklyn, NY 11201 Brooklyn"], ["created_at", "2015-06-09 15:31:22.072944"], ["updated_at", "2015-06-09 15:31:22.072944"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Bungalo"], ["city", "New York"], ["address", "32-03 Broadway Astoria"], ["created_at", "2015-06-09 15:31:22.074969"], ["updated_at", "2015-06-09 15:31:22.074969"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Buzz Night Club"], ["city", "New York"], ["address", "103 empire blvd Brooklyn"], ["created_at", "2015-06-09 15:31:22.076814"], ["updated_at", "2015-06-09 15:31:22.076814"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Cantina Rooftop"], ["city", "New York"], ["address", "605 W 48th St New York"], ["created_at", "2015-06-09 15:31:22.078874"], ["updated_at", "2015-06-09 15:31:22.078874"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cappello"], ["city", "New York"], ["address", "21 7th Ave New York"], ["created_at", "2015-06-09 15:31:22.081463"], ["updated_at", "2015-06-09 15:31:22.081463"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Cellar Bar"], ["city", "New York"], ["address", "40 W. 40th Street New York"], ["created_at", "2015-06-09 15:31:22.085129"], ["updated_at", "2015-06-09 15:31:22.085129"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Chrystie 141"], ["city", "New York"], ["address", "141 Chrystie St New York"], ["created_at", "2015-06-09 15:31:22.088859"], ["updated_at", "2015-06-09 15:31:22.088859"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Cielo"], ["city", "New York"], ["address", "18 Little West 12th Street New York"], ["created_at", "2015-06-09 15:31:22.093304"], ["updated_at", "2015-06-09 15:31:22.093304"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cliff Lounge"], ["city", "New York"], ["address", "440 West 202nd St Manhattan, NY 10034 New York"], ["created_at", "2015-06-09 15:31:22.095946"], ["updated_at", "2015-06-09 15:31:22.095946"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Club Cache NYC"], ["city", "New York"], ["address", "22 West 39th Street New York"], ["created_at", "2015-06-09 15:31:22.100639"], ["updated_at", "2015-06-09 15:31:22.100639"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Coco Bongo NYC"], ["city", "New York"], ["address", "36-21 Steinway St Queens Long Island City"], ["created_at", "2015-06-09 15:31:22.104462"], ["updated_at", "2015-06-09 15:31:22.104462"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Coliseum Night Club"], ["city", "New York"], ["address", "South Broadway White Plains New York"], ["created_at", "2015-06-09 15:31:22.106944"], ["updated_at", "2015-06-09 15:31:22.106944"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Copacapana"], ["city", "New York"], ["address", "268 West 47th Street New York\n"], ["created_at", "2015-06-09 15:31:22.109269"], ["updated_at", "2015-06-09 15:31:22.109269"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Copia NYC"], ["city", "New York"], ["address", "307 East 53rd Street New York"], ["created_at", "2015-06-09 15:31:22.111368"], ["updated_at", "2015-06-09 15:31:22.111368"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "DL Rooftop"], ["city", "New York"], ["address", "95 Delancey Street New York"], ["created_at", "2015-06-09 15:31:22.113248"], ["updated_at", "2015-06-09 15:31:22.113248"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Empire Rooftop"], ["city", "New York"], ["address", "44 West 63rd Street New York"], ["created_at", "2015-06-09 15:31:22.116082"], ["updated_at", "2015-06-09 15:31:22.116082"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Finale"], ["city", "New York"], ["address", "199 Bowery‎ New York"], ["created_at", "2015-06-09 15:31:22.119405"], ["updated_at", "2015-06-09 15:31:22.119405"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Gansevoort Park Rooftop"], ["city", "New York"], ["address", "420 PARK AVE SOUTH New York"], ["created_at", "2015-06-09 15:31:22.123164"], ["updated_at", "2015-06-09 15:31:22.123164"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gilded Lily"], ["city", "New York"], ["address", "408 W 15th St New York"], ["created_at", "2015-06-09 15:31:22.128022"], ["updated_at", "2015-06-09 15:31:22.128022"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Glazz"], ["city", "New York"], ["address", "79-51 Albion Ave - off Queens Blvd New York"], ["created_at", "2015-06-09 15:31:22.131671"], ["updated_at", "2015-06-09 15:31:22.131671"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Highline Ballroom"], ["city", "New York"], ["address", "431 West 16th Street New York"], ["created_at", "2015-06-09 15:31:22.134451"], ["updated_at", "2015-06-09 15:31:22.134451"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Hope Garage"], ["city", "New York"], ["address", "163 Hope St Williamsburg"], ["created_at", "2015-06-09 15:31:22.136966"], ["updated_at", "2015-06-09 15:31:22.136966"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Hotel Chantelle"], ["city", "New York"], ["address", "92 Ludlow St New York"], ["created_at", "2015-06-09 15:31:22.139279"], ["updated_at", "2015-06-09 15:31:22.139279"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Hudson Terrace"], ["city", "New York"], ["address", "621 West 46th Street, New York"], ["created_at", "2015-06-09 15:31:22.141125"], ["updated_at", "2015-06-09 15:31:22.141125"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Katra"], ["city", "New York"], ["address", "217 Bowery Street New York"], ["created_at", "2015-06-09 15:31:22.143204"], ["updated_at", "2015-06-09 15:31:22.143204"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Le Reve Lounge NYC"], ["city", "New York"], ["address", "125 East 54th Street New York"], ["created_at", "2015-06-09 15:31:22.145259"], ["updated_at", "2015-06-09 15:31:22.145259"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Level R"], ["city", "New York"], ["address", "44 West 63rd Street New York"], ["created_at", "2015-06-09 15:31:22.147231"], ["updated_at", "2015-06-09 15:31:22.147231"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Lexicon"], ["city", "New York"], ["address", "226 East 54TH Street New York"], ["created_at", "2015-06-09 15:31:22.150196"], ["updated_at", "2015-06-09 15:31:22.150196"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Liberty Theater"], ["city", "New York"], ["address", "233 W 41ST ST New York"], ["created_at", "2015-06-09 15:31:22.152408"], ["updated_at", "2015-06-09 15:31:22.152408"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Lit NYC"], ["city", "New York"], ["address", "Lit, 93 2nd Ave, New York, NY 10001 New York"], ["created_at", "2015-06-09 15:31:22.154421"], ["updated_at", "2015-06-09 15:31:22.154421"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "LUST NY"], ["city", "New York"], ["address", "225 47th Street New York"], ["created_at", "2015-06-09 15:31:22.156678"], ["updated_at", "2015-06-09 15:31:22.156678"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Marquee NYC"], ["city", "New York"], ["address", "289 10th Avenue New York"], ["created_at", "2015-06-09 15:31:22.159601"], ["updated_at", "2015-06-09 15:31:22.159601"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Milk River"], ["city", "New York"], ["address", "960 Atlantic Avenue Brooklyn"], ["created_at", "2015-06-09 15:31:22.161905"], ["updated_at", "2015-06-09 15:31:22.161905"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Opus 51"], ["city", "New York"], ["address", "51 Gansevoort ST New York"], ["created_at", "2015-06-09 15:31:22.164173"], ["updated_at", "2015-06-09 15:31:22.164173"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Output Night Club"], ["city", "New York"], ["address", "74 Wythe Ave New York"], ["created_at", "2015-06-09 15:31:22.166710"], ["updated_at", "2015-06-09 15:31:22.166710"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Pacha NYC"], ["city", "New York"], ["address", "618 W 46th St New York"], ["created_at", "2015-06-09 15:31:22.173914"], ["updated_at", "2015-06-09 15:31:22.173914"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Palladium"], ["city", "New York"], ["address", "36-14 31st Street Astoria"], ["created_at", "2015-06-09 15:31:22.176855"], ["updated_at", "2015-06-09 15:31:22.176855"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Phuket Lounge"], ["city", "New York"], ["address", "701 W 135th St New York"], ["created_at", "2015-06-09 15:31:22.180509"], ["updated_at", "2015-06-09 15:31:22.180509"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Plunge Gansevoort"], ["city", "New York"], ["address", "18 Ninth Avenue New York"], ["created_at", "2015-06-09 15:31:22.183947"], ["updated_at", "2015-06-09 15:31:22.183947"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Public House"], ["city", "New York"], ["address", "140 E. 41st St., New York, NY 10017 New York"], ["created_at", "2015-06-09 15:31:22.186515"], ["updated_at", "2015-06-09 15:31:22.186515"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "RdV"], ["city", "New York"], ["address", "409 West 13th Street New York"], ["created_at", "2015-06-09 15:31:22.189450"], ["updated_at", "2015-06-09 15:31:22.189450"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Rooftop 760"], ["city", "New York"], ["address", "760 8th ave New York"], ["created_at", "2015-06-09 15:31:22.192801"], ["updated_at", "2015-06-09 15:31:22.192801"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rosewood"], ["city", "New York"], ["address", "5 E 19th St., Cnr of 5th Avenue Manhattan, New York New York"], ["created_at", "2015-06-09 15:31:22.195141"], ["updated_at", "2015-06-09 15:31:22.195141"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Sky Room"], ["city", "New York"], ["address", "330 West 40th Street New York"], ["created_at", "2015-06-09 15:31:22.197159"], ["updated_at", "2015-06-09 15:31:22.197159"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Slate Lounge NYC"], ["city", "New York"], ["address", "54 West 21st Street New York"], ["created_at", "2015-06-09 15:31:22.198870"], ["updated_at", "2015-06-09 15:31:22.198870"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Space"], ["city", "New York"], ["address", "637 West 50th St New York"], ["created_at", "2015-06-09 15:31:22.201851"], ["updated_at", "2015-06-09 15:31:22.201851"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Stage 48"], ["city", "New York"], ["address", "605 W.48th b/w 11th ave & 12th Ave New York"], ["created_at", "2015-06-09 15:31:22.206442"], ["updated_at", "2015-06-09 15:31:22.206442"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Stellan Nyc"], ["city", "New York"], ["address", "2 West 35th Street, New York, NY"], ["created_at", "2015-06-09 15:31:22.209895"], ["updated_at", "2015-06-09 15:31:22.209895"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Studio 21"], ["city", "New York"], ["address", "59 West 21st Street New York, NY New York"], ["created_at", "2015-06-09 15:31:22.213049"], ["updated_at", "2015-06-09 15:31:22.213049"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Studio 299"], ["city", "New York"], ["address", "299 Vandervoort Ave. New York"], ["created_at", "2015-06-09 15:31:22.216486"], ["updated_at", "2015-06-09 15:31:22.216486"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mission"], ["city", "New York"], ["address", "16 W 36th St New York"], ["created_at", "2015-06-09 15:31:22.220130"], ["updated_at", "2015-06-09 15:31:22.220130"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Tagline"], ["city", "New York"], ["address", "221 West 38th Street New York"], ["created_at", "2015-06-09 15:31:22.222542"], ["updated_at", "2015-06-09 15:31:22.222542"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Taj"], ["city", "New York"], ["address", "48 West 21st Street New York"], ["created_at", "2015-06-09 15:31:22.224733"], ["updated_at", "2015-06-09 15:31:22.224733"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Tenjune"], ["city", "New York"], ["address", "26 Little West 12th New York"], ["created_at", "2015-06-09 15:31:22.227848"], ["updated_at", "2015-06-09 15:31:22.227848"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "The Bowery Electric"], ["city", "New York"], ["address", "327 Bowery New York"], ["created_at", "2015-06-09 15:31:22.231603"], ["updated_at", "2015-06-09 15:31:22.231603"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "The Leonora"], ["city", "New York"], ["address", "525 W 29th St New York"], ["created_at", "2015-06-09 15:31:22.237263"], ["updated_at", "2015-06-09 15:31:22.237263"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "The Varick Room"], ["city", "New York"], ["address", "54 Varick Street New York"], ["created_at", "2015-06-09 15:31:22.239629"], ["updated_at", "2015-06-09 15:31:22.239629"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Toy"], ["city", "New York"], ["address", "18 9th Ave New York"], ["created_at", "2015-06-09 15:31:22.241616"], ["updated_at", "2015-06-09 15:31:22.241616"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "VIP Room"], ["city", "New York"], ["address", "409 W 13th St, New York, New York"], ["created_at", "2015-06-09 15:31:22.243669"], ["updated_at", "2015-06-09 15:31:22.243669"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "TAO Downtown"], ["city", "New York"], ["address", "Maritime Hotel, 92 9th Ave, New York, NY 10011"], ["created_at", "2015-06-09 15:31:22.245612"], ["updated_at", "2015-06-09 15:31:22.245612"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "The Raven"], ["city", "New York"], ["address", "55 Gansevoort St, New York, NY 10014"], ["created_at", "2015-06-09 15:31:22.247985"], ["updated_at", "2015-06-09 15:31:22.247985"]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Lavo"], ["city", "New York"], ["address", "39 E 58th St, New York, NY 10022"], ["created_at", "2015-06-09 15:31:22.252273"], ["updated_at", "2015-06-09 15:31:22.252273"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Provocateur"], ["city", "New York"], ["address", "Gansevoort Meatpacking NYC, 18 9th Ave, New York, NY 10014"], ["created_at", "2015-06-09 15:31:22.255837"], ["updated_at", "2015-06-09 15:31:22.255837"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Le Bain"], ["city", "New York"], ["address", "848 Washington St, New York, NY 10014"], ["created_at", "2015-06-09 15:31:22.258640"], ["updated_at", "2015-06-09 15:31:22.258640"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Electric Room"], ["city", "New York"], ["address", "355 W 16th St, New York, NY 10011"], ["created_at", "2015-06-09 15:31:22.262816"], ["updated_at", "2015-06-09 15:31:22.262816"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Up&Down"], ["city", "New York"], ["address", "409 W 13th St, New York, New York"], ["created_at", "2015-06-09 15:31:22.265667"], ["updated_at", "2015-06-09 15:31:22.265667"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "PH-D"], ["city", "New York"], ["address", "355 W 16th St"], ["created_at", "2015-06-09 15:31:22.271370"], ["updated_at", "2015-06-09 15:31:22.271370"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "The Griffin"], ["city", "New York"], ["address", "50 Gansevoort St, New York, NY 10014"], ["created_at", "2015-06-09 15:31:22.274070"], ["updated_at", "2015-06-09 15:31:22.274070"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Avenue"], ["city", "New York"], ["address", "116 10th Ave, New York, NY 10011"], ["created_at", "2015-06-09 15:31:22.276822"], ["updated_at", "2015-06-09 15:31:22.276822"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Gaslight"], ["city", "New York"], ["address", "400 W 14th St, New York, NY 10014"], ["created_at", "2015-06-09 15:31:22.279975"], ["updated_at", "2015-06-09 15:31:22.279975"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "No. 8"], ["city", "New York"], ["address", "357 W 16th St, New York, NY 10011"], ["created_at", "2015-06-09 15:31:22.282963"], ["updated_at", "2015-06-09 15:31:22.282963"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "W.i.P"], ["city", "New York"], ["address", "34 Vandam St., downstairs, New York, NY 10013"], ["created_at", "2015-06-09 15:31:22.285023"], ["updated_at", "2015-06-09 15:31:22.285023"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Riff Raff"], ["city", "New York"], ["address", "360 Park Ave S, New York, NY 10010"], ["created_at", "2015-06-09 15:31:22.287073"], ["updated_at", "2015-06-09 15:31:22.287073"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Fat Black Pussy Cat"], ["city", "New York"], ["address", "130 W 3rd St, New York, NY 10012"], ["created_at", "2015-06-09 15:31:22.289902"], ["updated_at", "2015-06-09 15:31:22.289902"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Electric Room"], ["city", "New York"], ["address", "355 W 16th St, New York, NY 10011"], ["created_at", "2015-06-09 15:31:22.292542"], ["updated_at", "2015-06-09 15:31:22.292542"]]
+  [1m[35m (0.4ms)[0m  COMMIT
