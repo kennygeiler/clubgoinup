@@ -1,1 +1,15 @@
-show.html.erb
+<%= @venue.name %>
+
+<% if current_user.going == false %>
+
+<% else %>
+
+<% end %>
+
+
+
+
+<% @venue.users.each do |user| %>
+  <%= user.name %> <br>
+  <img src="<%= user.image %>">
+<% end %>
