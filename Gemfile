@@ -9,6 +9,7 @@ gem 'rails', '4.2.1'
 gem "thin", :group => :production
 gem 'pg'
 gem 'omniauth-facebook', '~> 1.4.1'
+gem "koala", "~> 2.0"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
