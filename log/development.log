@@ -7149,3 +7149,845 @@ Started GET "/assets/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde4
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-09 21:44:38 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (7.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'goings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'promotors'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (5.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'quotes'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'venues'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36m (19.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (5.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150608142548)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (14.7ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "provider" character varying, "uid" character varying, "name" character varying, "image" character varying, "user_friends" character varying, "oauth_token" character varying, "oauth_expires_at" timestamp, "promotor" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150608142548"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePromotors (20150609131346)
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (9.2ms)[0m  [1mCREATE TABLE "promotors" ("id" serial primary key, "user_id" integer, "company" character varying, "venues" text, "about" text, "instagram" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609131346"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateVenues (20150609131359)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "venues" ("id" serial primary key, "name" character varying, "city" character varying, "address" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609131359"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateGoings (20150609131421)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (4.3ms)[0m  [1mCREATE TABLE "goings" ("id" serial primary key, "user_id" integer, "venue_id" integer, "going" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609131421"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateQuotes (20150609131434)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (5.8ms)[0m  [1mCREATE TABLE "quotes" ("id" serial primary key, "men" integer, "women" integer, "min" integer, "max" integer, "venues" text, "date" date, "comments" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609131434"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'goings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'promotors'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (4.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'quotes'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (5.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (4.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'venues'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/signout" for 127.0.0.1 at 2015-06-10 09:46:02 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-10 09:46:03 -0400
+Processing by HomeController#show as HTML
+  Rendered home/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 298ms (Views: 296.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2015-06-10 09:46:03 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-10 09:46:03 -0400
+Processing by HomeController#show as HTML
+  Rendered home/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 74ms (Views: 73.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-10 09:46:06 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-10 09:46:07 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQAukpVqpTsncHKH7fn5fDaG-vc-sP4ApHO_1l8euspSJLuZrWsQyonTO2V_D3z72_45hTktYq_7MVcG1dHfcAEpVFzoCzmHleza6ih0CLjnQ23g8bu2ZWWgAl4gS3uzk9we-9XGBOYkFmFJkWjZKxqhJECdNCyAFxCON4QhNwD6ySBihP_SnoleGrW0_eXM9qKZ-7I9kBcicQ3TN1-f_icwaEnksQ6Ot3zOQtgtpzCMVoPVR2MWUf7WuOvJMeVhb9mOVjCkIgwyljFB8U7K-c0TbGFzaF8Z9Cs5dg57kzW5VF3HuOaioY88zwqhCcuuJBU&state=4f941113443d4d6b4122b58eaa77e687b73a47c28ba5f84d" for 127.0.0.1 at 2015-06-10 09:46:07 -0400
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQAukpVqpTsncHKH7fn5fDaG-vc-sP4ApHO_1l8euspSJLuZrWsQyonTO2V_D3z72_45hTktYq_7MVcG1dHfcAEpVFzoCzmHleza6ih0CLjnQ23g8bu2ZWWgAl4gS3uzk9we-9XGBOYkFmFJkWjZKxqhJECdNCyAFxCON4QhNwD6ySBihP_SnoleGrW0_eXM9qKZ-7I9kBcicQ3TN1-f_icwaEnksQ6Ot3zOQtgtpzCMVoPVR2MWUf7WuOvJMeVhb9mOVjCkIgwyljFB8U7K-c0TbGFzaF8Z9Cs5dg57kzW5VF3HuOaioY88zwqhCcuuJBU", "state"=>"4f941113443d4d6b4122b58eaa77e687b73a47c28ba5f84d", "provider"=>"facebook"}
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10206339728668711"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("provider", "uid", "image", "oauth_token", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["provider", "facebook"], ["uid", "10206339728668711"], ["image", "http://graph.facebook.com/10206339728668711/picture?type=square"], ["oauth_token", "CAARUwTI31v0BAHjFZCaKZCepPA6yylq32dOGDvVpM07MnVesGtG8Npvjr6IPjY57A6sOV33WmhtCAnDoxVbbIoWhDJa7ZBkZA8bdKsjZBJObmfEljdeW6SoYgwaqCSrveShMwoJK8ZA35sKSRSA3rMy2FAJriGZCSqgPAc7PCr0QTxqKryvVz8TJGuehUVjLzyZB8vYZCnHbeSHs6xLD0W9yj"], ["name", "Kenny Geiler"], ["created_at", "2015-06-10 13:46:07.822445"], ["updated_at", "2015-06-10 13:46:07.822445"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 52ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-10 09:46:07 -0400
+Processing by HomeController#show as HTML
+  Rendered home/show.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 60ms (Views: 58.7ms | ActiveRecord: 0.4ms)
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/signout" for 127.0.0.1 at 2015-06-10 10:08:24 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-10 10:08:24 -0400
+Processing by HomeController#show as HTML
+  Rendered home/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 317ms (Views: 315.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-10 10:08:26 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-10 10:08:27 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQBx_dvE-xoNrsGPYuxYmF6FejBUmG7IbcQQ99jcDQWx9b8Vg0oD8MZaS0lqdaG71Ys_DurkzmINdV0J5riMsnxJnkf9qwe6EyvQRw7Pcah2XnznwfpWXq364MKLY2dTdZEKWZfWcFUY61_BCUNNsA2EY1TR8SFBdueLrLCOC6BIz_FgCMNS21CMRNM-Fw9J1lB-3wgyWKgAJcTzuzsK4pdax8E95PqgdzPkrvr0sWXg0CaNIB19bVBKTGPhQA9V9I7lmTco9E1hx7uUvqDBk6tmdd21i1xcFG-RkA_DA_1_zM9Nq0SPlsb17t7CMkLyJ2bO2IGNSmyvqs7ZrFDZd1IZ&state=13cd0441785dc150352021a07911b01cca4ad5834caa7a61" for 127.0.0.1 at 2015-06-10 10:08:27 -0400
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBx_dvE-xoNrsGPYuxYmF6FejBUmG7IbcQQ99jcDQWx9b8Vg0oD8MZaS0lqdaG71Ys_DurkzmINdV0J5riMsnxJnkf9qwe6EyvQRw7Pcah2XnznwfpWXq364MKLY2dTdZEKWZfWcFUY61_BCUNNsA2EY1TR8SFBdueLrLCOC6BIz_FgCMNS21CMRNM-Fw9J1lB-3wgyWKgAJcTzuzsK4pdax8E95PqgdzPkrvr0sWXg0CaNIB19bVBKTGPhQA9V9I7lmTco9E1hx7uUvqDBk6tmdd21i1xcFG-RkA_DA_1_zM9Nq0SPlsb17t7CMkLyJ2bO2IGNSmyvqs7ZrFDZd1IZ", "state"=>"13cd0441785dc150352021a07911b01cca4ad5834caa7a61", "provider"=>"facebook"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "101572900184982"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("provider", "uid", "image", "oauth_token", "oauth_expires_at", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["provider", "facebook"], ["uid", "101572900184982"], ["image", "http://graph.facebook.com/101572900184982/picture?type=square"], ["oauth_token", "CAARUwTI31v0BADAYVwd0z9KKjzBkHVvofexZCSrjAk6tMBXpSWdIlRG9EPIRKEGFi6ahX6z6ZCycxdUJrZBbFRxefthDU7JFFVmmBQ7Mqx4mmiG1Y3qZB1ivNz0bnoXZAc91hog4U6UzBWNWaZAKou0Vg04xTbuiFh2gZCXvBpJZB02Hh1OfYeHgoZC5lWkcUZBdQe3gDyT6LWJNXZCmRTiZCr2i"], ["oauth_expires_at", "2015-08-09 14:08:26.000000"], ["name", "Mark Amiifhafacfc Okelolaman"], ["created_at", "2015-06-10 14:08:27.628791"], ["updated_at", "2015-06-10 14:08:27.628791"]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 46ms (ActiveRecord: 10.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-10 10:08:27 -0400
+Processing by HomeController#show as HTML
+  Rendered home/show.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 200 OK in 63ms (Views: 61.5ms | ActiveRecord: 0.5ms)
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[36m (6.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (2.3ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150608142548)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (6.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "provider" character varying, "uid" character varying, "name" character varying, "image" character varying, "user_friends" character varying, "oauth_token" character varying, "oauth_expires_at" timestamp, "promotor" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150608142548"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePromotors (20150609131346)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "promotors" ("id" serial primary key, "user_id" integer, "company" character varying, "venues" text, "about" text, "instagram" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609131346"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateVenues (20150609131359)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (6.4ms)[0m  [1mCREATE TABLE "venues" ("id" serial primary key, "name" character varying, "city" character varying, "address" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609131359"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateGoings (20150609131421)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.6ms)[0m  [1mCREATE TABLE "goings" ("id" serial primary key, "user_id" integer, "venue_id" integer, "going" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609131421"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateQuotes (20150609131434)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (4.4ms)[0m  [1mCREATE TABLE "quotes" ("id" serial primary key, "men" integer, "women" integer, "min" integer, "max" integer, "venues" text, "date" date, "comments" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609131434"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (4.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'goings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'promotors'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (4.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'quotes'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'venues'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/signout" for 127.0.0.1 at 2015-06-10 10:30:02 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-10 10:30:02 -0400
+Processing by HomeController#show as HTML
+  Rendered home/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 315ms (Views: 314.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-10 10:30:04 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-10 10:30:04 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQCwEqS7trd4KGv9FIvtJnVZoVAZEDZuKI1Kyodhdl4W5TIORYiM-28uj7OetZkSc7MXQdP9dNjRVzwdB5wVY-WgQ0JXQTc4lg9lOH5VXGG3MOvmWCitZEksCDir-oUn7zOf_20ek58IpcL31fMRVrMDth4otvJuJvgzrjvQJJenfGpFDM3Oujo2Itk5ZjzHHlXmWFxffyWdkLYmVRwQINqkBU8mo-hMTBdNknXr05Dpto5d9477mCeawtcuv80H1rG915qfiMrP8DShXp_SjphnXjr_I10F5UB4kZaCdsfqAhdIOD69ILSEq2xrKin9oRx7Jgpwl21hyL0I7VfBrfp5&state=90945f43174a5ac8750727ddc8e9a90d794dbf83fd2060c8" for 127.0.0.1 at 2015-06-10 10:30:04 -0400
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQCwEqS7trd4KGv9FIvtJnVZoVAZEDZuKI1Kyodhdl4W5TIORYiM-28uj7OetZkSc7MXQdP9dNjRVzwdB5wVY-WgQ0JXQTc4lg9lOH5VXGG3MOvmWCitZEksCDir-oUn7zOf_20ek58IpcL31fMRVrMDth4otvJuJvgzrjvQJJenfGpFDM3Oujo2Itk5ZjzHHlXmWFxffyWdkLYmVRwQINqkBU8mo-hMTBdNknXr05Dpto5d9477mCeawtcuv80H1rG915qfiMrP8DShXp_SjphnXjr_I10F5UB4kZaCdsfqAhdIOD69ILSEq2xrKin9oRx7Jgpwl21hyL0I7VfBrfp5", "state"=>"90945f43174a5ac8750727ddc8e9a90d794dbf83fd2060c8", "provider"=>"facebook"}
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "101572900184982"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("provider", "uid", "image", "oauth_token", "oauth_expires_at", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["provider", "facebook"], ["uid", "101572900184982"], ["image", "http://graph.facebook.com/101572900184982/picture?type=square"], ["oauth_token", "CAARUwTI31v0BAAJvzNgc7fZBPLSfDkDutlMJLFTfRrYctr23YHI3RGwdIlWHhhdHXHoYZAfYzEBhtxZBTs7E8NwbZC7XtjwC3XfVjfGuF52rLfFwsJTmqp72J7dge43uhJEUPbbagZBagvaHYYwMn49dGb1BLYU2rNqoEecUu2xDyFwqxj6ZASGsCRrZBZBqgJbGmUxneVio6X6u10yovh2J"], ["oauth_expires_at", "2015-08-09 14:08:26.000000"], ["name", "Mark Amiifhafacfc Okelolaman"], ["created_at", "2015-06-10 14:30:05.052963"], ["updated_at", "2015-06-10 14:30:05.052963"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 50ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-10 10:30:05 -0400
+Processing by HomeController#show as HTML
+  Rendered home/show.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 70ms (Views: 68.6ms | ActiveRecord: 0.4ms)
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-10 11:06:05 -0400
+Processing by HomeController#show as HTML
+  Rendered home/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 280ms (Views: 266.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/going.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-10 11:06:05 -0400
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-10 11:06:05 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-10 11:06:05 -0400
+
+
+Started GET "/assets/venues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-10 11:06:05 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-10 11:06:06 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-10 11:06:06 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-10 11:06:06 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-10 11:06:06 -0400
+
+
+Started GET "/assets/going.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-10 11:06:06 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-10 11:06:06 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-10 11:06:06 -0400
+
+
+Started GET "/assets/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-10 11:06:06 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-10 11:06:06 -0400
+
+
+Started GET "/venues" for 127.0.0.1 at 2015-06-10 11:06:09 -0400
+Processing by VenuesController#index as HTML
+  [1m[35mVenue Load (2.9ms)[0m  SELECT "venues".* FROM "venues"
+  Rendered venues/index.html.erb within layouts/application (16.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 245ms (Views: 223.4ms | ActiveRecord: 7.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "1oak"], ["city", "New York"], ["address", "453 west 17th street New York"], ["created_at", "2015-06-10 15:06:54.631119"], ["updated_at", "2015-06-10 15:06:54.631119"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "42 West"], ["city", "New York"], ["address", "220 West 42nd Street 12th Floor New York NY"], ["created_at", "2015-06-10 15:06:54.641397"], ["updated_at", "2015-06-10 15:06:54.641397"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "49 Grove"], ["city", "New York"], ["address", "49 GROVE ST(BTWN BLEECKER & GROVE ST) New York"], ["created_at", "2015-06-10 15:06:54.645441"], ["updated_at", "2015-06-10 15:06:54.645441"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "809 NYC"], ["city", "New York"], ["address", "809 Lounge 112 Dyckman Street New York, NY 10040 New York"], ["created_at", "2015-06-10 15:06:54.648892"], ["updated_at", "2015-06-10 15:06:54.648892"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "9A West Harlem"], ["city", "New York"], ["address", "2331 12th Avenue (133rd St) New York"], ["created_at", "2015-06-10 15:06:54.652972"], ["updated_at", "2015-06-10 15:06:54.652972"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Allure"], ["city", "New York"], ["address", "33-02 Queens Boulevard Long Island City"], ["created_at", "2015-06-10 15:06:54.655739"], ["updated_at", "2015-06-10 15:06:54.655739"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Amazura"], ["city", "New York"], ["address", "91-12 144th Pl Jamaica"], ["created_at", "2015-06-10 15:06:54.658934"], ["updated_at", "2015-06-10 15:06:54.658934"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Area Lounge"], ["city", "New York"], ["address", "89-25 130th Street Richmond Hill Richmond Hill"], ["created_at", "2015-06-10 15:06:54.661830"], ["updated_at", "2015-06-10 15:06:54.661830"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Attic Rooftop & Lounge,city"], ["city", "New York"], ["address", "251 West 48th Street New York"], ["created_at", "2015-06-10 15:06:54.664797"], ["updated_at", "2015-06-10 15:06:54.664797"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Ava Rooftop Lounge"], ["city", "New York"], ["address", "210 West 55th Street New York"], ["created_at", "2015-06-10 15:06:54.669936"], ["updated_at", "2015-06-10 15:06:54.669936"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Avenue Beach Club"], ["city", "New York"], ["address", "23 Ocean Ave Long Branch"], ["created_at", "2015-06-10 15:06:54.672693"], ["updated_at", "2015-06-10 15:06:54.672693"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Babys All Right"], ["city", "New York"], ["address", "146 Broadway Brooklyn"], ["created_at", "2015-06-10 15:06:54.675681"], ["updated_at", "2015-06-10 15:06:54.675681"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bamboo Lounge"], ["city", "New York"], ["address", "Bamboo 985 Morris Ave Bronx, NY 10456 New York"], ["created_at", "2015-06-10 15:06:54.679570"], ["updated_at", "2015-06-10 15:06:54.679570"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Baroque NYC"], ["city", "New York"], ["address", "19-44 Steinway Street Astoria"], ["created_at", "2015-06-10 15:06:54.682108"], ["updated_at", "2015-06-10 15:06:54.682108"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Brooklyn Terrace"], ["city", "New York"], ["address", "216 Duffield St, Brooklyn, NY 11201 Brooklyn"], ["created_at", "2015-06-10 15:06:54.688018"], ["updated_at", "2015-06-10 15:06:54.688018"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Bungalo"], ["city", "New York"], ["address", "32-03 Broadway Astoria"], ["created_at", "2015-06-10 15:06:54.691867"], ["updated_at", "2015-06-10 15:06:54.691867"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Buzz Night Club"], ["city", "New York"], ["address", "103 empire blvd Brooklyn"], ["created_at", "2015-06-10 15:06:54.694992"], ["updated_at", "2015-06-10 15:06:54.694992"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Cantina Rooftop"], ["city", "New York"], ["address", "605 W 48th St New York"], ["created_at", "2015-06-10 15:06:54.697981"], ["updated_at", "2015-06-10 15:06:54.697981"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cappello"], ["city", "New York"], ["address", "21 7th Ave New York"], ["created_at", "2015-06-10 15:06:54.701947"], ["updated_at", "2015-06-10 15:06:54.701947"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Cellar Bar"], ["city", "New York"], ["address", "40 W. 40th Street New York"], ["created_at", "2015-06-10 15:06:54.704577"], ["updated_at", "2015-06-10 15:06:54.704577"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Chrystie 141"], ["city", "New York"], ["address", "141 Chrystie St New York"], ["created_at", "2015-06-10 15:06:54.708226"], ["updated_at", "2015-06-10 15:06:54.708226"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Cielo"], ["city", "New York"], ["address", "18 Little West 12th Street New York"], ["created_at", "2015-06-10 15:06:54.712160"], ["updated_at", "2015-06-10 15:06:54.712160"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cliff Lounge"], ["city", "New York"], ["address", "440 West 202nd St Manhattan, NY 10034 New York"], ["created_at", "2015-06-10 15:06:54.715579"], ["updated_at", "2015-06-10 15:06:54.715579"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Club Cache NYC"], ["city", "New York"], ["address", "22 West 39th Street New York"], ["created_at", "2015-06-10 15:06:54.719570"], ["updated_at", "2015-06-10 15:06:54.719570"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Coco Bongo NYC"], ["city", "New York"], ["address", "36-21 Steinway St Queens Long Island City"], ["created_at", "2015-06-10 15:06:54.722899"], ["updated_at", "2015-06-10 15:06:54.722899"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Coliseum Night Club"], ["city", "New York"], ["address", "South Broadway White Plains New York"], ["created_at", "2015-06-10 15:06:54.727211"], ["updated_at", "2015-06-10 15:06:54.727211"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Copacapana"], ["city", "New York"], ["address", "268 West 47th Street New York\n"], ["created_at", "2015-06-10 15:06:54.731228"], ["updated_at", "2015-06-10 15:06:54.731228"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.5ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Copia NYC"], ["city", "New York"], ["address", "307 East 53rd Street New York"], ["created_at", "2015-06-10 15:06:54.734816"], ["updated_at", "2015-06-10 15:06:54.734816"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "DL Rooftop"], ["city", "New York"], ["address", "95 Delancey Street New York"], ["created_at", "2015-06-10 15:06:54.741343"], ["updated_at", "2015-06-10 15:06:54.741343"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Empire Rooftop"], ["city", "New York"], ["address", "44 West 63rd Street New York"], ["created_at", "2015-06-10 15:06:54.745388"], ["updated_at", "2015-06-10 15:06:54.745388"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Finale"], ["city", "New York"], ["address", "199 Bowery‎ New York"], ["created_at", "2015-06-10 15:06:54.748806"], ["updated_at", "2015-06-10 15:06:54.748806"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Gansevoort Park Rooftop"], ["city", "New York"], ["address", "420 PARK AVE SOUTH New York"], ["created_at", "2015-06-10 15:06:54.757247"], ["updated_at", "2015-06-10 15:06:54.757247"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gilded Lily"], ["city", "New York"], ["address", "408 W 15th St New York"], ["created_at", "2015-06-10 15:06:54.760422"], ["updated_at", "2015-06-10 15:06:54.760422"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Glazz"], ["city", "New York"], ["address", "79-51 Albion Ave - off Queens Blvd New York"], ["created_at", "2015-06-10 15:06:54.763494"], ["updated_at", "2015-06-10 15:06:54.763494"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Highline Ballroom"], ["city", "New York"], ["address", "431 West 16th Street New York"], ["created_at", "2015-06-10 15:06:54.766691"], ["updated_at", "2015-06-10 15:06:54.766691"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Hope Garage"], ["city", "New York"], ["address", "163 Hope St Williamsburg"], ["created_at", "2015-06-10 15:06:54.770581"], ["updated_at", "2015-06-10 15:06:54.770581"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Hotel Chantelle"], ["city", "New York"], ["address", "92 Ludlow St New York"], ["created_at", "2015-06-10 15:06:54.773997"], ["updated_at", "2015-06-10 15:06:54.773997"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Hudson Terrace"], ["city", "New York"], ["address", "621 West 46th Street, New York"], ["created_at", "2015-06-10 15:06:54.777441"], ["updated_at", "2015-06-10 15:06:54.777441"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Katra"], ["city", "New York"], ["address", "217 Bowery Street New York"], ["created_at", "2015-06-10 15:06:54.785472"], ["updated_at", "2015-06-10 15:06:54.785472"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Le Reve Lounge NYC"], ["city", "New York"], ["address", "125 East 54th Street New York"], ["created_at", "2015-06-10 15:06:54.796423"], ["updated_at", "2015-06-10 15:06:54.796423"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Level R"], ["city", "New York"], ["address", "44 West 63rd Street New York"], ["created_at", "2015-06-10 15:06:54.801891"], ["updated_at", "2015-06-10 15:06:54.801891"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Lexicon"], ["city", "New York"], ["address", "226 East 54TH Street New York"], ["created_at", "2015-06-10 15:06:54.807783"], ["updated_at", "2015-06-10 15:06:54.807783"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Liberty Theater"], ["city", "New York"], ["address", "233 W 41ST ST New York"], ["created_at", "2015-06-10 15:06:54.813076"], ["updated_at", "2015-06-10 15:06:54.813076"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Lit NYC"], ["city", "New York"], ["address", "Lit, 93 2nd Ave, New York, NY 10001 New York"], ["created_at", "2015-06-10 15:06:54.817931"], ["updated_at", "2015-06-10 15:06:54.817931"]]
+  [1m[36m (4.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (6.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "LUST NY"], ["city", "New York"], ["address", "225 47th Street New York"], ["created_at", "2015-06-10 15:06:54.834802"], ["updated_at", "2015-06-10 15:06:54.834802"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Marquee NYC"], ["city", "New York"], ["address", "289 10th Avenue New York"], ["created_at", "2015-06-10 15:06:54.845021"], ["updated_at", "2015-06-10 15:06:54.845021"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Milk River"], ["city", "New York"], ["address", "960 Atlantic Avenue Brooklyn"], ["created_at", "2015-06-10 15:06:54.848144"], ["updated_at", "2015-06-10 15:06:54.848144"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Opus 51"], ["city", "New York"], ["address", "51 Gansevoort ST New York"], ["created_at", "2015-06-10 15:06:54.853480"], ["updated_at", "2015-06-10 15:06:54.853480"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.4ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Output Night Club"], ["city", "New York"], ["address", "74 Wythe Ave New York"], ["created_at", "2015-06-10 15:06:54.860077"], ["updated_at", "2015-06-10 15:06:54.860077"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Pacha NYC"], ["city", "New York"], ["address", "618 W 46th St New York"], ["created_at", "2015-06-10 15:06:54.863899"], ["updated_at", "2015-06-10 15:06:54.863899"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Palladium"], ["city", "New York"], ["address", "36-14 31st Street Astoria"], ["created_at", "2015-06-10 15:06:54.867436"], ["updated_at", "2015-06-10 15:06:54.867436"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Phuket Lounge"], ["city", "New York"], ["address", "701 W 135th St New York"], ["created_at", "2015-06-10 15:06:54.872160"], ["updated_at", "2015-06-10 15:06:54.872160"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Plunge Gansevoort"], ["city", "New York"], ["address", "18 Ninth Avenue New York"], ["created_at", "2015-06-10 15:06:54.874937"], ["updated_at", "2015-06-10 15:06:54.874937"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Public House"], ["city", "New York"], ["address", "140 E. 41st St., New York, NY 10017 New York"], ["created_at", "2015-06-10 15:06:54.878021"], ["updated_at", "2015-06-10 15:06:54.878021"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "RdV"], ["city", "New York"], ["address", "409 West 13th Street New York"], ["created_at", "2015-06-10 15:06:54.880541"], ["updated_at", "2015-06-10 15:06:54.880541"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Rooftop 760"], ["city", "New York"], ["address", "760 8th ave New York"], ["created_at", "2015-06-10 15:06:54.884053"], ["updated_at", "2015-06-10 15:06:54.884053"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rosewood"], ["city", "New York"], ["address", "5 E 19th St., Cnr of 5th Avenue Manhattan, New York New York"], ["created_at", "2015-06-10 15:06:54.888147"], ["updated_at", "2015-06-10 15:06:54.888147"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Sky Room"], ["city", "New York"], ["address", "330 West 40th Street New York"], ["created_at", "2015-06-10 15:06:54.894941"], ["updated_at", "2015-06-10 15:06:54.894941"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Slate Lounge NYC"], ["city", "New York"], ["address", "54 West 21st Street New York"], ["created_at", "2015-06-10 15:06:54.898362"], ["updated_at", "2015-06-10 15:06:54.898362"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Space"], ["city", "New York"], ["address", "637 West 50th St New York"], ["created_at", "2015-06-10 15:06:54.901958"], ["updated_at", "2015-06-10 15:06:54.901958"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Stage 48"], ["city", "New York"], ["address", "605 W.48th b/w 11th ave & 12th Ave New York"], ["created_at", "2015-06-10 15:06:54.906584"], ["updated_at", "2015-06-10 15:06:54.906584"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Stellan Nyc"], ["city", "New York"], ["address", "2 West 35th Street, New York, NY"], ["created_at", "2015-06-10 15:06:54.909999"], ["updated_at", "2015-06-10 15:06:54.909999"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Studio 21"], ["city", "New York"], ["address", "59 West 21st Street New York, NY New York"], ["created_at", "2015-06-10 15:06:54.912551"], ["updated_at", "2015-06-10 15:06:54.912551"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Studio 299"], ["city", "New York"], ["address", "299 Vandervoort Ave. New York"], ["created_at", "2015-06-10 15:06:54.915425"], ["updated_at", "2015-06-10 15:06:54.915425"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mission"], ["city", "New York"], ["address", "16 W 36th St New York"], ["created_at", "2015-06-10 15:06:54.919357"], ["updated_at", "2015-06-10 15:06:54.919357"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Tagline"], ["city", "New York"], ["address", "221 West 38th Street New York"], ["created_at", "2015-06-10 15:06:54.922201"], ["updated_at", "2015-06-10 15:06:54.922201"]]
+  [1m[36m (3.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Taj"], ["city", "New York"], ["address", "48 West 21st Street New York"], ["created_at", "2015-06-10 15:06:54.931694"], ["updated_at", "2015-06-10 15:06:54.931694"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Tenjune"], ["city", "New York"], ["address", "26 Little West 12th New York"], ["created_at", "2015-06-10 15:06:54.935381"], ["updated_at", "2015-06-10 15:06:54.935381"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "The Bowery Electric"], ["city", "New York"], ["address", "327 Bowery New York"], ["created_at", "2015-06-10 15:06:54.938209"], ["updated_at", "2015-06-10 15:06:54.938209"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "The Leonora"], ["city", "New York"], ["address", "525 W 29th St New York"], ["created_at", "2015-06-10 15:06:54.940773"], ["updated_at", "2015-06-10 15:06:54.940773"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "The Varick Room"], ["city", "New York"], ["address", "54 Varick Street New York"], ["created_at", "2015-06-10 15:06:54.944073"], ["updated_at", "2015-06-10 15:06:54.944073"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Toy"], ["city", "New York"], ["address", "18 9th Ave New York"], ["created_at", "2015-06-10 15:06:54.947351"], ["updated_at", "2015-06-10 15:06:54.947351"]]
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "VIP Room"], ["city", "New York"], ["address", "409 W 13th St, New York, New York"], ["created_at", "2015-06-10 15:06:54.953621"], ["updated_at", "2015-06-10 15:06:54.953621"]]
+  [1m[35m (3.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "TAO Downtown"], ["city", "New York"], ["address", "Maritime Hotel, 92 9th Ave, New York, NY 10011"], ["created_at", "2015-06-10 15:06:54.960751"], ["updated_at", "2015-06-10 15:06:54.960751"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "The Raven"], ["city", "New York"], ["address", "55 Gansevoort St, New York, NY 10014"], ["created_at", "2015-06-10 15:06:54.965439"], ["updated_at", "2015-06-10 15:06:54.965439"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Lavo"], ["city", "New York"], ["address", "39 E 58th St, New York, NY 10022"], ["created_at", "2015-06-10 15:06:54.969501"], ["updated_at", "2015-06-10 15:06:54.969501"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Provocateur"], ["city", "New York"], ["address", "Gansevoort Meatpacking NYC, 18 9th Ave, New York, NY 10014"], ["created_at", "2015-06-10 15:06:54.974895"], ["updated_at", "2015-06-10 15:06:54.974895"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Le Bain"], ["city", "New York"], ["address", "848 Washington St, New York, NY 10014"], ["created_at", "2015-06-10 15:06:54.978210"], ["updated_at", "2015-06-10 15:06:54.978210"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Electric Room"], ["city", "New York"], ["address", "355 W 16th St, New York, NY 10011"], ["created_at", "2015-06-10 15:06:54.982002"], ["updated_at", "2015-06-10 15:06:54.982002"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Up&Down"], ["city", "New York"], ["address", "409 W 13th St, New York, New York"], ["created_at", "2015-06-10 15:06:54.987135"], ["updated_at", "2015-06-10 15:06:54.987135"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "PH-D"], ["city", "New York"], ["address", "355 W 16th St"], ["created_at", "2015-06-10 15:06:54.992701"], ["updated_at", "2015-06-10 15:06:54.992701"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "The Griffin"], ["city", "New York"], ["address", "50 Gansevoort St, New York, NY 10014"], ["created_at", "2015-06-10 15:06:54.996824"], ["updated_at", "2015-06-10 15:06:54.996824"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Avenue"], ["city", "New York"], ["address", "116 10th Ave, New York, NY 10011"], ["created_at", "2015-06-10 15:06:55.000108"], ["updated_at", "2015-06-10 15:06:55.000108"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Gaslight"], ["city", "New York"], ["address", "400 W 14th St, New York, NY 10014"], ["created_at", "2015-06-10 15:06:55.004718"], ["updated_at", "2015-06-10 15:06:55.004718"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "No. 8"], ["city", "New York"], ["address", "357 W 16th St, New York, NY 10011"], ["created_at", "2015-06-10 15:06:55.008213"], ["updated_at", "2015-06-10 15:06:55.008213"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "W.i.P"], ["city", "New York"], ["address", "34 Vandam St., downstairs, New York, NY 10013"], ["created_at", "2015-06-10 15:06:55.011287"], ["updated_at", "2015-06-10 15:06:55.011287"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Riff Raff"], ["city", "New York"], ["address", "360 Park Ave S, New York, NY 10010"], ["created_at", "2015-06-10 15:06:55.014274"], ["updated_at", "2015-06-10 15:06:55.014274"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Fat Black Pussy Cat"], ["city", "New York"], ["address", "130 W 3rd St, New York, NY 10012"], ["created_at", "2015-06-10 15:06:55.016911"], ["updated_at", "2015-06-10 15:06:55.016911"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Electric Room"], ["city", "New York"], ["address", "355 W 16th St, New York, NY 10011"], ["created_at", "2015-06-10 15:06:55.022265"], ["updated_at", "2015-06-10 15:06:55.022265"]]
+  [1m[35m (1.6ms)[0m  COMMIT
+
+
+Started GET "/venues" for 127.0.0.1 at 2015-06-10 11:07:09 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VenuesController#index as HTML
+  [1m[35mVenue Load (1.9ms)[0m  SELECT "venues".* FROM "venues"
+  Rendered venues/index.html.erb within layouts/application (37.9ms)
+  [1m[36mUser Load (3.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 498ms (Views: 448.5ms | ActiveRecord: 16.9ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-10 11:07:13 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mVenue Load (0.5ms)[0m  SELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mGoing Load (1.3ms)[0m  SELECT "goings".* FROM "goings" WHERE "goings"."user_id" = $1 AND "goings"."venue_id" = 1  [["user_id", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1[0m  [["venue_id", 1], ["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1  [["venue_id", 1], ["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1[0m  [["venue_id", 1]]
+  Rendered venues/show.html.erb within layouts/application (80.6ms)
+Completed 200 OK in 242ms (Views: 212.2ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/venues/1/going" for 127.0.0.1 at 2015-06-10 11:07:15 -0400
+Processing by GoingController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OpDy8qkgMXSLLBbPYkAPeoCSAx991RIX4bLDXLEmh8CmAYuMjMnB8wXqGPkjcm0LvIqRTpen4mEHlfcTZqZ85g==", "going"=>{"user_id"=>"1", "venue_id"=>"1", "going"=>"true"}, "commit"=>"Going", "venue_id"=>"1"}
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "goings" ("user_id", "venue_id", "going", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["venue_id", 1], ["going", "t"], ["created_at", "2015-06-10 15:07:15.951734"], ["updated_at", "2015-06-10 15:07:15.951734"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/venues/1
+Completed 302 Found in 19ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-10 11:07:15 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVenue Load (0.4ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mGoing Load (0.5ms)[0m  [1mSELECT "goings".* FROM "goings" WHERE "goings"."user_id" = $1 AND "goings"."venue_id" = 1[0m  [["user_id", 1]]
+  [1m[35mUser Load (2.4ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1  [["venue_id", 1], ["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1[0m  [["venue_id", 1], ["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "goings".* FROM "goings" WHERE "goings"."user_id" = $1 AND "goings"."venue_id" = 1  [["user_id", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1[0m  [["venue_id", 1]]
+  [1m[35mGoing Load (0.6ms)[0m  SELECT  "goings".* FROM "goings" WHERE "goings"."user_id" = $1 AND "goings"."venue_id" = $2 LIMIT 1  [["user_id", 1], ["venue_id", 1]]
+  Rendered venues/show.html.erb within layouts/application (32.8ms)
+Completed 200 OK in 174ms (Views: 164.7ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2015-06-10 11:10:35 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-10 11:10:35 -0400
+Processing by HomeController#show as HTML
+  Rendered home/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 124ms (Views: 123.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-10 11:10:49 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-10 11:10:49 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQARd4JZ72EgcZaqTQupHvH6ZgLBTy1gX5xHU5me4Jk7YWSCltIc8edK32R-g-jwGLqOEqn7LrmmJNU20s4QfXH01hrUB-480fcUd32x-vGFzSY_yx6OlfqY8MGoOtGhtw38SW08sLsWFXaLj-wEolVLMC9Xa2xT-D7mYsmND4gM_v81HbDfg98kS28-DA25-A_uaLdCTo4492hr6DBSddtGpsrXfo1963KG5vijDapuY5r8tsUTlJdSnabz2ppc0Bj_ZXsNKTLNqTcNctaAr7_Jo24nMX3WOmM8POMmyORtSkTp4hzEWKSmg_sFwgT9pXc&state=6f4399d2faec5faa7101742dcf9c8981702fb9b3594df638" for 127.0.0.1 at 2015-06-10 11:10:49 -0400
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQARd4JZ72EgcZaqTQupHvH6ZgLBTy1gX5xHU5me4Jk7YWSCltIc8edK32R-g-jwGLqOEqn7LrmmJNU20s4QfXH01hrUB-480fcUd32x-vGFzSY_yx6OlfqY8MGoOtGhtw38SW08sLsWFXaLj-wEolVLMC9Xa2xT-D7mYsmND4gM_v81HbDfg98kS28-DA25-A_uaLdCTo4492hr6DBSddtGpsrXfo1963KG5vijDapuY5r8tsUTlJdSnabz2ppc0Bj_ZXsNKTLNqTcNctaAr7_Jo24nMX3WOmM8POMmyORtSkTp4hzEWKSmg_sFwgT9pXc", "state"=>"6f4399d2faec5faa7101742dcf9c8981702fb9b3594df638", "provider"=>"facebook"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10206339728668711"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "image", "oauth_token", "oauth_expires_at", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["provider", "facebook"], ["uid", "10206339728668711"], ["image", "http://graph.facebook.com/10206339728668711/picture?type=square"], ["oauth_token", "CAARUwTI31v0BAOgoH7bj9Gl5qFvEUVWwsOctD9vZAwjxLCKkVf3GEucBe4oLltQgZC60PhIHe3VoQbAVdt3gPJK5vYDqAjhwuZCSBH95ApLtnsLvk8pDnSqGIyGtYrFapwTqCEUoSuzWe8BrwPapsPKNZB4s9uuT9ZAojdXZB3fVJSgygsuLwx0DOnMhNZC5QKLm5xcn3ATXM7VyHzaknWZA"], ["oauth_expires_at", "2015-08-08 18:34:32.000000"], ["name", "Kenny Geiler"], ["created_at", "2015-06-10 15:10:50.755729"], ["updated_at", "2015-06-10 15:10:50.755729"]]
+  [1m[35m (2.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-10 11:10:50 -0400
+Processing by HomeController#show as HTML
+  Rendered home/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 126ms (Views: 124.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/venues" for 127.0.0.1 at 2015-06-10 11:10:55 -0400
+Processing by VenuesController#index as HTML
+  [1m[35mVenue Load (1.0ms)[0m  SELECT "venues".* FROM "venues"
+  Rendered venues/index.html.erb within layouts/application (14.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 165ms (Views: 160.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-10 11:10:57 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mVenue Load (0.7ms)[0m  SELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mGoing Load (0.4ms)[0m  SELECT "goings".* FROM "goings" WHERE "goings"."user_id" = $1 AND "goings"."venue_id" = 1  [["user_id", 2]]
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1[0m  [["venue_id", 1], ["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1  [["venue_id", 1], ["id", 2]]
+  [1m[36mUser Load (3.5ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1[0m  [["venue_id", 1]]
+  [1m[35mGoing Load (1.8ms)[0m  SELECT  "goings".* FROM "goings" WHERE "goings"."user_id" = $1 AND "goings"."venue_id" = $2 LIMIT 1  [["user_id", 1], ["venue_id", 1]]
+  Rendered venues/show.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 269ms (Views: 251.7ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/venues/1/going" for 127.0.0.1 at 2015-06-10 11:11:00 -0400
+Processing by GoingController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wj4vVdkFxIQW3+lJjmcWFqAZ9+9iphF5vhuP62/0xI/Gr1Yr/Ow0A5gZ53/PVXRnnAFlvojU4Q9YPLukuHQ/qQ==", "going"=>{"user_id"=>"2", "venue_id"=>"1", "going"=>"true"}, "commit"=>"Going", "venue_id"=>"1"}
+  [1m[36m (1.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "goings" ("user_id", "venue_id", "going", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 2], ["venue_id", 1], ["going", "t"], ["created_at", "2015-06-10 15:11:00.321789"], ["updated_at", "2015-06-10 15:11:00.321789"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/venues/1
+Completed 302 Found in 9ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-10 11:11:00 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mVenue Load (0.6ms)[0m  SELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mGoing Load (2.3ms)[0m  SELECT "goings".* FROM "goings" WHERE "goings"."user_id" = $1 AND "goings"."venue_id" = 1  [["user_id", 2]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1[0m  [["venue_id", 1], ["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1  [["venue_id", 1], ["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "goings".* FROM "goings" WHERE "goings"."user_id" = $1 AND "goings"."venue_id" = 1[0m  [["user_id", 2]]
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1  [["venue_id", 1]]
+  [1m[36mGoing Load (0.6ms)[0m  [1mSELECT  "goings".* FROM "goings" WHERE "goings"."user_id" = $1 AND "goings"."venue_id" = $2 LIMIT 1[0m  [["user_id", 1], ["venue_id", 1]]
+  [1m[35mGoing Load (0.5ms)[0m  SELECT  "goings".* FROM "goings" WHERE "goings"."user_id" = $1 AND "goings"."venue_id" = $2 LIMIT 1  [["user_id", 2], ["venue_id", 1]]
+  Rendered venues/show.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 133ms (Views: 121.1ms | ActiveRecord: 7.3ms)
