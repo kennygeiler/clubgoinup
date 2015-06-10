@@ -1,7 +1,12 @@
 <%= @venue.name %>
 
-<% if current_user.going == false %>
-
+<% if @venue.users.find_by(id: current_user.id) == nil %>
+  <%= form_for @going, :url => venue_going_index_path(@venue.id) do |f| %>
+  <%= f.hidden_field :user_id, :value => current_user.id %><br />
+  <%= f.hidden_field :venue_id, :value => @venue.id %><br />
+  <%= f.check_box :going, {}, "true", "false" %>
+  <%= f.submit "Going" %>
+  <% end %>
 <% else %>
 
 <% end %>

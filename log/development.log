@@ -3221,3 +3221,2149 @@ Started GET "/assets/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde4
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-09 14:40:36 -0400
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:10:08 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mVenue Load (1.2ms)[0m  SELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 7.5ms)
+
+ActionView::Template::Error (undefined method `going' for nil:NilClass):
+    1: <%= @venue.name %>
+    2: 
+    3: <% if current_user.going == false %>
+    4:   <%= form_for @going do |f| %>
+    5:   <%= f.hidden_field :user_id, :value => current_user.id %><br />
+    6:   <%= f.hidden_field :venue_id, :value => @venue.id %><br />
+  app/views/venues/show.html.erb:3:in `_app_views_venues_show_html_erb__2833849109630138747_70325659111160'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (101.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (85.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (189.8ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:11:51 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVenue Load (0.5ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (61.5ms)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 2.8ms)
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: <%= @venue.name %>
+    2: 
+    3: <% if @venue.users.find(user_id: current_user.id) == nil %>
+    4:   <%= form_for @going do |f| %>
+    5:   <%= f.hidden_field :user_id, :value => current_user.id %><br />
+    6:   <%= f.hidden_field :venue_id, :value => @venue.id %><br />
+  app/views/venues/show.html.erb:3:in `_app_views_venues_show_html_erb__2833849109630138747_70325627178720'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (88.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (60.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (151.6ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:12:13 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mVenue Load (0.4ms)[0m  SELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: <%= @venue.name %>
+    2: 
+    3: <% if @venue.users.find_by(user_id: current_user.id) == nil %>
+    4:   <%= form_for @going do |f| %>
+    5:   <%= f.hidden_field :user_id, :value => current_user.id %><br />
+    6:   <%= f.hidden_field :venue_id, :value => @venue.id %><br />
+  app/views/venues/show.html.erb:3:in `_app_views_venues_show_html_erb__2833849109630138747_70325629815940'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (87.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (64.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (143.2ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2015-06-09 19:12:20 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-09 19:12:20 -0400
+Processing by HomeController#show as HTML
+  Rendered home/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 265ms (Views: 263.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-09 19:12:22 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-09 19:12:22 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQDedvwDJSRlLdVoezU7wPqDEwdvQPxD2Q6Cj0cgb2uHKhDHz4slQ4o1xv7Wtma71s3UvF_cyO1U3jGAp8xEQ2DjC6QxUjLaqsgnNlzHnlQQKbBWz46954Ga0Pb7T14q2b1SvDEKe8hu4BYCKSS7dBXcFlw4JIHj6Iiawsg-_1tio9zXRH9RZ1vMTIv3QAXbqWu6nf7D4QOnlwTXJ0o1W60K9kd5XaWxmZIVNnU8ERj7zRsj8wbE2SAhN0rg-NO2KVW2WbQM_sGChDSRAeSRRkrtAZQjkHVPY96ocP7NmCJzvdbsLQxzS7Yjtw6c-JTrd2w&state=3f30ddeaafa2f06449b7247e4d4f7fdcad40b9e8d8177de9" for 127.0.0.1 at 2015-06-09 19:12:23 -0400
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQDedvwDJSRlLdVoezU7wPqDEwdvQPxD2Q6Cj0cgb2uHKhDHz4slQ4o1xv7Wtma71s3UvF_cyO1U3jGAp8xEQ2DjC6QxUjLaqsgnNlzHnlQQKbBWz46954Ga0Pb7T14q2b1SvDEKe8hu4BYCKSS7dBXcFlw4JIHj6Iiawsg-_1tio9zXRH9RZ1vMTIv3QAXbqWu6nf7D4QOnlwTXJ0o1W60K9kd5XaWxmZIVNnU8ERj7zRsj8wbE2SAhN0rg-NO2KVW2WbQM_sGChDSRAeSRRkrtAZQjkHVPY96ocP7NmCJzvdbsLQxzS7Yjtw6c-JTrd2w", "state"=>"3f30ddeaafa2f06449b7247e4d4f7fdcad40b9e8d8177de9", "provider"=>"facebook"}
+  [1m[36mUser Load (3.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10206339728668711"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-09 19:12:23 -0400
+Processing by HomeController#show as HTML
+  Rendered home/show.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 58ms (Views: 56.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/venues" for 127.0.0.1 at 2015-06-09 19:12:28 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (1.3ms)[0m  [1mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (5.4ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 59ms (Views: 55.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:12:30 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVenue Load (0.5ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+PG::UndefinedColumn: ERROR:  column users.user_id does not exist
+LINE 1: ...ngs"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."u...
+                                                             ^
+: SELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."user_id" = 1 LIMIT 1
+  Rendered venues/show.html.erb within layouts/application (18.0ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.9ms)
+
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column users.user_id does not exist
+LINE 1: ...ngs"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."u...
+                                                             ^
+: SELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."user_id" = 1 LIMIT 1):
+    1: <%= @venue.name %>
+    2: 
+    3: <% if @venue.users.find_by(user_id: current_user.id) == nil %>
+    4:   <%= form_for @going do |f| %>
+    5:   <%= f.hidden_field :user_id, :value => current_user.id %><br />
+    6:   <%= f.hidden_field :venue_id, :value => @venue.id %><br />
+  app/views/venues/show.html.erb:3:in `_app_views_venues_show_html_erb__2833849109630138747_70325629815940'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (105.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (71.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (159.0ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:12:49 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVenue Load (0.5ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1[0m  [["venue_id", 1], ["id", 1]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1  [["venue_id", 1]]
+  Rendered venues/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 67ms (Views: 61.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:12:50 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:12:50 -0400
+
+
+Started GET "/assets/venues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:12:50 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-09 19:12:50 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-09 19:12:50 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-09 19:12:50 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-09 19:12:50 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:12:50 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:12:50 -0400
+
+
+Started GET "/assets/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:12:50 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-09 19:12:50 -0400
+  [1m[36m (15.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (4.6ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150608142548)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (15.6ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "provider" character varying, "uid" character varying, "name" character varying, "image" character varying, "user_friends" character varying, "oauth_token" character varying, "oauth_expires_at" timestamp, "promotor" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150608142548"]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePromotors (20150609131346)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (6.7ms)[0m  [1mCREATE TABLE "promotors" ("id" serial primary key, "user_id" integer, "company" character varying, "venues" text, "about" text, "instagram" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609131346"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateVenues (20150609131359)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "venues" ("id" serial primary key, "name" character varying, "city" character varying, "address" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609131359"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateGoings (20150609131421)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (3.8ms)[0m  [1mCREATE TABLE "goings" ("id" serial primary key, "user_id" integer, "venue_id" integer, "going" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609131421"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateQuotes (20150609131434)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (5.9ms)[0m  [1mCREATE TABLE "quotes" ("id" serial primary key, "men" integer, "women" integer, "min" integer, "max" integer, "venues" text, "date" date, "comments" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609131434"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'goings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'promotors'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (4.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'quotes'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (7.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (6.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'venues'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "1oak"], ["city", "New York"], ["address", "453 west 17th street New York"], ["created_at", "2015-06-09 23:13:27.232842"], ["updated_at", "2015-06-09 23:13:27.232842"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "42 West"], ["city", "New York"], ["address", "220 West 42nd Street 12th Floor New York NY"], ["created_at", "2015-06-09 23:13:27.239143"], ["updated_at", "2015-06-09 23:13:27.239143"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "49 Grove"], ["city", "New York"], ["address", "49 GROVE ST(BTWN BLEECKER & GROVE ST) New York"], ["created_at", "2015-06-09 23:13:27.241539"], ["updated_at", "2015-06-09 23:13:27.241539"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "809 NYC"], ["city", "New York"], ["address", "809 Lounge 112 Dyckman Street New York, NY 10040 New York"], ["created_at", "2015-06-09 23:13:27.244879"], ["updated_at", "2015-06-09 23:13:27.244879"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "9A West Harlem"], ["city", "New York"], ["address", "2331 12th Avenue (133rd St) New York"], ["created_at", "2015-06-09 23:13:27.247317"], ["updated_at", "2015-06-09 23:13:27.247317"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Allure"], ["city", "New York"], ["address", "33-02 Queens Boulevard Long Island City"], ["created_at", "2015-06-09 23:13:27.249948"], ["updated_at", "2015-06-09 23:13:27.249948"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Amazura"], ["city", "New York"], ["address", "91-12 144th Pl Jamaica"], ["created_at", "2015-06-09 23:13:27.252423"], ["updated_at", "2015-06-09 23:13:27.252423"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Area Lounge"], ["city", "New York"], ["address", "89-25 130th Street Richmond Hill Richmond Hill"], ["created_at", "2015-06-09 23:13:27.255033"], ["updated_at", "2015-06-09 23:13:27.255033"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Attic Rooftop & Lounge,city"], ["city", "New York"], ["address", "251 West 48th Street New York"], ["created_at", "2015-06-09 23:13:27.257326"], ["updated_at", "2015-06-09 23:13:27.257326"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Ava Rooftop Lounge"], ["city", "New York"], ["address", "210 West 55th Street New York"], ["created_at", "2015-06-09 23:13:27.259884"], ["updated_at", "2015-06-09 23:13:27.259884"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Avenue Beach Club"], ["city", "New York"], ["address", "23 Ocean Ave Long Branch"], ["created_at", "2015-06-09 23:13:27.263076"], ["updated_at", "2015-06-09 23:13:27.263076"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Babys All Right"], ["city", "New York"], ["address", "146 Broadway Brooklyn"], ["created_at", "2015-06-09 23:13:27.266385"], ["updated_at", "2015-06-09 23:13:27.266385"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bamboo Lounge"], ["city", "New York"], ["address", "Bamboo 985 Morris Ave Bronx, NY 10456 New York"], ["created_at", "2015-06-09 23:13:27.269000"], ["updated_at", "2015-06-09 23:13:27.269000"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Baroque NYC"], ["city", "New York"], ["address", "19-44 Steinway Street Astoria"], ["created_at", "2015-06-09 23:13:27.271428"], ["updated_at", "2015-06-09 23:13:27.271428"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Brooklyn Terrace"], ["city", "New York"], ["address", "216 Duffield St, Brooklyn, NY 11201 Brooklyn"], ["created_at", "2015-06-09 23:13:27.274627"], ["updated_at", "2015-06-09 23:13:27.274627"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Bungalo"], ["city", "New York"], ["address", "32-03 Broadway Astoria"], ["created_at", "2015-06-09 23:13:27.278239"], ["updated_at", "2015-06-09 23:13:27.278239"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Buzz Night Club"], ["city", "New York"], ["address", "103 empire blvd Brooklyn"], ["created_at", "2015-06-09 23:13:27.282938"], ["updated_at", "2015-06-09 23:13:27.282938"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Cantina Rooftop"], ["city", "New York"], ["address", "605 W 48th St New York"], ["created_at", "2015-06-09 23:13:27.287785"], ["updated_at", "2015-06-09 23:13:27.287785"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cappello"], ["city", "New York"], ["address", "21 7th Ave New York"], ["created_at", "2015-06-09 23:13:27.290784"], ["updated_at", "2015-06-09 23:13:27.290784"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Cellar Bar"], ["city", "New York"], ["address", "40 W. 40th Street New York"], ["created_at", "2015-06-09 23:13:27.293441"], ["updated_at", "2015-06-09 23:13:27.293441"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Chrystie 141"], ["city", "New York"], ["address", "141 Chrystie St New York"], ["created_at", "2015-06-09 23:13:27.295853"], ["updated_at", "2015-06-09 23:13:27.295853"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Cielo"], ["city", "New York"], ["address", "18 Little West 12th Street New York"], ["created_at", "2015-06-09 23:13:27.298259"], ["updated_at", "2015-06-09 23:13:27.298259"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cliff Lounge"], ["city", "New York"], ["address", "440 West 202nd St Manhattan, NY 10034 New York"], ["created_at", "2015-06-09 23:13:27.301427"], ["updated_at", "2015-06-09 23:13:27.301427"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Club Cache NYC"], ["city", "New York"], ["address", "22 West 39th Street New York"], ["created_at", "2015-06-09 23:13:27.304460"], ["updated_at", "2015-06-09 23:13:27.304460"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Coco Bongo NYC"], ["city", "New York"], ["address", "36-21 Steinway St Queens Long Island City"], ["created_at", "2015-06-09 23:13:27.307759"], ["updated_at", "2015-06-09 23:13:27.307759"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Coliseum Night Club"], ["city", "New York"], ["address", "South Broadway White Plains New York"], ["created_at", "2015-06-09 23:13:27.311023"], ["updated_at", "2015-06-09 23:13:27.311023"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Copacapana"], ["city", "New York"], ["address", "268 West 47th Street New York\n"], ["created_at", "2015-06-09 23:13:27.313973"], ["updated_at", "2015-06-09 23:13:27.313973"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Copia NYC"], ["city", "New York"], ["address", "307 East 53rd Street New York"], ["created_at", "2015-06-09 23:13:27.316293"], ["updated_at", "2015-06-09 23:13:27.316293"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "DL Rooftop"], ["city", "New York"], ["address", "95 Delancey Street New York"], ["created_at", "2015-06-09 23:13:27.318604"], ["updated_at", "2015-06-09 23:13:27.318604"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Empire Rooftop"], ["city", "New York"], ["address", "44 West 63rd Street New York"], ["created_at", "2015-06-09 23:13:27.321916"], ["updated_at", "2015-06-09 23:13:27.321916"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Finale"], ["city", "New York"], ["address", "199 Bowery‎ New York"], ["created_at", "2015-06-09 23:13:27.324868"], ["updated_at", "2015-06-09 23:13:27.324868"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Gansevoort Park Rooftop"], ["city", "New York"], ["address", "420 PARK AVE SOUTH New York"], ["created_at", "2015-06-09 23:13:27.328520"], ["updated_at", "2015-06-09 23:13:27.328520"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gilded Lily"], ["city", "New York"], ["address", "408 W 15th St New York"], ["created_at", "2015-06-09 23:13:27.331381"], ["updated_at", "2015-06-09 23:13:27.331381"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Glazz"], ["city", "New York"], ["address", "79-51 Albion Ave - off Queens Blvd New York"], ["created_at", "2015-06-09 23:13:27.333618"], ["updated_at", "2015-06-09 23:13:27.333618"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Highline Ballroom"], ["city", "New York"], ["address", "431 West 16th Street New York"], ["created_at", "2015-06-09 23:13:27.335779"], ["updated_at", "2015-06-09 23:13:27.335779"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Hope Garage"], ["city", "New York"], ["address", "163 Hope St Williamsburg"], ["created_at", "2015-06-09 23:13:27.337938"], ["updated_at", "2015-06-09 23:13:27.337938"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Hotel Chantelle"], ["city", "New York"], ["address", "92 Ludlow St New York"], ["created_at", "2015-06-09 23:13:27.339986"], ["updated_at", "2015-06-09 23:13:27.339986"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Hudson Terrace"], ["city", "New York"], ["address", "621 West 46th Street, New York"], ["created_at", "2015-06-09 23:13:27.342251"], ["updated_at", "2015-06-09 23:13:27.342251"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Katra"], ["city", "New York"], ["address", "217 Bowery Street New York"], ["created_at", "2015-06-09 23:13:27.344782"], ["updated_at", "2015-06-09 23:13:27.344782"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Le Reve Lounge NYC"], ["city", "New York"], ["address", "125 East 54th Street New York"], ["created_at", "2015-06-09 23:13:27.346867"], ["updated_at", "2015-06-09 23:13:27.346867"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Level R"], ["city", "New York"], ["address", "44 West 63rd Street New York"], ["created_at", "2015-06-09 23:13:27.348898"], ["updated_at", "2015-06-09 23:13:27.348898"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Lexicon"], ["city", "New York"], ["address", "226 East 54TH Street New York"], ["created_at", "2015-06-09 23:13:27.351842"], ["updated_at", "2015-06-09 23:13:27.351842"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Liberty Theater"], ["city", "New York"], ["address", "233 W 41ST ST New York"], ["created_at", "2015-06-09 23:13:27.355856"], ["updated_at", "2015-06-09 23:13:27.355856"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Lit NYC"], ["city", "New York"], ["address", "Lit, 93 2nd Ave, New York, NY 10001 New York"], ["created_at", "2015-06-09 23:13:27.358246"], ["updated_at", "2015-06-09 23:13:27.358246"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "LUST NY"], ["city", "New York"], ["address", "225 47th Street New York"], ["created_at", "2015-06-09 23:13:27.360389"], ["updated_at", "2015-06-09 23:13:27.360389"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Marquee NYC"], ["city", "New York"], ["address", "289 10th Avenue New York"], ["created_at", "2015-06-09 23:13:27.362505"], ["updated_at", "2015-06-09 23:13:27.362505"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Milk River"], ["city", "New York"], ["address", "960 Atlantic Avenue Brooklyn"], ["created_at", "2015-06-09 23:13:27.364741"], ["updated_at", "2015-06-09 23:13:27.364741"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Opus 51"], ["city", "New York"], ["address", "51 Gansevoort ST New York"], ["created_at", "2015-06-09 23:13:27.367006"], ["updated_at", "2015-06-09 23:13:27.367006"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Output Night Club"], ["city", "New York"], ["address", "74 Wythe Ave New York"], ["created_at", "2015-06-09 23:13:27.369458"], ["updated_at", "2015-06-09 23:13:27.369458"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Pacha NYC"], ["city", "New York"], ["address", "618 W 46th St New York"], ["created_at", "2015-06-09 23:13:27.372449"], ["updated_at", "2015-06-09 23:13:27.372449"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Palladium"], ["city", "New York"], ["address", "36-14 31st Street Astoria"], ["created_at", "2015-06-09 23:13:27.375396"], ["updated_at", "2015-06-09 23:13:27.375396"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Phuket Lounge"], ["city", "New York"], ["address", "701 W 135th St New York"], ["created_at", "2015-06-09 23:13:27.380005"], ["updated_at", "2015-06-09 23:13:27.380005"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Plunge Gansevoort"], ["city", "New York"], ["address", "18 Ninth Avenue New York"], ["created_at", "2015-06-09 23:13:27.384362"], ["updated_at", "2015-06-09 23:13:27.384362"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Public House"], ["city", "New York"], ["address", "140 E. 41st St., New York, NY 10017 New York"], ["created_at", "2015-06-09 23:13:27.387339"], ["updated_at", "2015-06-09 23:13:27.387339"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "RdV"], ["city", "New York"], ["address", "409 West 13th Street New York"], ["created_at", "2015-06-09 23:13:27.390140"], ["updated_at", "2015-06-09 23:13:27.390140"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Rooftop 760"], ["city", "New York"], ["address", "760 8th ave New York"], ["created_at", "2015-06-09 23:13:27.393507"], ["updated_at", "2015-06-09 23:13:27.393507"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rosewood"], ["city", "New York"], ["address", "5 E 19th St., Cnr of 5th Avenue Manhattan, New York New York"], ["created_at", "2015-06-09 23:13:27.397347"], ["updated_at", "2015-06-09 23:13:27.397347"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Sky Room"], ["city", "New York"], ["address", "330 West 40th Street New York"], ["created_at", "2015-06-09 23:13:27.401262"], ["updated_at", "2015-06-09 23:13:27.401262"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Slate Lounge NYC"], ["city", "New York"], ["address", "54 West 21st Street New York"], ["created_at", "2015-06-09 23:13:27.403912"], ["updated_at", "2015-06-09 23:13:27.403912"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Space"], ["city", "New York"], ["address", "637 West 50th St New York"], ["created_at", "2015-06-09 23:13:27.406279"], ["updated_at", "2015-06-09 23:13:27.406279"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Stage 48"], ["city", "New York"], ["address", "605 W.48th b/w 11th ave & 12th Ave New York"], ["created_at", "2015-06-09 23:13:27.408380"], ["updated_at", "2015-06-09 23:13:27.408380"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Stellan Nyc"], ["city", "New York"], ["address", "2 West 35th Street, New York, NY"], ["created_at", "2015-06-09 23:13:27.410392"], ["updated_at", "2015-06-09 23:13:27.410392"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Studio 21"], ["city", "New York"], ["address", "59 West 21st Street New York, NY New York"], ["created_at", "2015-06-09 23:13:27.412276"], ["updated_at", "2015-06-09 23:13:27.412276"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Studio 299"], ["city", "New York"], ["address", "299 Vandervoort Ave. New York"], ["created_at", "2015-06-09 23:13:27.414186"], ["updated_at", "2015-06-09 23:13:27.414186"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mission"], ["city", "New York"], ["address", "16 W 36th St New York"], ["created_at", "2015-06-09 23:13:27.416086"], ["updated_at", "2015-06-09 23:13:27.416086"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Tagline"], ["city", "New York"], ["address", "221 West 38th Street New York"], ["created_at", "2015-06-09 23:13:27.418166"], ["updated_at", "2015-06-09 23:13:27.418166"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Taj"], ["city", "New York"], ["address", "48 West 21st Street New York"], ["created_at", "2015-06-09 23:13:27.420232"], ["updated_at", "2015-06-09 23:13:27.420232"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Tenjune"], ["city", "New York"], ["address", "26 Little West 12th New York"], ["created_at", "2015-06-09 23:13:27.422667"], ["updated_at", "2015-06-09 23:13:27.422667"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "The Bowery Electric"], ["city", "New York"], ["address", "327 Bowery New York"], ["created_at", "2015-06-09 23:13:27.424716"], ["updated_at", "2015-06-09 23:13:27.424716"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "The Leonora"], ["city", "New York"], ["address", "525 W 29th St New York"], ["created_at", "2015-06-09 23:13:27.426937"], ["updated_at", "2015-06-09 23:13:27.426937"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "The Varick Room"], ["city", "New York"], ["address", "54 Varick Street New York"], ["created_at", "2015-06-09 23:13:27.429528"], ["updated_at", "2015-06-09 23:13:27.429528"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Toy"], ["city", "New York"], ["address", "18 9th Ave New York"], ["created_at", "2015-06-09 23:13:27.431670"], ["updated_at", "2015-06-09 23:13:27.431670"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "VIP Room"], ["city", "New York"], ["address", "409 W 13th St, New York, New York"], ["created_at", "2015-06-09 23:13:27.433855"], ["updated_at", "2015-06-09 23:13:27.433855"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "TAO Downtown"], ["city", "New York"], ["address", "Maritime Hotel, 92 9th Ave, New York, NY 10011"], ["created_at", "2015-06-09 23:13:27.436200"], ["updated_at", "2015-06-09 23:13:27.436200"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "The Raven"], ["city", "New York"], ["address", "55 Gansevoort St, New York, NY 10014"], ["created_at", "2015-06-09 23:13:27.438236"], ["updated_at", "2015-06-09 23:13:27.438236"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Lavo"], ["city", "New York"], ["address", "39 E 58th St, New York, NY 10022"], ["created_at", "2015-06-09 23:13:27.440433"], ["updated_at", "2015-06-09 23:13:27.440433"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Provocateur"], ["city", "New York"], ["address", "Gansevoort Meatpacking NYC, 18 9th Ave, New York, NY 10014"], ["created_at", "2015-06-09 23:13:27.442862"], ["updated_at", "2015-06-09 23:13:27.442862"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Le Bain"], ["city", "New York"], ["address", "848 Washington St, New York, NY 10014"], ["created_at", "2015-06-09 23:13:27.445251"], ["updated_at", "2015-06-09 23:13:27.445251"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Electric Room"], ["city", "New York"], ["address", "355 W 16th St, New York, NY 10011"], ["created_at", "2015-06-09 23:13:27.447244"], ["updated_at", "2015-06-09 23:13:27.447244"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Up&Down"], ["city", "New York"], ["address", "409 W 13th St, New York, New York"], ["created_at", "2015-06-09 23:13:27.449781"], ["updated_at", "2015-06-09 23:13:27.449781"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "PH-D"], ["city", "New York"], ["address", "355 W 16th St"], ["created_at", "2015-06-09 23:13:27.451890"], ["updated_at", "2015-06-09 23:13:27.451890"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "The Griffin"], ["city", "New York"], ["address", "50 Gansevoort St, New York, NY 10014"], ["created_at", "2015-06-09 23:13:27.454346"], ["updated_at", "2015-06-09 23:13:27.454346"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Avenue"], ["city", "New York"], ["address", "116 10th Ave, New York, NY 10011"], ["created_at", "2015-06-09 23:13:27.456638"], ["updated_at", "2015-06-09 23:13:27.456638"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Gaslight"], ["city", "New York"], ["address", "400 W 14th St, New York, NY 10014"], ["created_at", "2015-06-09 23:13:27.459470"], ["updated_at", "2015-06-09 23:13:27.459470"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "No. 8"], ["city", "New York"], ["address", "357 W 16th St, New York, NY 10011"], ["created_at", "2015-06-09 23:13:27.462777"], ["updated_at", "2015-06-09 23:13:27.462777"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "W.i.P"], ["city", "New York"], ["address", "34 Vandam St., downstairs, New York, NY 10013"], ["created_at", "2015-06-09 23:13:27.465919"], ["updated_at", "2015-06-09 23:13:27.465919"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Riff Raff"], ["city", "New York"], ["address", "360 Park Ave S, New York, NY 10010"], ["created_at", "2015-06-09 23:13:27.469809"], ["updated_at", "2015-06-09 23:13:27.469809"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Fat Black Pussy Cat"], ["city", "New York"], ["address", "130 W 3rd St, New York, NY 10012"], ["created_at", "2015-06-09 23:13:27.473667"], ["updated_at", "2015-06-09 23:13:27.473667"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "venues" ("name", "city", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Electric Room"], ["city", "New York"], ["address", "355 W 16th St, New York, NY 10011"], ["created_at", "2015-06-09 23:13:27.479431"], ["updated_at", "2015-06-09 23:13:27.479431"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+
+
+Started GET "/signout" for 127.0.0.1 at 2015-06-09 19:13:51 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-09 19:13:52 -0400
+Processing by HomeController#show as HTML
+  Rendered home/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 227ms (Views: 226.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-09 19:13:53 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-09 19:13:53 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQDOFJPN_d_Fj_Juz-bb7LgLtmcGvjzVo3HTW2455pkmc5hjlIWODkZvg_KFN57SDWOvLnWBMb-hDJunDw0YLw4OY9ATNUoVrjxVEhBiHeLIe8JaX8Mk9rIGLGHwKcqNiwfHhSyPHvFnPHqAgIW6_ZTumN63_uLbsE7WSZJAzycp0-w5E4-MMvjYrhBr-idNenRodo-Hwj2m2oO0shDiVoVccHQDefxVNVqvCpz3Eqr6sLHdVcDzUsoqQVC7OvYhFL9T1NUCL1Ei0GCJ2tuu5dRNmKD8nLjy3E4WLHDVHABT5GbNu8m2k4MB_VH_fiCsdyI&state=a88aeada43744ccd42bd3d210bf1d23a2c2775c237e721dc" for 127.0.0.1 at 2015-06-09 19:13:54 -0400
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQDOFJPN_d_Fj_Juz-bb7LgLtmcGvjzVo3HTW2455pkmc5hjlIWODkZvg_KFN57SDWOvLnWBMb-hDJunDw0YLw4OY9ATNUoVrjxVEhBiHeLIe8JaX8Mk9rIGLGHwKcqNiwfHhSyPHvFnPHqAgIW6_ZTumN63_uLbsE7WSZJAzycp0-w5E4-MMvjYrhBr-idNenRodo-Hwj2m2oO0shDiVoVccHQDefxVNVqvCpz3Eqr6sLHdVcDzUsoqQVC7OvYhFL9T1NUCL1Ei0GCJ2tuu5dRNmKD8nLjy3E4WLHDVHABT5GbNu8m2k4MB_VH_fiCsdyI", "state"=>"a88aeada43744ccd42bd3d210bf1d23a2c2775c237e721dc", "provider"=>"facebook"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10206339728668711"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("provider", "uid", "image", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["provider", "facebook"], ["uid", "10206339728668711"], ["image", "http://graph.facebook.com/10206339728668711/picture?type=square"], ["name", "Kenny Geiler"], ["created_at", "2015-06-09 23:13:54.838788"], ["updated_at", "2015-06-09 23:13:54.838788"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 44ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-09 19:13:54 -0400
+Processing by HomeController#show as HTML
+  Rendered home/show.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 51ms (Views: 49.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:13:59 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVenue Load (0.5ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1[0m  [["venue_id", 1], ["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (39.5ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 5.0ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= @venue.name %>
+    2: 
+    3: <% if @venue.users.find_by(id: current_user.id) == nil %>
+    4:   <%= form_for @going do |f| %>
+    5:   <%= f.hidden_field :user_id, :value => current_user.id %><br />
+    6:   <%= f.hidden_field :venue_id, :value => @venue.id %><br />
+    7:   <%= f.check_box :going, true, false %>
+  app/views/venues/show.html.erb:4:in `_app_views_venues_show_html_erb__4031953951072940004_70275708095820'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (23.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (102.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (66.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (154.9ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:15:24 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mVenue Load (0.6ms)[0m  SELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1  [["venue_id", 1], ["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (70.1ms)
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 9.9ms)
+
+ActionView::Template::Error (undefined method `merge' for true:TrueClass):
+    4:   <%= form_for venue_going_index_path(@venue) do |f| %>
+    5:   <%= f.hidden_field :user_id, :value => current_user.id %><br />
+    6:   <%= f.hidden_field :venue_id, :value => @venue.id %><br />
+    7:   <%= f.check_box :going, true, false %>
+    8:   <%= f.submit %>
+    9:   <% end %>
+   10: <% else %>
+  app/views/venues/show.html.erb:7:in `block in _app_views_venues_show_html_erb__4390906672837791471_70345381049840'
+  app/views/venues/show.html.erb:4:in `_app_views_venues_show_html_erb__4390906672837791471_70345381049840'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (95.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (79.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (172.7ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:18:22 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVenue Load (0.4ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms)
+
+SyntaxError (/Users/kennethgeiler/Desktop/Code Projects/club_goin_up/app/views/venues/show.html.erb:7: syntax error, unexpected ')', expecting keyword_end
+...rue, unchecked_value = false) );@output_buffer.safe_append='
+...                               ^):
+  app/views/venues/show.html.erb:7: syntax error, unexpected ')', expecting keyword_end
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (81.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (65.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (145.2ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:18:34 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mVenue Load (0.4ms)[0m  SELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms)
+
+SyntaxError (/Users/kennethgeiler/Desktop/Code Projects/club_goin_up/app/views/venues/show.html.erb:7: syntax error, unexpected ')', expecting keyword_end
+..._box :going, {}, true, false) );@output_buffer.safe_append='
+...                               ^):
+  app/views/venues/show.html.erb:7: syntax error, unexpected ')', expecting keyword_end
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (93.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (65.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (150.0ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:18:43 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVenue Load (0.4ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms)
+
+SyntaxError (/Users/kennethgeiler/Desktop/Code Projects/club_goin_up/app/views/venues/show.html.erb:7: syntax error, unexpected ')', expecting keyword_end
+...ng, "going", {}, true, false) );@output_buffer.safe_append='
+...                               ^):
+  app/views/venues/show.html.erb:7: syntax error, unexpected ')', expecting keyword_end
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (87.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (66.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (147.7ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:19:25 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mVenue Load (0.4ms)[0m  SELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms)
+
+SyntaxError (/Users/kennethgeiler/Desktop/Code Projects/club_goin_up/app/views/venues/show.html.erb:7: syntax error, unexpected ')', expecting keyword_end
+..."going", {}, "true", "false") );@output_buffer.safe_append='
+...                               ^):
+  app/views/venues/show.html.erb:7: syntax error, unexpected ')', expecting keyword_end
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (83.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (75.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (159.5ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:19:27 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVenue Load (0.4ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.4ms)
+
+SyntaxError (/Users/kennethgeiler/Desktop/Code Projects/club_goin_up/app/views/venues/show.html.erb:7: syntax error, unexpected ')', expecting keyword_end
+..."going", {}, "true", "false") );@output_buffer.safe_append='
+...                               ^):
+  app/views/venues/show.html.erb:7: syntax error, unexpected ')', expecting keyword_end
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (87.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (62.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (153.7ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:19:39 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mVenue Load (0.3ms)[0m  SELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+SyntaxError (/Users/kennethgeiler/Desktop/Code Projects/club_goin_up/app/views/venues/show.html.erb:7: syntax error, unexpected ')', expecting keyword_end
+... :going, {}, "true", "false") );@output_buffer.safe_append='
+...                               ^):
+  app/views/venues/show.html.erb:7: syntax error, unexpected ')', expecting keyword_end
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (90.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (68.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (153.5ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:20:42 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVenue Load (0.4ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1[0m  [["venue_id", 1], ["id", 1]]
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1  [["venue_id", 1]]
+  Rendered venues/show.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 276ms (Views: 271.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:20:43 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:20:43 -0400
+
+
+Started GET "/assets/venues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:20:43 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-09 19:20:43 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-09 19:20:43 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-09 19:20:43 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-09 19:20:43 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:20:43 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:20:43 -0400
+
+
+Started GET "/assets/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:20:43 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-09 19:20:43 -0400
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:20:52 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1[0m  [["venue_id", 1], ["id", 1]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1  [["venue_id", 1]]
+  Rendered venues/show.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 69ms (Views: 64.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:20:52 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:20:52 -0400
+
+
+Started GET "/assets/venues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:20:52 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-09 19:20:52 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-09 19:20:52 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-09 19:20:52 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-09 19:20:52 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:20:52 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:20:52 -0400
+
+
+Started GET "/assets/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:20:52 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-09 19:20:52 -0400
+
+
+Started POST "/venues/1" for 127.0.0.1 at 2015-06-09 19:20:57 -0400
+
+ActionController::RoutingError (No route matches [POST] "/venues/1"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.6.1) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (120.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (67.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (152.0ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:22:03 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1[0m  [["venue_id", 1], ["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1  [["venue_id", 1]]
+  Rendered venues/show.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 65ms (Views: 61.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:22:04 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:22:04 -0400
+
+
+Started GET "/assets/venues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:22:04 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-09 19:22:04 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-09 19:22:04 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-09 19:22:04 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-09 19:22:04 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:22:04 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:22:04 -0400
+
+
+Started GET "/assets/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:22:04 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-09 19:22:04 -0400
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:24:00 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVenue Load (0.4ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1[0m  [["venue_id", 1], ["id", 1]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1  [["venue_id", 1]]
+  Rendered venues/show.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 95ms (Views: 90.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:24:00 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:24:00 -0400
+
+
+Started GET "/assets/venues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:24:00 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-09 19:24:00 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-09 19:24:00 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-09 19:24:00 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-09 19:24:00 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:24:00 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:24:00 -0400
+
+
+Started GET "/assets/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:24:00 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-09 19:24:00 -0400
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:25:04 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVenue Load (0.7ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1[0m  [["venue_id", 1], ["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.6ms)
+
+ActionView::Template::Error (No route matches {:action=>"create", :controller=>"going", :id=>"1"} missing required keys: [:venue_id]):
+    1: <%= @venue.name %>
+    2: 
+    3: <% if @venue.users.find_by(id: current_user.id) == nil %>
+    4:   <%= form_for venue_going_index_path do |f| %>
+    5:   <%= f.hidden_field :user_id, :value => current_user.id %><br />
+    6:   <%= f.hidden_field :venue_id, :value => @venue.id %><br />
+    7:   <%= f.check_box :going, {}, "true", "false" %>
+  app/views/venues/show.html.erb:4:in `_app_views_venues_show_html_erb__4390906672837791471_70345355053380'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (83.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (69.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (161.2ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:25:29 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mVenue Load (0.3ms)[0m  SELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1  [["venue_id", 1], ["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1[0m  [["venue_id", 1]]
+  Rendered venues/show.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 59ms (Views: 56.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:25:29 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:25:29 -0400
+
+
+Started GET "/assets/venues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:25:29 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-09 19:25:29 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-09 19:25:29 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-09 19:25:29 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-09 19:25:29 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:25:29 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:25:29 -0400
+
+
+Started GET "/assets/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:25:29 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-09 19:25:29 -0400
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:48:14 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 400 Bad Request in 20ms (ActiveRecord: 4.6ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: going):
+  app/controllers/venues_controller.rb:15:in `going_params'
+  app/controllers/venues_controller.rb:9:in `show'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (95.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (84.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (178.4ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:48:45 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 2.8ms)
+
+NameError (undefined local variable or method `going_params' for #<VenuesController:0x007ff522df5cb8>):
+  app/controllers/venues_controller.rb:9:in `show'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (101.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (72.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (171.5ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:48:54 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1  [["venue_id", 1], ["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (50.0ms)
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 8.0ms)
+
+ActionView::Template::Error (undefined method `goings_path' for #<#<Class:0x007ff51c6a3330>:0x007ff51c6a2890>):
+    1: <%= @venue.name %>
+    2: 
+    3: <% if @venue.users.find_by(id: current_user.id) == nil %>
+    4:   <%= form_for @going do |f| %>
+    5:   <%= f.hidden_field :user_id, :value => current_user.id %><br />
+    6:   <%= f.hidden_field :venue_id, :value => @venue.id %><br />
+    7:   <%= f.check_box :going, {}, "true", "false" %>
+  app/views/venues/show.html.erb:4:in `_app_views_venues_show_html_erb__4390906672837791471_70345360214820'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (97.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (72.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (174.2ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:49:23 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1[0m  [["venue_id", 1], ["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1  [["venue_id", 1]]
+  Rendered venues/show.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 81ms (Views: 77.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:49:23 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:49:23 -0400
+
+
+Started GET "/assets/venues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:49:24 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-09 19:49:24 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-09 19:49:24 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-09 19:49:24 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-09 19:49:24 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:49:24 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:49:24 -0400
+
+
+Started GET "/assets/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:49:24 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-09 19:49:24 -0400
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:50:04 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1[0m  [["venue_id", 1], ["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (21.4ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (undefined method `goings_path' for #<#<Class:0x007ff51c6a3330>:0x007ff522820018>):
+    1: <%= @venue.name %>
+    2: 
+    3: <% if @venue.users.find_by(id: current_user.id) == nil %>
+    4:   <%= form_for(Going.new) do |f| %>
+    5:   <%= f.hidden_field :user_id, :value => current_user.id %><br />
+    6:   <%= f.hidden_field :venue_id, :value => @venue.id %><br />
+    7:   <%= f.check_box :going, {}, "true", "false" %>
+  app/views/venues/show.html.erb:4:in `_app_views_venues_show_html_erb__4390906672837791471_70345411352280'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (94.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (78.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (177.2ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:50:36 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1  [["venue_id", 1], ["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (42.3ms)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 7.2ms)
+
+ActionView::Template::Error (undefined method `goings_path' for #<#<Class:0x007ff51bd12758>:0x007ff51bd11cb8>):
+    1: <%= @venue.name %>
+    2: 
+    3: <% if @venue.users.find_by(id: current_user.id) == nil %>
+    4:   <%= form_for(Going.new) do |f| %>
+    5:   <%= f.hidden_field :user_id, :value => current_user.id %><br />
+    6:   <%= f.hidden_field :venue_id, :value => @venue.id %><br />
+    7:   <%= f.check_box :going, {}, "true", "false" %>
+  app/views/venues/show.html.erb:4:in `_app_views_venues_show_html_erb__4390906672837791471_70345411352280'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (93.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (87.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (176.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-09 19:51:01 -0400
+Processing by HomeController#show as HTML
+  Rendered home/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 68ms (Views: 66.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:51:01 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:51:01 -0400
+
+
+Started GET "/assets/venues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:51:01 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-09 19:51:01 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-09 19:51:01 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-09 19:51:01 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-09 19:51:01 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:51:01 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:51:01 -0400
+
+
+Started GET "/assets/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:51:01 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-09 19:51:01 -0400
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:51:03 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mVenue Load (0.3ms)[0m  SELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1  [["venue_id", 1], ["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (24.1ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined method `goings_path' for #<#<Class:0x007ff51bd12758>:0x007ff5212c9228>):
+    1: <%= @venue.name %>
+    2: 
+    3: <% if @venue.users.find_by(id: current_user.id) == nil %>
+    4:   <%= form_for(Going.new) do |f| %>
+    5:   <%= f.hidden_field :user_id, :value => current_user.id %><br />
+    6:   <%= f.hidden_field :venue_id, :value => @venue.id %><br />
+    7:   <%= f.check_box :going, {}, "true", "false" %>
+  app/views/venues/show.html.erb:4:in `_app_views_venues_show_html_erb__4390906672837791471_70345411352280'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (89.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (70.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (154.8ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:52:48 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1[0m  [["venue_id", 1], ["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (48.4ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 8.9ms)
+
+ActionView::Template::Error (undefined method `venue_goings_path' for #<#<Class:0x007ff5214ee198>:0x007ff5214ed630>):
+    1: <%= @venue.name %>
+    2: 
+    3: <% if @venue.users.find_by(id: current_user.id) == nil %>
+    4:   <%= form_for [@venue, @going] do |f| %>
+    5:   <%= f.hidden_field :user_id, :value => current_user.id %><br />
+    6:   <%= f.hidden_field :venue_id, :value => @venue.id %><br />
+    7:   <%= f.check_box :going, {}, "true", "false" %>
+  app/views/venues/show.html.erb:4:in `_app_views_venues_show_html_erb__4390906672837791471_70345401264060'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (95.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (57.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (138.4ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:53:21 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mVenue Load (0.4ms)[0m  SELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1  [["venue_id", 1], ["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (21.9ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined method `venue_goings_path' for #<#<Class:0x007ff5214ee198>:0x007ff520656e28>):
+    1: <%= @venue.name %>
+    2: 
+    3: <% if @venue.users.find_by(id: current_user.id) == nil %>
+    4:   <%= form_for [@venue, @going] do |f| %>
+    5:   <%= f.hidden_field :user_id, :value => current_user.id %><br />
+    6:   <%= f.hidden_field :venue_id, :value => @venue.id %><br />
+    7:   <%= f.check_box :going, {}, "true", "false" %>
+  app/views/venues/show.html.erb:4:in `_app_views_venues_show_html_erb__4390906672837791471_70345401264060'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (97.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (65.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (149.4ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:55:45 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1[0m  [["venue_id", 1], ["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.9ms)
+
+ActionView::Template::Error (No route matches {:action=>"create", :controller=>"going", :id=>"1"} missing required keys: [:venue_id]):
+    1: <%= @venue.name %>
+    2: 
+    3: <% if @venue.users.find_by(id: current_user.id) == nil %>
+    4:   <%= form_for venue_going_index_path do |f| %>
+    5:   <%= f.hidden_field :user_id, :value => current_user.id %><br />
+    6:   <%= f.hidden_field :venue_id, :value => @venue.id %><br />
+    7:   <%= f.check_box :going, {}, "true", "false" %>
+  app/views/venues/show.html.erb:4:in `_app_views_venues_show_html_erb__4390906672837791471_70345394433320'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (88.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (73.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (162.3ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:56:26 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mVenue Load (0.3ms)[0m  SELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1  [["venue_id", 1], ["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1[0m  [["venue_id", 1]]
+  Rendered venues/show.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 77ms (Views: 73.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:56:26 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:56:26 -0400
+
+
+Started GET "/assets/venues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:56:27 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-09 19:56:27 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-09 19:56:27 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-09 19:56:27 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-09 19:56:27 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:56:27 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:56:27 -0400
+
+
+Started GET "/assets/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:56:27 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-09 19:56:27 -0400
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:57:50 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mVenue Load (0.3ms)[0m  SELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1  [["venue_id", 1], ["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.9ms)
+
+ActionView::Template::Error (undefined method `model_name' for {:url=>"/venues/1/going"}:Hash):
+    1: <%= @venue.name %>
+    2: 
+    3: <% if @venue.users.find_by(id: current_user.id) == nil %>
+    4:   <%= form_for :url => venue_going_index_path(@venue.id) do |f| %>
+    5:   <%= f.hidden_field :user_id, :value => current_user.id %><br />
+    6:   <%= f.hidden_field :venue_id, :value => @venue.id %><br />
+    7:   <%= f.check_box :going, {}, "true", "false" %>
+  app/views/venues/show.html.erb:4:in `_app_views_venues_show_html_erb__4390906672837791471_70345394102580'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (93.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (92.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (180.5ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:58:13 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVenue Load (0.6ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1[0m  [["venue_id", 1], ["id", 1]]
+  Rendered venues/show.html.erb within layouts/application (10.2ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.4ms)
+
+ActionView::Template::Error (undefined method `going' for #<Venue:0x007ff521714e68>):
+    4:   <%= form_for @venue, :url => venue_going_index_path(@venue.id) do |f| %>
+    5:   <%= f.hidden_field :user_id, :value => current_user.id %><br />
+    6:   <%= f.hidden_field :venue_id, :value => @venue.id %><br />
+    7:   <%= f.check_box :going, {}, "true", "false" %>
+    8:   <%= f.submit "Going" %>
+    9:   <% end %>
+   10: <% else %>
+  app/views/venues/show.html.erb:7:in `block in _app_views_venues_show_html_erb__4390906672837791471_70345360709940'
+  app/views/venues/show.html.erb:4:in `_app_views_venues_show_html_erb__4390906672837791471_70345360709940'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (87.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (70.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (154.1ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 19:58:21 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mVenue Load (0.6ms)[0m  SELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1  [["venue_id", 1], ["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1[0m  [["venue_id", 1]]
+  Rendered venues/show.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 86ms (Views: 82.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:58:21 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:58:21 -0400
+
+
+Started GET "/assets/venues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 19:58:21 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-09 19:58:21 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-09 19:58:21 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-09 19:58:21 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-09 19:58:21 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:58:21 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:58:21 -0400
+
+
+Started GET "/assets/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 19:58:21 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-09 19:58:21 -0400
+
+
+Started POST "/venues/1/going" for 127.0.0.1 at 2015-06-09 19:58:44 -0400
+
+ActionController::RoutingError (uninitialized constant GoingController):
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:261:in `const_get'
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:261:in `block in constantize'
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:259:in `each'
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:259:in `inject'
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:259:in `constantize'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:70:in `controller_reference'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:60:in `controller'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:39:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/builder.rb:59:in `call'
+  rack (1.6.1) lib/rack/etag.rb:24:in `call'
+  rack (1.6.1) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.1) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.1) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.1) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.6.1) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (17.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (132.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (63.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (157.1ms)
+
+
+Started POST "/venues/1/going" for 127.0.0.1 at 2015-06-09 20:00:22 -0400
+
+ActionController::RoutingError (uninitialized constant GoingController):
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:261:in `const_get'
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:261:in `block in constantize'
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:259:in `each'
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:259:in `inject'
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:259:in `constantize'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:70:in `controller_reference'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:60:in `controller'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:39:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/builder.rb:59:in `call'
+  rack (1.6.1) lib/rack/etag.rb:24:in `call'
+  rack (1.6.1) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.1) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.1) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.1) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.6.1) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (146.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (73.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (158.6ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 20:00:27 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1  [["venue_id", 1], ["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1[0m  [["venue_id", 1]]
+  Rendered venues/show.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 101ms (Views: 74.4ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 20:00:28 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 20:00:28 -0400
+
+
+Started GET "/assets/venues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 20:00:28 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-09 20:00:28 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-09 20:00:28 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-09 20:00:28 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-09 20:00:28 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 20:00:28 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 20:00:28 -0400
+
+
+Started GET "/assets/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 20:00:28 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-09 20:00:28 -0400
+
+
+Started POST "/venues/1/going" for 127.0.0.1 at 2015-06-09 20:00:29 -0400
+
+ActionController::RoutingError (uninitialized constant GoingController):
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:261:in `const_get'
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:261:in `block in constantize'
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:259:in `each'
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:259:in `inject'
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:259:in `constantize'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:70:in `controller_reference'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:60:in `controller'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:39:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/builder.rb:59:in `call'
+  rack (1.6.1) lib/rack/etag.rb:24:in `call'
+  rack (1.6.1) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.1) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.1) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.1) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.6.1) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (106.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (66.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (149.1ms)
+
+
+Started POST "/venues/1/going" for 127.0.0.1 at 2015-06-09 20:01:36 -0400
+Processing by GoingController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v5JNAk22ykRD74JFBCj6ydT0npOX5ke0/ROHvo6Fy4cjAzR8aF86w80pjHNFGpi46OwMwn2Ut8IbNLPxWQUwoQ==", "going"=>{"user_id"=>"1", "venue_id"=>"1", "going"=>"true"}, "commit"=>"Going", "venue_id"=>"1"}
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 3.4ms)
+
+NameError (undefined local variable or method `going' for #<GoingController:0x007ff52019a830>):
+  app/controllers/going_controller.rb:5:in `create'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (95.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (84.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (168.0ms)
+
+
+Started POST "/venues/1/going" for 127.0.0.1 at 2015-06-09 20:01:52 -0400
+Processing by GoingController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v5JNAk22ykRD74JFBCj6ydT0npOX5ke0/ROHvo6Fy4cjAzR8aF86w80pjHNFGpi46OwMwn2Ut8IbNLPxWQUwoQ==", "going"=>{"user_id"=>"1", "venue_id"=>"1", "going"=>"true"}, "commit"=>"Going", "venue_id"=>"1"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "goings" ("user_id", "venue_id", "going", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["venue_id", 1], ["going", "t"], ["created_at", "2015-06-10 00:01:52.863326"], ["updated_at", "2015-06-10 00:01:52.863326"]]
+  [1m[35m (2.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/venues/1
+Completed 302 Found in 18ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at 2015-06-09 20:01:52 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1[0m  [["venue_id", 1], ["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1  [["venue_id", 1]]
+  Rendered venues/show.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 271ms (Views: 253.8ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/assets/going.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 20:01:53 -0400
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 20:01:53 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 20:01:53 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-09 20:01:53 -0400
+
+
+Started GET "/assets/venues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-09 20:01:53 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-09 20:01:53 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-09 20:01:53 -0400
+
+
+Started GET "/assets/going.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 20:01:53 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-09 20:01:53 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 20:01:53 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 20:01:53 -0400
+
+
+Started GET "/assets/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-09 20:01:53 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-09 20:01:53 -0400
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mVenue Load (0.8ms)[0m  SELECT  "venues".* FROM "venues"  ORDER BY "venues"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1[0m  [["venue_id", 1]]
