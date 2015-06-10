@@ -1,6 +1,8 @@
 <%= @venue.name %>
 
-<% if @venue.users.find_by(id: current_user.id) == nil %>
+<% is_going = @venue.users.find_by(id: current_user.id) %>
+
+<% if @venue.users.find_by(id: current_user.id) == nil || Going.where(venue_id: @venue, user_id: current_user.id)[0].going == false %>
   <%= form_for @going, :url => venue_going_index_path(@venue.id) do |f| %>
   <%= f.hidden_field :user_id, :value => current_user.id %><br />
   <%= f.hidden_field :venue_id, :value => @venue.id %><br />
@@ -8,10 +10,15 @@
   <%= f.submit "Going" %>
   <% end %>
 <% else %>
-
+  <%= form_for @going_up, :url => venue_going_path(@venue, @going_up), :method => "put" do |f| %>
+  <%= f.hidden_field :user_id, :value => current_user.id %><br />
+  <%= f.hidden_field :venue_id, :value => @venue.id %><br />
+  <%= f.check_box :going, {}, "false", "true" %>
+  <%= f.submit "Not Going" %>
+  <% end %>
 <% end %>
 
-
+<br>
 
 
 <% @venue.users.each do |user| %>
