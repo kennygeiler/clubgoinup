@@ -22,6 +22,8 @@
 
 
 <% @venue.users.each do |user| %>
-  <%= user.name %> <br>
-  <img src="<%= user.image %>">
+  <% if user.goings.find_by(venue_id: @venue.id).going == true %>
+    <%= user.name %> <br>
+    <img src="<%= user.image %>">
+  <% end %>
 <% end %>
