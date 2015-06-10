@@ -5367,3 +5367,43 @@ Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bd
   [1m[36mUser Load (1.9ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
   [1m[35mVenue Load (0.8ms)[0m  SELECT  "venues".* FROM "venues"  ORDER BY "venues"."id" ASC LIMIT 1
   [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1[0m  [["venue_id", 1]]
+
+
+Started GET "/venues" for 127.0.0.1 at 2015-06-09 20:02:50 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.8ms)[0m  [1mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (5.5ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 64ms (Views: 61.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/venues/2" for 127.0.0.1 at 2015-06-09 20:02:53 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1[0m  [["venue_id", 2], ["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1  [["venue_id", 2]]
+  Rendered venues/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 56ms (Views: 52.7ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/venues/2/going" for 127.0.0.1 at 2015-06-09 20:02:56 -0400
+Processing by GoingController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OBL2cykRWVedNfmM8QqVhu+q4//mXewsCXBJX09HTGmkg48NDPip0BPz97qwOPf307JxrgwvHFrvV30QmMe3Tw==", "going"=>{"user_id"=>"1", "venue_id"=>"2", "going"=>"true"}, "commit"=>"Going", "venue_id"=>"2"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.6ms)[0m  INSERT INTO "goings" ("user_id", "venue_id", "going", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 1], ["venue_id", 2], ["going", "t"], ["created_at", "2015-06-10 00:02:56.442122"], ["updated_at", "2015-06-10 00:02:56.442122"]]
+  [1m[36m (8.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/venues/2
+Completed 302 Found in 19ms (ActiveRecord: 14.0ms)
+
+
+Started GET "/venues/2" for 127.0.0.1 at 2015-06-09 20:02:56 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mVenue Load (0.3ms)[0m  SELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1 AND "users"."id" = $2 LIMIT 1  [["venue_id", 2], ["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "goings" ON "users"."id" = "goings"."user_id" WHERE "goings"."venue_id" = $1[0m  [["venue_id", 2]]
+  Rendered venues/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 78ms (Views: 75.1ms | ActiveRecord: 1.2ms)

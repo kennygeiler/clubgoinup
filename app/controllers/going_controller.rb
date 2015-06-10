@@ -1,5 +1,4 @@
 class GoingController < ApplicationController
-
   def create
     @going = Going.new(going_params)
     if @going.save
