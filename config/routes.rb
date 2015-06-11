@@ -9,5 +9,8 @@ Rails.application.routes.draw do
       resources :going, only: [:new, :create, :update]
     end
 
-    root to: "home#show"
+    resources :quotes, only: [:new, :create, :index, :show, :delete]
+    resources :promotors, only: [:new, :create, :delete]
+
+    root to: "quotes#new"
 end

@@ -5,6 +5,7 @@ class CreateQuotes < ActiveRecord::Migration
       t.integer :women
       t.integer :min
       t.integer :max
+      t.boolean :bottles, default: false
       t.text :venues
       t.date :date
       t.text :comments
