@@ -11,10 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608142548) do
+ActiveRecord::Schema.define(version: 20150611131620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "goings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "venue_id"
+    t.boolean  "going",      default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "liker_id"
+    t.integer  "likee_id"
+    t.boolean  "like",       default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  create_table "promotors", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "company"
+    t.text     "venues"
+    t.text     "about"
+    t.string   "instagram"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "quotes", force: :cascade do |t|
+    t.integer  "men"
+    t.integer  "women"
+    t.integer  "min"
+    t.integer  "max"
+    t.text     "venues"
+    t.date     "date"
+    t.text     "comments"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "provider"
@@ -24,8 +62,17 @@ ActiveRecord::Schema.define(version: 20150608142548) do
     t.string   "user_friends"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.boolean  "promotor",         default: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
+  create_table "venues", force: :cascade do |t|
+    t.string   "name"
+    t.string   "city"
+    t.string   "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
