@@ -9,5 +9,9 @@ Rails.application.routes.draw do
       resources :going, only: [:new, :create, :update]
     end
 
+    resources :users, only: [:show] do
+      resources :likes, only: [:create]
+    end
+
     root to: "home#show"
 end
