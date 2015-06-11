@@ -94,3 +94,4 @@ Venue.create(name: "Electric Room",city: 'New York', address: "355 W 16th St, Ne
 
 
 
+Like.create(liker_id: 1, likee_id: 2, like: true)
