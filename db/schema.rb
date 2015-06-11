@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20150611131620) do
     t.text     "venues"
     t.date     "date"
     t.text     "comments"
+    t.integer  "user_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end

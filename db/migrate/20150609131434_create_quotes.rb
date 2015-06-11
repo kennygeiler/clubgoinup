@@ -9,6 +9,7 @@ class CreateQuotes < ActiveRecord::Migration
       t.text :venues
       t.date :date
       t.text :comments
+      t.references :user
       t.timestamps null: false
     end
   end

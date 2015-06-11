@@ -13,9 +13,9 @@ class PromotorsController < ApplicationController
   def delete
   end
 
-private
-
+  private
   def promotor_params
     params.require(:promotor).permit(:user_id)
   end
+
 end
