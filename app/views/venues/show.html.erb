@@ -20,10 +20,12 @@
 
 <br>
 
-
+<!-- here will be a list of users going so you can see them and then decide if you want to start liking -->
 <% @venue.users.each do |user| %>
   <% if user.goings.find_by(venue_id: @venue.id).going == true %>
     <%= user.name %> <br>
     <img src="<%= user.image %>">
   <% end %>
 <% end %>
+
+<br>
