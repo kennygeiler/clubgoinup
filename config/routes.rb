@@ -13,5 +13,9 @@ Rails.application.routes.draw do
       resources :likes, only: [:create]
     end
 
-    root to: "home#show"
+    resources :quotes, only: [:new, :create, :index, :show, :delete]
+    resources :promotors, only: [:new, :create, :delete]
+
+    root to: "quotes#new"
+
 end
