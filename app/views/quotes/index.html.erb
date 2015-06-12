@@ -1,1 +1,5 @@
-index.html.erb
+<% @quotes.each do |quote| %>
+  <%= quote.user.name %>
+  <%= quote.date %>
+  <%= quote.venues %>
+<% end %>
