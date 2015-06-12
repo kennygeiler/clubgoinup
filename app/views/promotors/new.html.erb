@@ -1,0 +1,4 @@
+ <%= form_for @promotor do |f| %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.submit "Create Promotor Account" %>
+<% end %>

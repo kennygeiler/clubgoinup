@@ -8,7 +8,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :user_friends
       t.string :oauth_token
       t.datetime :oauth_expires_at
-      t.boolean :promotor, default: false
       t.timestamps null: false
     end
   end
