@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     resources :quotes, only: [:new, :create, :index, :show, :delete]
     resources :promotors, only: [:new, :create, :delete]
 
+    resources :conversations, only: [:index, :show, :destroy]
+
     root to: "quotes#new"
 
 end
