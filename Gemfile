@@ -8,7 +8,7 @@ gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
 gem "thin", :group => :production
 gem 'pg'
-gem 'mailboxer'
+gem 'mailboxer', :git => 'git://github.com/div/mailboxer.git', :branch => 'rails42-foreigner'
 gem 'omniauth-facebook', '~> 1.4.1'
 gem "koala", "~> 2.0"
 # Use SCSS for stylesheets
