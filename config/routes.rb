@@ -5,10 +5,6 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
-  resources :venues, only: [:index, :show] do
-    resources :going, only: [:new, :create, :update]
-  end
-
   resources :users, only: [:index]
 
   resources :quotes, only: [:new, :create, :index, :show, :delete]
