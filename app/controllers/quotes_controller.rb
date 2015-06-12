@@ -7,7 +7,7 @@ class QuotesController < ApplicationController
   def create
     @quote = Quote.new(quote_params)
     if @quote.save
-      redirect_to new_quote_path
+      redirect_to conversations_path
     end
   end
 

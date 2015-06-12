@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :received_likes, class_name: "Like", foreign_key: :likee_id
   has_many :promotors
   has_many :quotes
+  acts_as_messageable
 
 
   def self.from_omniauth(auth)
@@ -15,6 +16,7 @@ class User < ActiveRecord::Base
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.name     = auth.info.name
+      user.email = auth.info.email
       user.save
     end
   end
