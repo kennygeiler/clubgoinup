@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :likes, foreign_key: :liker_id
   has_many :received_likes, class_name: "Like", foreign_key: :likee_id
   has_many :promotors
+  has_many :quotes
 
 
   def self.from_omniauth(auth)

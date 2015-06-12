@@ -10828,3 +10828,12 @@ Started GET "/assets/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde4
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-11 20:35:39 -0400
+
+
+Started GET "/quotes" for 127.0.0.1 at 2015-06-11 20:38:49 -0400
+Processing by QuotesController#index as HTML
+  [1m[36mQuote Load (0.8ms)[0m  [1mSELECT "quotes".* FROM "quotes"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered quotes/index.html.erb within layouts/application (41.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 142ms (Views: 128.9ms | ActiveRecord: 7.2ms)
