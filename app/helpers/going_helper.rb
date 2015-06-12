@@ -1,0 +1,2 @@
+module GoingHelper
+end
