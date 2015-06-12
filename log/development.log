@@ -10350,3 +10350,481 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 
+  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (2.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150608142548)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (11.8ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "provider" character varying, "uid" character varying, "name" character varying, "image" character varying, "user_friends" character varying, "oauth_token" character varying, "oauth_expires_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150608142548"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePromotors (20150609131346)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (6.9ms)[0m  [1mCREATE TABLE "promotors" ("id" serial primary key, "user_id" integer, "company" character varying, "venues" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609131346"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateVenues (20150609131359)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (6.4ms)[0m  [1mCREATE TABLE "venues" ("id" serial primary key, "name" character varying, "city" character varying, "address" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609131359"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateGoings (20150609131421)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (5.8ms)[0m  [1mCREATE TABLE "goings" ("id" serial primary key, "user_id" integer, "venue_id" integer, "going" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609131421"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateQuotes (20150609131434)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (8.1ms)[0m  [1mCREATE TABLE "quotes" ("id" serial primary key, "men" integer, "women" integer, "min" integer, "max" integer, "bottles" boolean DEFAULT 'f', "venues" text, "date" date, "comments" text, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609131434"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateLikes (20150611131620)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (5.4ms)[0m  [1mCREATE TABLE "likes" ("id" serial primary key, "liker_id" integer, "likee_id" integer, "like" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150611131620"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (6.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'goings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'likes'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (4.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'promotors'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'quotes'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (6.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (6.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'venues'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/quotes/new" for 127.0.0.1 at 2015-06-11 20:20:14 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuotesController#new as HTML
+  Rendered quotes/new.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 5.8ms)
+
+SyntaxError (/Users/kennethgeiler/Desktop/Code Projects/club_goin_up/app/views/quotes/new.html.erb:17: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/kennethgeiler/Desktop/Code Projects/club_goin_up/app/views/quotes/new.html.erb:19: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/quotes/new.html.erb:17: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/quotes/new.html.erb:19: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (11.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (111.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (78.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (185.6ms)
+
+
+Started GET "/quotes/new" for 127.0.0.1 at 2015-06-11 20:21:15 -0400
+Processing by QuotesController#new as HTML
+  Rendered quotes/new.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/kennethgeiler/Desktop/Code Projects/club_goin_up/app/views/quotes/new.html.erb:17: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/kennethgeiler/Desktop/Code Projects/club_goin_up/app/views/quotes/new.html.erb:19: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/quotes/new.html.erb:17: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/quotes/new.html.erb:19: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (104.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (100.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (217.6ms)
+
+
+Started GET "/quotes/new" for 127.0.0.1 at 2015-06-11 20:28:07 -0400
+Processing by QuotesController#new as HTML
+  Rendered quotes/new.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/kennethgeiler/Desktop/Code Projects/club_goin_up/app/views/quotes/new.html.erb:17: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/kennethgeiler/Desktop/Code Projects/club_goin_up/app/views/quotes/new.html.erb:19: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/quotes/new.html.erb:17: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/quotes/new.html.erb:19: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (99.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (76.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (172.3ms)
+
+
+Started GET "/quotes/new" for 127.0.0.1 at 2015-06-11 20:31:18 -0400
+Processing by QuotesController#new as HTML
+  [1m[35mUser Load (2.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered quotes/new.html.erb within layouts/application (81.9ms)
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 6.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  app/controllers/application_controller.rb:8:in `current_user'
+  app/views/quotes/new.html.erb:2:in `block in _app_views_quotes_new_html_erb___3226392234674338444_70111419026940'
+  app/views/quotes/new.html.erb:1:in `_app_views_quotes_new_html_erb___3226392234674338444_70111419026940'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (93.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (87.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (180.3ms)
+
+
+Started GET "/venues" for 127.0.0.1 at 2015-06-11 20:31:27 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (2.1ms)[0m  [1mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (6.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 416ms (ActiveRecord: 4.5ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  app/controllers/application_controller.rb:8:in `current_user'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__3486778508870076699_70111419407040'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (25.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (110.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (67.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (160.7ms)
+
+
+Started GET "/venues" for 127.0.0.1 at 2015-06-11 20:31:28 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (1.2ms)
+  [1m[35mUser Load (4.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 5.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  app/controllers/application_controller.rb:8:in `current_user'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__3486778508870076699_70111419407040'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (87.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (71.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (164.1ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2015-06-11 20:31:37 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-11 20:31:37 -0400
+Processing by QuotesController#new as HTML
+  Rendered quotes/new.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1:   <% form_for @quote do |f| %>
+    2:   <%= f.hidden_field :user_id, :value => current_user.id %><br />
+    3:   <%= f.label "Date" %>
+    4:   <%= f.date_select :date %><br />
+    5:   <%= f.label "How Many Guys" %>
+  app/views/quotes/new.html.erb:2:in `block in _app_views_quotes_new_html_erb___3226392234674338444_70111419026940'
+  app/views/quotes/new.html.erb:1:in `_app_views_quotes_new_html_erb___3226392234674338444_70111419026940'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (105.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (74.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (173.7ms)
+
+
+Started GET "/venues" for 127.0.0.1 at 2015-06-11 20:31:42 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 93ms (Views: 91.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-11 20:31:43 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-11 20:31:44 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQBNc2cmbtkhk3VOPZHEEh_sSR_v_fuvmsCcm5P6QUFnrvNQfio1FmdmFWdcjsmhH829sBy1hMgdq1nBLxUiUCvr6NPuAh1UxG-wuYljwGzt3qHMDodjocFreAr3DTQEN7znO11-u9RtyH7UHZR33F3XEKzcucLLsRI5pBjy5fq-BFg7JaxwyDNz-CK2UM6kjIBzj_ZLnywbQbt5A7oGKPoqZUhRRbdAJ9tdGv2oKxVBABRth72W8U6uWNyawwQFiiZLtMmkEk33-o3YJoPMzNjPhKmtM80b1WdOqwGBzuXig7txNqQ39FljQP9xb_8f9HI&state=983af68cf47b3ab2714510d2c31a92322abaad256b3981af" for 127.0.0.1 at 2015-06-11 20:31:44 -0400
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBNc2cmbtkhk3VOPZHEEh_sSR_v_fuvmsCcm5P6QUFnrvNQfio1FmdmFWdcjsmhH829sBy1hMgdq1nBLxUiUCvr6NPuAh1UxG-wuYljwGzt3qHMDodjocFreAr3DTQEN7znO11-u9RtyH7UHZR33F3XEKzcucLLsRI5pBjy5fq-BFg7JaxwyDNz-CK2UM6kjIBzj_ZLnywbQbt5A7oGKPoqZUhRRbdAJ9tdGv2oKxVBABRth72W8U6uWNyawwQFiiZLtMmkEk33-o3YJoPMzNjPhKmtM80b1WdOqwGBzuXig7txNqQ39FljQP9xb_8f9HI", "state"=>"983af68cf47b3ab2714510d2c31a92322abaad256b3981af", "provider"=>"facebook"}
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10206339728668711"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "users" ("provider", "uid", "image", "oauth_token", "oauth_expires_at", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["provider", "facebook"], ["uid", "10206339728668711"], ["image", "http://graph.facebook.com/10206339728668711/picture?type=square"], ["oauth_token", "CAARUwTI31v0BAFXaKQaIpvko9niXnBsCGrkcbiKd8ZB9cii4gVFyGJMYC4omfZAFZAviBHhVnvUuV7OF72RIi7HkYuwc5IgTkHCwTtnFyuxZA0drZBjcS8oLNfggKinUawnwqUaKgCKNmDhyiWDL0ZAYtSMFcbrZCQZCmvvFxh7KZCPPfmIKU9LpTiJ83HI1ygvC4YO5n7ZB72nS0twwi1iXLR"], ["oauth_expires_at", "2015-08-10 19:44:12.000000"], ["name", "Kenny Geiler"], ["created_at", "2015-06-12 00:31:44.697145"], ["updated_at", "2015-06-12 00:31:44.697145"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 29ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-11 20:31:44 -0400
+Processing by QuotesController#new as HTML
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered quotes/new.html.erb within layouts/application (46.4ms)
+Completed 200 OK in 121ms (Views: 118.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/quotes" for 127.0.0.1 at 2015-06-11 20:31:55 -0400
+Processing by QuotesController#index as HTML
+  Rendered quotes/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 112ms (Views: 106.8ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/quotes/new" for 127.0.0.1 at 2015-06-11 20:31:59 -0400
+Processing by QuotesController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered quotes/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 113ms (Views: 98.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/quotes/new" for 127.0.0.1 at 2015-06-11 20:32:29 -0400
+Processing by QuotesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered quotes/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 113ms (Views: 111.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/going.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-11 20:32:29 -0400
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-11 20:32:29 -0400
+
+
+Started GET "/assets/promotor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-11 20:32:29 -0400
+
+
+Started GET "/assets/quotes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-11 20:32:29 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-11 20:32:29 -0400
+
+
+Started GET "/assets/venues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-11 20:32:29 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-11 20:32:29 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-11 20:32:29 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-11 20:32:29 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-11 20:32:29 -0400
+
+
+Started GET "/assets/going.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-11 20:32:29 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-11 20:32:29 -0400
+
+
+Started GET "/assets/promotor.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-11 20:32:29 -0400
+
+
+Started GET "/assets/quotes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-11 20:32:29 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-11 20:32:29 -0400
+
+
+Started GET "/assets/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-11 20:32:29 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-11 20:32:29 -0400
+
+
+Started POST "/quotes" for 127.0.0.1 at 2015-06-11 20:35:30 -0400
+Processing by QuotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yeoXpTAo+IzGVpvKtmkJi2gEASB9mz4q03xAb3PenaFVe27bFcEIC0iQlfz3W2v6VByTcZfpzlw1W3QgpF5mhw==", "quote"=>{"user_id"=>"1", "date(1i)"=>"2015", "date(2i)"=>"6", "date(3i)"=>"15", "men"=>"4", "women"=>"3", "min"=>"1200", "max"=>"1500", "bottles"=>"true", "venues"=>"1oak"}, "commit"=>"Submit"}
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "quotes" ("user_id", "men", "women", "min", "max", "bottles", "venues", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 1], ["men", 4], ["women", 3], ["min", 1200], ["max", 1500], ["bottles", "t"], ["venues", "1oak"], ["date", "2015-06-15"], ["created_at", "2015-06-12 00:35:30.977770"], ["updated_at", "2015-06-12 00:35:30.977770"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/quotes/new
+Completed 302 Found in 11ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/quotes/new" for 127.0.0.1 at 2015-06-11 20:35:30 -0400
+Processing by QuotesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered quotes/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 93ms (Views: 92.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/quotes/new" for 127.0.0.1 at 2015-06-11 20:35:39 -0400
+Processing by QuotesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered quotes/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 88ms (Views: 87.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/going.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-11 20:35:39 -0400
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-11 20:35:39 -0400
+
+
+Started GET "/assets/promotor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-11 20:35:39 -0400
+
+
+Started GET "/assets/quotes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-11 20:35:39 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-11 20:35:39 -0400
+
+
+Started GET "/assets/venues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-11 20:35:39 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-11 20:35:39 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-11 20:35:39 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-11 20:35:39 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-11 20:35:39 -0400
+
+
+Started GET "/assets/going.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-11 20:35:39 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-11 20:35:39 -0400
+
+
+Started GET "/assets/promotor.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-11 20:35:39 -0400
+
+
+Started GET "/assets/quotes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-11 20:35:39 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-11 20:35:39 -0400
+
+
+Started GET "/assets/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-11 20:35:39 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-11 20:35:39 -0400
