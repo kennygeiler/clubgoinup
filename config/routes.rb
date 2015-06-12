@@ -9,9 +9,7 @@ Rails.application.routes.draw do
       resources :going, only: [:new, :create, :update]
     end
 
-    resources :users, only: [:show] do
-      resources :likes, only: [:create]
-    end
+    resources :users, only: [:index]
 
     resources :quotes, only: [:new, :create, :index, :show, :delete]
     resources :promotors, only: [:new, :create, :delete]
