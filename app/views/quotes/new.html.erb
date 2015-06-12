@@ -1,1 +1,18 @@
-"helo"
+  <%= form_for @quote do |f| %>
+  <%= f.hidden_field :user_id, :value => current_user.id %><br />
+  <%= f.label "Date" %>
+  <%= f.date_select :date %><br />
+  <%= f.label "How Many Guys" %>
+  <%= f.text_field :men %><br />
+  <%= f.label "How Many Girls" %>
+  <%= f.text_field :women %><br />
+  <%= f.label "Min $" %>
+  <%= f.text_field :min %><br />
+  <%= f.label "Max $" %>
+  <%= f.text_field :max %><br />
+  <%= f.label "Bottle Service?" %>
+  <%= f.check_box :bottles, {}, "true", "false" %> <br>
+  <%= f.label "Venues" %>
+  <%= f.text_field :venues, :placeholder => "1oak, The Raven, etc" %> <br />
+  <%= f.submit "Submit" %>
+  <% end %>
