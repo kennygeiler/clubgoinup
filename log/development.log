@@ -14316,3 +14316,116 @@ Processing by ConversationsController#show as HTML
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
   Rendered conversations/show.html.erb within layouts/application (21.3ms)
 Completed 200 OK in 153ms (Views: 143.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2015-06-13 08:56:54 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 418ms (Views: 405.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/conversations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/going.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/promotor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/quotes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/venues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/application.self-5d584a76c8488dbf650d75b8fc6f4539004865e68f4ecf50c0d7b98998da9146.css?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/going.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/conversations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/likes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/promotor.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/quotes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-13 08:56:55 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-13 08:56:59 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-13 08:56:59 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQBqKE-uD-TfO4qS59dKF4vHoiQXpbKSuZnixj-72vA9eWhVTsFbVCyuMYyqU7wgDK0somAWqKAepVWTSwuLHNC6P8VGmXUzsdGgyN-34Go156AynLKScye8yHl7cAllGepI1Z0gqCopChADswPaPKenRrow1961RMGcJBeuSXFZOE1XEhGnLlmSdX8LWB3mQJ2Of7_UbxCpVwg2XuztwiwqjYqlJIp-Tu93goubZf-XnvxSyQp5niekv23jfa2kv_i2m2kEpizLKH70IT6ElFP0WF9f82yGWkSD7aIG1PlPwWiWaOlRQMuZHMHjCQ1HnYg&state=d98fd8ba55f9caca6e51d31dceb0cad1e49169be524c565e" for 127.0.0.1 at 2015-06-13 08:56:59 -0400
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBqKE-uD-TfO4qS59dKF4vHoiQXpbKSuZnixj-72vA9eWhVTsFbVCyuMYyqU7wgDK0somAWqKAepVWTSwuLHNC6P8VGmXUzsdGgyN-34Go156AynLKScye8yHl7cAllGepI1Z0gqCopChADswPaPKenRrow1961RMGcJBeuSXFZOE1XEhGnLlmSdX8LWB3mQJ2Of7_UbxCpVwg2XuztwiwqjYqlJIp-Tu93goubZf-XnvxSyQp5niekv23jfa2kv_i2m2kEpizLKH70IT6ElFP0WF9f82yGWkSD7aIG1PlPwWiWaOlRQMuZHMHjCQ1HnYg", "state"=>"d98fd8ba55f9caca6e51d31dceb0cad1e49169be524c565e", "provider"=>"facebook"}
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10206339728668711"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 47ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-13 08:57:00 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/quotes/new
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/quotes/new" for 127.0.0.1 at 2015-06-13 08:57:00 -0400
+Processing by QuotesController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered quotes/new.html.erb within layouts/application (40.3ms)
+Completed 200 OK in 205ms (Views: 185.5ms | ActiveRecord: 2.9ms)

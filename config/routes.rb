@@ -17,6 +17,6 @@ Rails.application.routes.draw do
   end
   resources :messages, only: [:new, :create]
 
-  root to: "quotes#new"
+  root to: "sessions#new"
 
 end
