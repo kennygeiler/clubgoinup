@@ -1,5 +1,5 @@
 <% conversation.participants.each do |participant| %>
   <% unless participant == current_user %>
-    <%= image_tag participant.image %>
+    <%= participant.name %>
   <% end %>
 <% end %>
