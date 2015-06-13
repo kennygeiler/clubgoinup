@@ -2,7 +2,7 @@
   <% redirect_to new_quote_path %>
 <% else %>
   <% @quotes.each do |quote| %>
-    <%= quote.user.name %>
+    <%= link_to quote.user.name, quote_path(quote.id) %>
     <%= quote.date %>
     <%= quote.venues %>
   <% end %>
