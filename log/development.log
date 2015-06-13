@@ -14429,3 +14429,44 @@ Processing by QuotesController#new as HTML
   [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
   Rendered quotes/new.html.erb within layouts/application (40.3ms)
 Completed 200 OK in 205ms (Views: 185.5ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/quotes" for 127.0.0.1 at 2015-06-13 09:01:37 -0400
+Processing by QuotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B9sJlcDSdJqfMU4nuEiJVVWoEzKHpBPgffg8/jOa1nibSnDr5TuEHRH3QBH5euskabCBY23W45ab3wix5BotXg==", "quote"=>{"user_id"=>"2", "date(1i)"=>"2015", "date(2i)"=>"6", "date(3i)"=>"13", "men"=>"8", "women"=>"0", "min"=>"1000", "max"=>"1500", "bottles"=>"true", "venues"=>""}, "commit"=>"Submit"}
+  [1m[36m (0.9ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.4ms)[0m  INSERT INTO "quotes" ("user_id", "men", "women", "min", "max", "bottles", "venues", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["user_id", 2], ["men", 8], ["women", 0], ["min", 1000], ["max", 1500], ["bottles", "t"], ["venues", ""], ["date", "2015-06-13"], ["created_at", "2015-06-13 13:01:37.395248"], ["updated_at", "2015-06-13 13:01:37.395248"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/conversations
+Completed 302 Found in 17ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/conversations" for 127.0.0.1 at 2015-06-13 09:01:37 -0400
+Processing by ConversationsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mMailboxer::Conversation Load (2.8ms)[0m  [1mSELECT DISTINCT "mailboxer_conversations".* FROM "mailboxer_conversations" INNER JOIN "mailboxer_notifications" ON "mailboxer_notifications"."conversation_id" = "mailboxer_conversations"."id" AND "mailboxer_notifications"."type" IN ('Mailboxer::Message') INNER JOIN "mailboxer_receipts" ON "mailboxer_receipts"."notification_id" = "mailboxer_notifications"."id" WHERE "mailboxer_notifications"."type" = 'Mailboxer::Message' AND "mailboxer_receipts"."receiver_id" = $1 AND "mailboxer_receipts"."receiver_type" = $2 AND "mailboxer_receipts"."mailbox_type" = $3 AND "mailboxer_receipts"."trashed" = 'f' AND "mailboxer_receipts"."deleted" = 'f'  ORDER BY mailboxer_conversations.updated_at DESC[0m  [["receiver_id", 2], ["receiver_type", "User"], ["mailbox_type", "inbox"]]
+  [1m[35mMailboxer::Message Load (0.5ms)[0m  SELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at LIMIT 1  [["conversation_id", 9]]
+  [1m[36mMailboxer::Receipt Load (0.4ms)[0m  [1mSELECT "mailboxer_receipts".* FROM "mailboxer_receipts" WHERE "mailboxer_receipts"."notification_id" = $1[0m  [["notification_id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered conversations/_participants.html.erb (100.7ms)
+  [1m[35mMailboxer::Message Load (0.7ms)[0m  SELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at DESC LIMIT 1  [["conversation_id", 9]]
+  [1m[36mMailboxer::Message Load (0.6ms)[0m  [1mSELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at LIMIT 1[0m  [["conversation_id", 7]]
+  [1m[35mMailboxer::Receipt Load (0.5ms)[0m  SELECT "mailboxer_receipts".* FROM "mailboxer_receipts" WHERE "mailboxer_receipts"."notification_id" = $1  [["notification_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered conversations/_participants.html.erb (6.7ms)
+  [1m[36mMailboxer::Message Load (0.7ms)[0m  [1mSELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["conversation_id", 7]]
+  Rendered conversations/_conversation.html.erb (120.7ms)
+  Rendered conversations/index.html.erb within layouts/application (164.4ms)
+Completed 200 OK in 350ms (Views: 292.9ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/quotes" for 127.0.0.1 at 2015-06-13 09:01:59 -0400
+Processing by QuotesController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mPromotor Load (0.4ms)[0m  [1mSELECT "promotors".* FROM "promotors" WHERE "promotors"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35mQuote Load (0.5ms)[0m  SELECT "quotes".* FROM "quotes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered quotes/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 147ms (Views: 143.6ms | ActiveRecord: 2.4ms)
