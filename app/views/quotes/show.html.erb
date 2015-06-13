@@ -1,1 +1,10 @@
-show.html.erb
+
+men: <%= @quote.men %> <br>
+women: <%= @quote.women %> <br>
+min: <%= @quote.min %> <br>
+max: <%= @quote.max %> <br>
+bottles: <%= @quote.bottles %> <br>
+venues: <%= @quote.venues %> <br>
+date: <%= @quote.date %> <br>
+comments: <%= @quote.comments %> <br>
+<p><%= link_to 'Start conversation', new_message_path, :data => {:user_id => @quote.user_id} %></p>

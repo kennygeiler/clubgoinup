@@ -1,4 +1,11 @@
 class SessionsController < ApplicationController
+
+  def new
+    if current_user
+      redirect_to new_quote_path
+    end
+  end
+
   def create
     user = User.from_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
