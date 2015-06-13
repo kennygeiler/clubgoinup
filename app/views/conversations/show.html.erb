@@ -6,7 +6,7 @@
 
   <div class="panel-body">
     <div class="messages">
-      <% @conversation.receipts_for(current_user).each do |receipt| %>
+      <% @conversation.receipts_for(current_user).order(created_at: :asc).each do |receipt| %>
         <div class="media">
           <% message = receipt.message %> <br>
            <%= message.body %> - <%= message.sender.name %> <br>
