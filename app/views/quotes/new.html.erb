@@ -1,4 +1,5 @@
 <% if current_user %>
+<p>Required Fields: Date, City, min $</p>
   <%= form_for @quote do |f| %>
   <%= f.hidden_field :user_id, :value => current_user.id %><br />
   <%= f.label "Date" %>
