@@ -1,9 +1,8 @@
-<% if current_user.promotors == nil %>
-  <% redirect_to new_quote_path %>
-<% else %>
   <% @quotes.each do |quote| %>
-    <%= link_to quote.user.name, quote_path(quote.id) %>
-    <%= quote.date %>
-    <%= quote.venues %>
-  <% end %>
+    <% if current_user.promotor.first.location.downcase == quote.location.downcase %>
+      <%= link_to quote.user.name, quote_path(quote.id) %>
+      <%= quote.date %>
+      <%= quote.location %>
+      <%= quote.venues %> <br>
+    <% end %>
 <% end %>

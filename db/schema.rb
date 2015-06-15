@@ -16,22 +16,6 @@ ActiveRecord::Schema.define(version: 20150612142803) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "goings", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "venue_id"
-    t.boolean  "going",      default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-  end
-
-  create_table "likes", force: :cascade do |t|
-    t.integer  "liker_id"
-    t.integer  "likee_id"
-    t.boolean  "like",       default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-  end
-
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
     t.integer "unsubscriber_id"
     t.string  "unsubscriber_type"
@@ -88,6 +72,7 @@ ActiveRecord::Schema.define(version: 20150612142803) do
   create_table "promotors", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "company"
+    t.string   "location",   null: false
     t.text     "venues"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -100,7 +85,8 @@ ActiveRecord::Schema.define(version: 20150612142803) do
     t.integer  "max"
     t.boolean  "bottles",    default: false
     t.text     "venues"
-    t.date     "date"
+    t.date     "date",                       null: false
+    t.string   "location",                   null: false
     t.text     "comments"
     t.integer  "user_id"
     t.datetime "created_at",                 null: false
@@ -118,14 +104,6 @@ ActiveRecord::Schema.define(version: 20150612142803) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-  end
-
-  create_table "venues", force: :cascade do |t|
-    t.string   "name"
-    t.string   "city"
-    t.string   "address"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"

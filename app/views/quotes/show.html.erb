@@ -7,4 +7,5 @@ bottles: <%= @quote.bottles %> <br>
 venues: <%= @quote.venues %> <br>
 date: <%= @quote.date %> <br>
 comments: <%= @quote.comments %> <br>
+city: <%= @quote.location %>
 <p><%= link_to 'Start conversation', new_message_path, :data => {:user_id => @quote.user_id} %></p>

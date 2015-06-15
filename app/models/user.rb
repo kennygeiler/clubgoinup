@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :venues, through: :goings
   has_many :likes, foreign_key: :liker_id
   has_many :received_likes, class_name: "Like", foreign_key: :likee_id
-  has_many :promotors
+  has_one :promotor
   has_many :quotes
   acts_as_messageable
 
