@@ -1,5 +1,5 @@
   <% @quotes.each do |quote| %>
-    <% if current_user.promotor.first.location.downcase == quote.location.downcase %>
+    <% if current_user.promotor.location.downcase == quote.location.downcase %>
       <%= link_to quote.user.name, quote_path(quote.id) %>
       <%= quote.date %>
       <%= quote.location %>
