@@ -11,9 +11,10 @@
   </div>
 
     <%= hidden_field_tag 'recipients', @message_quote.user.id %>
+     <%= hidden_field_tag 'message[quote_id]', @message_quote.id %>
 
 
-  <%= submit_tag 'Send', class: 'btn btn-primary' %>
+  <%= submit_tag('Send', quote_id: @message_quote.id)%>
 <% end %>
 
 <p>Request</p>
