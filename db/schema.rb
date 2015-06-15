@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20150612142803) do
   create_table "promotors", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "company"
+    t.string   "location"
     t.text     "venues"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
