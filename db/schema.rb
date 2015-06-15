@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20150612142803) do
     t.integer  "user_id"
     t.string   "company"
     t.string   "location",   null: false
+    t.string   "email",      null: false
     t.text     "venues"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
