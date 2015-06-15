@@ -1,4 +1,4 @@
-<p>Start Convo</p>
+<p>Start Convo with <%= @message_quote.user.name %> </p>
 
 <%= form_tag messages_path, method: :post do %>
   <div class="form-group">
@@ -10,12 +10,19 @@
     <%= text_area_tag 'message[body]', nil, cols: 3, class: 'form-control', required: true %>
   </div>
 
-  <div class="form-group">
-    <%= label_tag 'recipients', 'Choose recipients' %>
-    <%= select_tag 'recipients', recipients_options(@chosen_recipient), multiple: true, class: 'form-control chosen-it' %>
-  </div>
+    <%= hidden_field_tag 'recipients', @message_quote.user.id %>
+
 
   <%= submit_tag 'Send', class: 'btn btn-primary' %>
 <% end %>
 
-<%= @message_quote.user.name %>
+<p>Request</p>
+men: <%= @message_quote.men %> <br>
+women: <%= @message_quote.women %> <br>
+min: <%= @message_quote.min %> <br>
+max: <%= @message_quote.max %> <br>
+bottles: <%= @message_quote.bottles %> <br>
+venues: <%= @message_quote.venues %> <br>
+date: <%= @message_quote.date %> <br>
+comments: <%= @message_quote.comments %> <br>
+city: <%= @message_quote.location %>
