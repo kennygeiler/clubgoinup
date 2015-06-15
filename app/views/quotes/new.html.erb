@@ -3,6 +3,8 @@
   <%= f.hidden_field :user_id, :value => current_user.id %><br />
   <%= f.label "Date" %>
   <%= f.date_select :date %><br />
+  <%= f.label "City" %>
+  <%= f.date_select :location, :placeholder => "New York City" %><br />
   <%= f.label "How Many Guys" %>
   <%= f.text_field :men %><br />
   <%= f.label "How Many Girls" %>
