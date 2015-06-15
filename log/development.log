@@ -20198,3 +20198,324 @@ ActionView::Template::Error (undefined method `downcase' for nil:NilClass):
   Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
   Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
   Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (175.7ms)
+  [1m[36m (7.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150608142548)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (5.8ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "provider" character varying, "uid" character varying, "name" character varying, "image" character varying, "email" character varying, "user_friends" character varying, "oauth_token" character varying, "oauth_expires_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150608142548"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePromotors (20150609131346)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (5.4ms)[0m  [1mCREATE TABLE "promotors" ("id" serial primary key, "user_id" integer, "company" character varying, "location" character varying, "venues" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609131346"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateQuotes (20150609131434)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (7.4ms)[0m  [1mCREATE TABLE "quotes" ("id" serial primary key, "men" integer, "women" integer, "min" integer, "max" integer, "bottles" boolean DEFAULT 'f', "venues" text, "date" date, "location" character varying, "comments" text, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150609131434"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateMailboxer (20150612142801)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "mailboxer_conversations" ("id" serial primary key, "subject" character varying DEFAULT '', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (8.5ms)[0m  CREATE TABLE "mailboxer_receipts" ("id" serial primary key, "receiver_id" integer, "receiver_type" character varying, "notification_id" integer NOT NULL, "is_read" boolean DEFAULT 'f', "trashed" boolean DEFAULT 'f', "deleted" boolean DEFAULT 'f', "mailbox_type" character varying(25), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (6.7ms)[0m  [1mCREATE TABLE "mailboxer_notifications" ("id" serial primary key, "type" character varying, "body" text, "subject" character varying DEFAULT '', "sender_id" integer, "sender_type" character varying, "conversation_id" integer, "draft" boolean DEFAULT 'f', "notification_code" character varying, "notified_object_id" integer, "notified_object_type" character varying, "attachment" character varying, "updated_at" timestamp NOT NULL, "created_at" timestamp NOT NULL, "global" boolean DEFAULT 'f', "expires" timestamp) [0m
+  [1m[35m (1.2ms)[0m  CREATE  INDEX  "index_mailboxer_receipts_on_notification_id" ON "mailboxer_receipts"  ("notification_id")
+  [1m[36m (1.1ms)[0m  [1mCREATE  INDEX  "index_mailboxer_notifications_on_conversation_id" ON "mailboxer_notifications"  ("conversation_id")[0m
+  [1m[35m (2.9ms)[0m  ALTER TABLE "mailboxer_receipts" ADD CONSTRAINT "receipts_on_notification_id"
+FOREIGN KEY ("notification_id")
+  REFERENCES "mailboxer_notifications" ("id")
+
+  [1m[36m (1.4ms)[0m  [1mALTER TABLE "mailboxer_notifications" ADD CONSTRAINT "notifications_on_conversation_id"
+FOREIGN KEY ("conversation_id")
+  REFERENCES "mailboxer_conversations" ("id")
+[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150612142801"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Migrating to AddConversationOptout (20150612142802)
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36m (5.9ms)[0m  [1mCREATE TABLE "mailboxer_conversation_opt_outs" ("id" serial primary key, "unsubscriber_id" integer, "unsubscriber_type" character varying, "conversation_id" integer) [0m
+  [1m[35m (1.8ms)[0m  ALTER TABLE "mailboxer_conversation_opt_outs" ADD CONSTRAINT "mb_opt_outs_on_conversations_id"
+FOREIGN KEY ("conversation_id")
+  REFERENCES "mailboxer_conversations" ("id")
+
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150612142802"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Migrating to AddMissingIndices (20150612142803)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.9ms)[0m  CREATE  INDEX  "index_mailboxer_conversation_opt_outs_on_unsubscriber_id_type" ON "mailboxer_conversation_opt_outs"  ("unsubscriber_id", "unsubscriber_type")
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_mailboxer_conversation_opt_outs_on_conversation_id" ON "mailboxer_conversation_opt_outs"  ("conversation_id")[0m
+  [1m[35m (1.2ms)[0m  CREATE  INDEX  "index_mailboxer_notifications_on_type" ON "mailboxer_notifications"  ("type")
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_mailboxer_notifications_on_sender_id_and_sender_type" ON "mailboxer_notifications"  ("sender_id", "sender_type")[0m
+  [1m[35m (1.3ms)[0m  CREATE  INDEX  "index_mailboxer_notifications_on_notified_object_id_and_type" ON "mailboxer_notifications"  ("notified_object_id", "notified_object_type")
+  [1m[36m (1.6ms)[0m  [1mCREATE  INDEX  "index_mailboxer_receipts_on_receiver_id_and_receiver_type" ON "mailboxer_receipts"  ("receiver_id", "receiver_type")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150612142803"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (4.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'mailboxer_conversation_opt_outs'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'mailboxer_conversations'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (4.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'mailboxer_notifications'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'mailboxer_receipts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'promotors'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'quotes'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (4.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/quotes" for 127.0.0.1 at 2015-06-15 10:13:46 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuotesController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered quotes/index.html.erb within layouts/application (43.9ms)
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 5.9ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  app/controllers/application_controller.rb:8:in `current_user'
+  app/views/quotes/index.html.erb:1:in `_app_views_quotes_index_html_erb___3682591693492770899_70358180742700'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (124.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (79.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (186.4ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2015-06-15 10:13:51 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-15 10:13:51 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 386ms (Views: 384.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-15 10:13:54 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-15 10:13:55 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQBpi2K9t_QHt6J4TYoqbNRD3B5xqfdnw9HMe5NrQ-wHr9oqhEgBAN91Awn5z1CbnLPfYVUz9VFIcKJxnqpIuv3YWtxNRpOfj27xMfTqWtLhD_X85P-Z5Y3lNGXhiDsz_OSAmNDIseC8JEjyHqf_45inbW8cqVT6Z6Jj9DvoXpD9a3UBjwiseTH7bCLMH5vJUX845gts6_48qJmu0J6VIc_VLwnNFxlTXr6CxK_OlGBAUZyjkXvZPnlo8fBLiwsodwDkdD5uP1f_Cit1AJ7KpzmTl0ZjMv2vTSaNq39G9v6oAM6O5CLiPplxaNaL15Simoc&state=6fa16091063ab13373179e3465c3b2ea0139f733d8a88e01" for 127.0.0.1 at 2015-06-15 10:13:55 -0400
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBpi2K9t_QHt6J4TYoqbNRD3B5xqfdnw9HMe5NrQ-wHr9oqhEgBAN91Awn5z1CbnLPfYVUz9VFIcKJxnqpIuv3YWtxNRpOfj27xMfTqWtLhD_X85P-Z5Y3lNGXhiDsz_OSAmNDIseC8JEjyHqf_45inbW8cqVT6Z6Jj9DvoXpD9a3UBjwiseTH7bCLMH5vJUX845gts6_48qJmu0J6VIc_VLwnNFxlTXr6CxK_OlGBAUZyjkXvZPnlo8fBLiwsodwDkdD5uP1f_Cit1AJ7KpzmTl0ZjMv2vTSaNq39G9v6oAM6O5CLiPplxaNaL15Simoc", "state"=>"6fa16091063ab13373179e3465c3b2ea0139f733d8a88e01", "provider"=>"facebook"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10206339728668711"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "image", "oauth_token", "oauth_expires_at", "name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["provider", "facebook"], ["uid", "10206339728668711"], ["image", "http://graph.facebook.com/10206339728668711/picture?type=square"], ["oauth_token", "CAARUwTI31v0BANdMQuZBjZAU7a0eBZBCP8PV5yXsEXqTodTPRnZB9PKA2qPQ42usYTNz2RYrXxDcYzTR9fQks23DJWIzBPjYfxdp8S6ja9zrXJRuHYAyR47ZAB3ZAOa80jly4bbu3zKGQSKFSJnRdpWkZCq884AHXzSpve1i80IndDr4QDCDRszy8VKZCc2ZCBKTj462DuK8Dj3Dp2eoEJmu1"], ["oauth_expires_at", "2015-08-14 13:46:30.000000"], ["name", "Kenny Geiler"], ["email", "southparkkenny19@gmail.com"], ["created_at", "2015-06-15 14:13:55.616414"], ["updated_at", "2015-06-15 14:13:55.616414"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 48ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-15 10:13:55 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/quotes/new
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/quotes/new" for 127.0.0.1 at 2015-06-15 10:13:55 -0400
+Processing by QuotesController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered quotes/new.html.erb within layouts/application (41.3ms)
+Completed 200 OK in 217ms (Views: 199.4ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/quotes" for 127.0.0.1 at 2015-06-15 10:14:17 -0400
+Processing by QuotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VO3C5ZlNGmohslxyPxjHZXD7Tqy6Lz76gUB4Pr1HeD7IfLubvKTq7a90UkR+KqUUTOPc/VBdzoxnZ0xxaseDGA==", "quote"=>{"user_id"=>"1", "date(1i)"=>"2015", "date(2i)"=>"6", "date(3i)"=>"15", "location"=>"New york city", "men"=>"8", "women"=>"0", "min"=>"982", "max"=>"000", "bottles"=>"true", "venues"=>""}, "commit"=>"Submit"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "quotes" ("user_id", "men", "women", "min", "max", "bottles", "venues", "location", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["user_id", 1], ["men", 8], ["women", 0], ["min", 982], ["max", 0], ["bottles", "t"], ["venues", ""], ["location", "New york city"], ["date", "2015-06-15"], ["created_at", "2015-06-15 14:14:17.525190"], ["updated_at", "2015-06-15 14:14:17.525190"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/conversations
+Completed 302 Found in 12ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/conversations" for 127.0.0.1 at 2015-06-15 10:14:17 -0400
+Processing by ConversationsController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMailboxer::Conversation Load (3.1ms)[0m  [1mSELECT DISTINCT "mailboxer_conversations".* FROM "mailboxer_conversations" INNER JOIN "mailboxer_notifications" ON "mailboxer_notifications"."conversation_id" = "mailboxer_conversations"."id" AND "mailboxer_notifications"."type" IN ('Mailboxer::Message') INNER JOIN "mailboxer_receipts" ON "mailboxer_receipts"."notification_id" = "mailboxer_notifications"."id" WHERE "mailboxer_notifications"."type" = 'Mailboxer::Message' AND "mailboxer_receipts"."receiver_id" = $1 AND "mailboxer_receipts"."receiver_type" = $2 AND "mailboxer_receipts"."mailbox_type" = $3 AND "mailboxer_receipts"."trashed" = 'f' AND "mailboxer_receipts"."deleted" = 'f'  ORDER BY mailboxer_conversations.updated_at DESC[0m  [["receiver_id", 1], ["receiver_type", "User"], ["mailbox_type", "inbox"]]
+  Rendered conversations/_conversation.html.erb (0.0ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "promotors" WHERE "promotors"."user_id" = $1  [["user_id", 1]]
+  Rendered conversations/index.html.erb within layouts/application (71.2ms)
+Completed 200 OK in 264ms (Views: 205.5ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/quotes/new" for 127.0.0.1 at 2015-06-15 10:14:25 -0400
+Processing by QuotesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered quotes/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 128ms (Views: 126.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/quotes" for 127.0.0.1 at 2015-06-15 10:14:31 -0400
+Processing by QuotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OAr8UN6lMBv7XkX8HYhTdX9xDea0S7xckHWi0P2z2hykm4Uu+0zAnHWYS8pcujEEQ2mft145TCp2UpafKjMhOg==", "quote"=>{"user_id"=>"1", "date(1i)"=>"2015", "date(2i)"=>"6", "date(3i)"=>"15", "location"=>"Miami", "men"=>"9", "women"=>"9", "min"=>"9", "max"=>"9", "bottles"=>"false", "venues"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "quotes" ("user_id", "men", "women", "min", "max", "venues", "location", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["user_id", 1], ["men", 9], ["women", 9], ["min", 9], ["max", 9], ["venues", ""], ["location", "Miami"], ["date", "2015-06-15"], ["created_at", "2015-06-15 14:14:31.749090"], ["updated_at", "2015-06-15 14:14:31.749090"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/conversations
+Completed 302 Found in 6ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/conversations" for 127.0.0.1 at 2015-06-15 10:14:31 -0400
+Processing by ConversationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMailboxer::Conversation Load (1.4ms)[0m  SELECT DISTINCT "mailboxer_conversations".* FROM "mailboxer_conversations" INNER JOIN "mailboxer_notifications" ON "mailboxer_notifications"."conversation_id" = "mailboxer_conversations"."id" AND "mailboxer_notifications"."type" IN ('Mailboxer::Message') INNER JOIN "mailboxer_receipts" ON "mailboxer_receipts"."notification_id" = "mailboxer_notifications"."id" WHERE "mailboxer_notifications"."type" = 'Mailboxer::Message' AND "mailboxer_receipts"."receiver_id" = $1 AND "mailboxer_receipts"."receiver_type" = $2 AND "mailboxer_receipts"."mailbox_type" = $3 AND "mailboxer_receipts"."trashed" = 'f' AND "mailboxer_receipts"."deleted" = 'f'  ORDER BY mailboxer_conversations.updated_at DESC  [["receiver_id", 1], ["receiver_type", "User"], ["mailbox_type", "inbox"]]
+  Rendered conversations/_conversation.html.erb (0.0ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "promotors" WHERE "promotors"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered conversations/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 141ms (Views: 135.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/quotes" for 127.0.0.1 at 2015-06-15 10:14:35 -0400
+Processing by QuotesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPromotor Load (0.3ms)[0m  [1mSELECT "promotors".* FROM "promotors" WHERE "promotors"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mQuote Load (0.5ms)[0m  SELECT "quotes".* FROM "quotes"
+  Rendered quotes/index.html.erb within layouts/application (8.3ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.1ms)
+
+ActionView::Template::Error (undefined method `location' for nil:NilClass):
+    2:   <% redirect_to new_quote_path %>
+    3: <% else %>
+    4:   <% @quotes.each do |quote| %>
+    5:     <% if current_user.promotors.first.location.downcase == quote.location.downcase %>
+    6:       <%= link_to quote.user.name, quote_path(quote.id) %>
+    7:       <%= quote.date %>
+    8:       <%= quote.location %>
+  app/views/quotes/index.html.erb:5:in `block in _app_views_quotes_index_html_erb___3682591693492770899_70358180742700'
+  app/views/quotes/index.html.erb:4:in `_app_views_quotes_index_html_erb___3682591693492770899_70358180742700'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (104.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (74.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (161.1ms)
+
+
+Started GET "/promotors/new" for 127.0.0.1 at 2015-06-15 10:14:39 -0400
+Processing by PromotorsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered promotors/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 112ms (Views: 101.4ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/promotors" for 127.0.0.1 at 2015-06-15 10:14:43 -0400
+Processing by PromotorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K81jRhvXxsEcrTorrDDfL83cIV22zSNqH83RVMJjFqe3XBo4Pj42RpJrNB3tAr1e8cSzDFy/0xz56uUbFePtgQ==", "promotor"=>{"user_id"=>"1", "location"=>"new york city"}, "commit"=>"Create Promotor Account"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "promotors" ("user_id", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["location", "new york city"], ["created_at", "2015-06-15 14:14:43.618942"], ["updated_at", "2015-06-15 14:14:43.618942"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/quotes
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/quotes" for 127.0.0.1 at 2015-06-15 10:14:43 -0400
+Processing by QuotesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPromotor Load (0.7ms)[0m  SELECT "promotors".* FROM "promotors" WHERE "promotors"."user_id" = $1  [["user_id", 1]]
+  [1m[36mQuote Load (0.4ms)[0m  [1mSELECT "quotes".* FROM "quotes"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered quotes/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 149ms (Views: 146.2ms | ActiveRecord: 1.5ms)
