@@ -7,7 +7,8 @@ class CreateQuotes < ActiveRecord::Migration
       t.integer :max
       t.boolean :bottles, default: false
       t.text :venues
-      t.date :date
+      t.date :date, null: false
+      t.string :location, null: false
       t.text :comments
       t.references :user
       t.timestamps null: false

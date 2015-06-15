@@ -1,8 +1,11 @@
 <% if current_user %>
+<p>Required Fields: Date, City, min $</p>
   <%= form_for @quote do |f| %>
   <%= f.hidden_field :user_id, :value => current_user.id %><br />
   <%= f.label "Date" %>
   <%= f.date_select :date %><br />
+  <%= f.label "City" %>
+  <%= f.text_field :location, :placeholder => "New York City" %><br />
   <%= f.label "How Many Guys" %>
   <%= f.text_field :men %><br />
   <%= f.label "How Many Girls" %>

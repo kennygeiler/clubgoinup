@@ -12,7 +12,11 @@ class QuotesController < ApplicationController
   end
 
   def index
-    @quotes = Quote.all
+    if current_user.promotor == nil
+      redirect_to new_quote_path
+    else
+      @quotes = Quote.all
+    end
   end
 
   def show
@@ -21,7 +25,7 @@ class QuotesController < ApplicationController
 
   private
   def quote_params
-    params.require(:quote).permit(:user_id, :men, :women, :min, :max, :bottles, :venues, :date, :comments)
+    params.require(:quote).permit(:user_id, :men, :women, :min, :max, :bottles, :venues, :date, :comments, :location)
   end
 
 end

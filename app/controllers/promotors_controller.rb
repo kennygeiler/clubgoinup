@@ -15,7 +15,7 @@ class PromotorsController < ApplicationController
 
   private
   def promotor_params
-    params.require(:promotor).permit(:user_id)
+    params.require(:promotor).permit(:user_id, :location)
   end
 
 end
