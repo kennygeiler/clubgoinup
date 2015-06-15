@@ -4,6 +4,7 @@ class CreatePromotors < ActiveRecord::Migration
       t.references :user
       t.string :company
       t.string :location, null: false
+      t.string :email, null: false
       t.text :venues
       t.timestamps null: false
     end

@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20150612142803) do
   create_table "mailboxer_notifications", force: :cascade do |t|
     t.string   "type"
     t.text     "body"
+    t.integer  "quote_id"
     t.string   "subject",              default: ""
     t.integer  "sender_id"
     t.string   "sender_type"
@@ -73,6 +74,7 @@ ActiveRecord::Schema.define(version: 20150612142803) do
     t.integer  "user_id"
     t.string   "company"
     t.string   "location",   null: false
+    t.string   "email",      null: false
     t.text     "venues"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -81,8 +83,8 @@ ActiveRecord::Schema.define(version: 20150612142803) do
   create_table "quotes", force: :cascade do |t|
     t.integer  "men"
     t.integer  "women"
-    t.integer  "min"
-    t.integer  "max"
+    t.string   "min"
+    t.string   "max"
     t.boolean  "bottles",    default: false
     t.text     "venues"
     t.date     "date",                       null: false

@@ -1,6 +1,8 @@
  <%= form_for @promotor do |f| %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= f.label "City" %>
-  <%= f.text_field :location, :placeholder => "New York City" %>
+  <%= f.text_field :location, :placeholder => "New York City" %> <br>
+  <%= f.label "Email" %>
+  <%= f.text_field :email %>
   <%= f.submit "Create Promotor Account" %>
 <% end %>
