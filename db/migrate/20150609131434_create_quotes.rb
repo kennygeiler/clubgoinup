@@ -3,8 +3,8 @@ class CreateQuotes < ActiveRecord::Migration
     create_table :quotes do |t|
       t.integer :men
       t.integer :women
-      t.integer :min
-      t.integer :max
+      t.string :min
+      t.string :max
       t.boolean :bottles, default: false
       t.text :venues
       t.date :date, null: false
