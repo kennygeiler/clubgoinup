@@ -12,7 +12,11 @@ class QuotesController < ApplicationController
   end
 
   def index
-    @quotes = Quote.all
+    if current_user.promotor == nil
+      redirect_to new_quote_path
+    else
+      @quotes = Quote.all
+    end
   end
 
   def show

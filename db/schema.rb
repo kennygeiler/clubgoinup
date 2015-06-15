@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20150612142803) do
   create_table "promotors", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "company"
-    t.string   "location"
+    t.string   "location",   null: false
     t.text     "venues"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -85,8 +85,8 @@ ActiveRecord::Schema.define(version: 20150612142803) do
     t.integer  "max"
     t.boolean  "bottles",    default: false
     t.text     "venues"
-    t.date     "date"
-    t.string   "location"
+    t.date     "date",                       null: false
+    t.string   "location",                   null: false
     t.text     "comments"
     t.integer  "user_id"
     t.datetime "created_at",                 null: false

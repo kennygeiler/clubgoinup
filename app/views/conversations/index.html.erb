@@ -4,6 +4,6 @@
   <%= render partial: 'conversations/conversation', collection: @conversations %>
 </ul>
 
-<% if current_user.promotors.count > 0 %>
+<% if current_user.promotor %>
 <p><%= link_to 'Start conversation', new_message_path, class: 'btn btn-lg btn-primary' %></p>
 <% end %>
