@@ -7,7 +7,6 @@ class ConversationsController < ApplicationController
   end
 
   def show
-     @message_quote = Quote.find(params[:message][:quote_id])
   end
 
   def reply
