@@ -1,7 +1,11 @@
 class QuotesController < ApplicationController
 
   def new
-    @quote = Quote.new()
+    if current_user
+      @quote = Quote.new()
+    else
+      redirect_to root_path
+    end
   end
 
   def create

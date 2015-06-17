@@ -1,4 +1,3 @@
-<% if current_user %>
 <p>Required Fields: Date, City, min $</p>
   <%= form_for @quote do |f| %>
   <%= f.hidden_field :user_id, :value => current_user.id %><br />
@@ -20,6 +19,3 @@
   <%= f.text_field :venues, :placeholder => "1oak, The Raven, etc" %> <br />
   <%= f.submit "Submit" %>
   <% end %>
-<% else %>
-  <% redirect_to homes_path %>
-<% end %>
