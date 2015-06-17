@@ -17,7 +17,7 @@ class QuotesController < ApplicationController
 
   def index
     if current_user.promotor == nil
-      redirect_to new_quote_path
+      redirect_to new_promotor_path
     else
       @quotes = Quote.all
     end

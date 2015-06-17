@@ -12,14 +12,13 @@
 </head>
 <body>
       <div data-role="panel" data-display="push" id="sidebar" data-theme="a">
-                <ul data-role="listview">
-                    <li data-icon='false'><a data-ajax="true" href="/quotes/new">Nightlife Reqiest</a></li>
-                     <li data-icon='false'><a data-ajax="true" href="/promotors/new">Promotors</a></li>
-                      <li data-icon='false'><a data-ajax="true" href="/conversations">Messages</a></li>
-                       <li data-icon='false'><a data-ajax="true" href="/signout">Signout</a></li>
-                </ul>
-            </div>
-
+        <ul data-role="listview">
+          <li data-icon='false'><a data-ajax="true" href="/quotes/new">Nightlife Request</a></li>
+          <li data-icon='false'><a data-ajax="true" href="/quotes">Promoters</a></li>
+          <li data-icon='false'><a data-ajax="true" href="/conversations">Messages</a></li>
+          <li data-icon='false'><a data-ajax="true" href="/signout">Signout</a></li>
+        </ul>
+      </div>
 <%= yield %>
 </body>
 </html>
