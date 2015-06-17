@@ -2,17 +2,24 @@
 <html>
 <head>
   <title>Clubgoinup</title>
+
+
+    <!-- Load Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic|Oswald:400,700' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div>
-    <% if current_user %>
-      Signed in as <strong><%= current_user.name %></strong>!
-      <%= link_to "Sign out", signout_path, id: "sign_out" %>
-    <% end %>
-  </div>
+      <div data-role="panel" data-display="push" id="sidebar" data-theme="a">
+                <ul data-role="listview">
+                    <li data-icon='false'><a data-ajax="false" href="index.html">Home</a></li>
+                </ul>
+            </div>
+            <div data-role="header" data-tap-toggle="false" data-theme='a'>
+                <a href='#sidebar' data-role="none"><img src="images/menu-icon.png" alt="sidebar" id="header-menu-icon" /></a>
+                <h1 class="header-title">[header title]</h1>
+            </div>
 <%= yield %>
 </body>
 </html>
