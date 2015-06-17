@@ -2,8 +2,6 @@
 <html>
 <head>
   <title>Clubgoinup</title>
-
-
     <!-- Load Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic|Oswald:400,700' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -11,6 +9,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div data-role="page" data-theme='a'>
       <div data-role="panel" data-display="push" id="sidebar" data-theme="a">
         <ul data-role="listview">
           <li data-icon='false'><a data-ajax="true" href="/quotes/new">Nightlife Request</a></li>
@@ -19,6 +18,7 @@
           <li data-icon='false'><a data-ajax="true" href="/signout">Signout</a></li>
         </ul>
       </div>
-<%= yield %>
+    <%= yield %>
+  </div>
 </body>
 </html>
