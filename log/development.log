@@ -45351,3 +45351,1211 @@ ActionController::RoutingError (No route matches [GET] "/public/images/menu-icon
   Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
   Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
   Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (231.3ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2015-06-17 19:44:51 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-17 19:44:51 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 410ms (Views: 409.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-5955161e5cb6adfe7ddde436ddd1722cc6ecc69d5854213e6c515cc2af6842c3.css?body=1" for 127.0.0.1 at 2015-06-17 19:44:52 -0400
+
+
+Started GET "/assets/jquery.mobile-1.4.5.min.map" for 127.0.0.1 at 2015-06-17 19:44:52 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-17 19:44:56 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-17 19:44:56 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQCRcFjEkPZVDNfF_PJeMsiGl_QSPKG3OuJMlu51URpCr0n_H36ZIQ6QEfyGUSIXsuOzjNVFHlOzU2QALKkAgrM2XN_S-4k4bUve-kEOS_x6rv87IzOgoo05UZPrCP7lRhJM6IGB9nUg5xV-6gDhT9zLwjN1wC5ClkVXTU4DZQ03TVcERckt0nvPxkNzQ1iUkJlD68rI_EfvQDBWOpOfWNsBjIngyBHLrj3OaZpomVQlB8MZedJwqA2IpfsfkzAtV8f7dySne63LkLr1SSML3Dmk1AI-7z-0rF2u6HHG2NgdkOHfuHnzSLyaT9orJkU5crjsfnaeAnHsPg37iXWH1Wqf&state=33495d7a70751fedfe077d25b2596a74ed9f9b72a1479847" for 127.0.0.1 at 2015-06-17 19:44:56 -0400
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQCRcFjEkPZVDNfF_PJeMsiGl_QSPKG3OuJMlu51URpCr0n_H36ZIQ6QEfyGUSIXsuOzjNVFHlOzU2QALKkAgrM2XN_S-4k4bUve-kEOS_x6rv87IzOgoo05UZPrCP7lRhJM6IGB9nUg5xV-6gDhT9zLwjN1wC5ClkVXTU4DZQ03TVcERckt0nvPxkNzQ1iUkJlD68rI_EfvQDBWOpOfWNsBjIngyBHLrj3OaZpomVQlB8MZedJwqA2IpfsfkzAtV8f7dySne63LkLr1SSML3Dmk1AI-7z-0rF2u6HHG2NgdkOHfuHnzSLyaT9orJkU5crjsfnaeAnHsPg37iXWH1Wqf", "state"=>"33495d7a70751fedfe077d25b2596a74ed9f9b72a1479847", "provider"=>"facebook"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "101572900184982"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-17 19:44:56 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/quotes/new
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/quotes/new" for 127.0.0.1 at 2015-06-17 19:44:56 -0400
+Processing by QuotesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered quotes/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 299ms (Views: 298.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/quotes/images/menu-icon.png" for 127.0.0.1 at 2015-06-17 19:44:57 -0400
+
+ActionController::RoutingError (No route matches [GET] "/quotes/images/menu-icon.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.6.1) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (153.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (134.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (235.9ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.5.min.map" for 127.0.0.1 at 2015-06-17 19:44:57 -0400
+
+
+Started GET "/quotes" for 127.0.0.1 at 2015-06-17 19:45:01 -0400
+Processing by QuotesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mPromotor Load (0.4ms)[0m  [1mSELECT  "promotors".* FROM "promotors" WHERE "promotors"."user_id" = $1 LIMIT 1[0m  [["user_id", 2]]
+Redirected to http://localhost:3000/promotors/new
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/promotors/new" for 127.0.0.1 at 2015-06-17 19:45:01 -0400
+Processing by PromotorsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered promotors/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 324ms (Views: 322.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/promotors" for 127.0.0.1 at 2015-06-17 19:45:08 -0400
+Processing by PromotorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TjqeNVr6aLO+2l33dTzmUz+3YHIaYAp3w3joHX3nVuurLcH+4XhYQOf/oC9Rk5ooBDBvl47epzptDPzL7WmQyA==", "promotor"=>{"user_id"=>"2", "location"=>"New York City", "email"=>"kenny@aol.com"}, "commit"=>"Create Promotor Account"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "promotors" ("user_id", "location", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 2], ["location", "New York City"], ["email", "kenny@aol.com"], ["created_at", "2015-06-17 23:45:08.338088"], ["updated_at", "2015-06-17 23:45:08.338088"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/quotes
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/quotes" for 127.0.0.1 at 2015-06-17 19:45:08 -0400
+Processing by QuotesController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mPromotor Load (0.4ms)[0m  [1mSELECT  "promotors".* FROM "promotors" WHERE "promotors"."user_id" = $1 LIMIT 1[0m  [["user_id", 2]]
+  [1m[35mQuote Load (0.4ms)[0m  SELECT "quotes".* FROM "quotes"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered quotes/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 335ms (Views: 330.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/quotes/1" for 127.0.0.1 at 2015-06-17 19:45:10 -0400
+Processing by QuotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuote Load (0.3ms)[0m  SELECT  "quotes".* FROM "quotes" WHERE "quotes"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered quotes/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 371ms (Views: 368.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/quotes/images/menu-icon.png" for 127.0.0.1 at 2015-06-17 19:45:11 -0400
+
+ActionController::RoutingError (No route matches [GET] "/quotes/images/menu-icon.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.6.1) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (185.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (92.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (216.4ms)
+
+
+Started GET "/messages/new?quote_id=1" for 127.0.0.1 at 2015-06-17 19:45:14 -0400
+Processing by MessagesController#new as HTML
+  Parameters: {"quote_id"=>"1"}
+  [1m[36mQuote Load (0.6ms)[0m  [1mSELECT  "quotes".* FROM "quotes" WHERE "quotes"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered messages/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 370ms (Views: 366.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/messages/images/menu-icon.png" for 127.0.0.1 at 2015-06-17 19:45:14 -0400
+
+ActionController::RoutingError (No route matches [GET] "/messages/images/menu-icon.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.6.1) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (203.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (147.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (303.7ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2015-06-17 19:45:17 -0400
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N29eVrcvrY6k3MjWMQ059FIbAIdbkWRixooloRMa+7DSeAGdDK2dff35NQ4VokWPaZwPYs8vyS9o/jF3g5Q9kw==", "message"=>{"subject"=>"nothing", "body"=>"sup ", "quote_id"=>"1"}, "recipients"=>"1", "commit"=>"Send"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "mailboxer_conversations" ("subject", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["subject", "nothing"], ["created_at", "2015-06-17 23:45:17.946590"], ["updated_at", "2015-06-17 23:45:17.946590"]]
+  [1m[36mSQL (3.4ms)[0m  [1mINSERT INTO "mailboxer_notifications" ("type", "sender_id", "sender_type", "body", "subject", "created_at", "updated_at", "conversation_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["type", "Mailboxer::Message"], ["sender_id", 2], ["sender_type", "User"], ["body", "sup "], ["subject", "nothing"], ["created_at", "2015-06-17 23:45:17.946590"], ["updated_at", "2015-06-17 23:45:17.946590"], ["conversation_id", 2]]
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "mailboxer_receipts" ("mailbox_type", "receiver_id", "receiver_type", "notification_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["mailbox_type", "inbox"], ["receiver_id", 1], ["receiver_type", "User"], ["notification_id", 3], ["created_at", "2015-06-17 23:45:17.993887"], ["updated_at", "2015-06-17 23:45:17.993887"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "mailboxer_receipts" ("mailbox_type", "receiver_id", "receiver_type", "is_read", "notification_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["mailbox_type", "sentbox"], ["receiver_id", 2], ["receiver_type", "User"], ["is_read", "t"], ["notification_id", 3], ["created_at", "2015-06-17 23:45:18.000675"], ["updated_at", "2015-06-17 23:45:18.000675"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+  [1m[36mMailboxer::Message Load (1.3ms)[0m  [1mSELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mMailboxer::Conversation Load (0.3ms)[0m  SELECT  "mailboxer_conversations".* FROM "mailboxer_conversations" WHERE "mailboxer_conversations"."id" = $1 LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/conversations/2
+Completed 302 Found in 67ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/conversations/2" for 127.0.0.1 at 2015-06-17 19:45:18 -0400
+Processing by ConversationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mMailboxer::Conversation Load (1.6ms)[0m  SELECT  DISTINCT "mailboxer_conversations".* FROM "mailboxer_conversations" INNER JOIN "mailboxer_notifications" ON "mailboxer_notifications"."conversation_id" = "mailboxer_conversations"."id" AND "mailboxer_notifications"."type" IN ('Mailboxer::Message') INNER JOIN "mailboxer_receipts" ON "mailboxer_receipts"."notification_id" = "mailboxer_notifications"."id" WHERE "mailboxer_notifications"."type" = 'Mailboxer::Message' AND "mailboxer_receipts"."receiver_id" = $1 AND "mailboxer_receipts"."receiver_type" = $2 AND "mailboxer_conversations"."id" = $3  ORDER BY mailboxer_conversations.updated_at DESC LIMIT 1  [["receiver_id", 2], ["receiver_type", "User"], ["id", 2]]
+  [1m[36mMailboxer::Message Load (0.5ms)[0m  [1mSELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at LIMIT 1[0m  [["conversation_id", 2]]
+  [1m[35mMailboxer::Receipt Load (0.6ms)[0m  SELECT "mailboxer_receipts".* FROM "mailboxer_receipts" WHERE "mailboxer_receipts"."notification_id" = $1  [["notification_id", 3]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered conversations/_participants.html.erb (15.5ms)
+  [1m[36mMailboxer::Receipt Load (1.1ms)[0m  [1mSELECT "mailboxer_receipts".* FROM "mailboxer_receipts" INNER JOIN "mailboxer_notifications" ON "mailboxer_notifications"."id" = "mailboxer_receipts"."notification_id" AND "mailboxer_notifications"."type" IN ('Mailboxer::Message') WHERE "mailboxer_notifications"."conversation_id" = 2 AND "mailboxer_receipts"."receiver_id" = $1 AND "mailboxer_receipts"."receiver_type" = $2  ORDER BY "mailboxer_receipts"."created_at" ASC[0m  [["receiver_id", 2], ["receiver_type", "User"]]
+  [1m[35mMailboxer::Message Load (1.2ms)[0m  SELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered conversations/show.html.erb within layouts/application (49.5ms)
+Completed 200 OK in 394ms (Views: 383.8ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/quotes" for 127.0.0.1 at 2015-06-17 19:45:24 -0400
+Processing by QuotesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mPromotor Load (0.4ms)[0m  [1mSELECT  "promotors".* FROM "promotors" WHERE "promotors"."user_id" = $1 LIMIT 1[0m  [["user_id", 2]]
+  [1m[35mQuote Load (2.5ms)[0m  SELECT "quotes".* FROM "quotes"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered quotes/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 334ms (Views: 326.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.5.min.map" for 127.0.0.1 at 2015-06-17 19:45:25 -0400
+
+
+Started GET "/quotes/1" for 127.0.0.1 at 2015-06-17 19:45:27 -0400
+Processing by QuotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuote Load (0.5ms)[0m  SELECT  "quotes".* FROM "quotes" WHERE "quotes"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered quotes/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 354ms (Views: 352.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/quotes/images/menu-icon.png" for 127.0.0.1 at 2015-06-17 19:45:27 -0400
+
+ActionController::RoutingError (No route matches [GET] "/quotes/images/menu-icon.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.6.1) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (181.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (105.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (225.7ms)
+
+
+Started GET "/messages/new?quote_id=1" for 127.0.0.1 at 2015-06-17 19:45:29 -0400
+Processing by MessagesController#new as HTML
+  Parameters: {"quote_id"=>"1"}
+  [1m[36mQuote Load (0.7ms)[0m  [1mSELECT  "quotes".* FROM "quotes" WHERE "quotes"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered messages/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 367ms (Views: 364.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/messages/images/menu-icon.png" for 127.0.0.1 at 2015-06-17 19:45:29 -0400
+
+ActionController::RoutingError (No route matches [GET] "/messages/images/menu-icon.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.6.1) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (198.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (2.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (133.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.2ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (274.8ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2015-06-17 19:45:34 -0400
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WiL0FWujs0bYzzeUKRa04BNy+BX1IpB+EVKBAGoaEna/Nave0CGDtYHqykwNucibKPX38GGcPTO/JpXW+pTUVQ==", "message"=>{"subject"=>"nothing", "body"=>"yooo", "quote_id"=>"1"}, "recipients"=>"1", "commit"=>"Send"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "mailboxer_conversations" ("subject", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["subject", "nothing"], ["created_at", "2015-06-17 23:45:34.556441"], ["updated_at", "2015-06-17 23:45:34.556441"]]
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "mailboxer_notifications" ("type", "sender_id", "sender_type", "body", "subject", "created_at", "updated_at", "conversation_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["type", "Mailboxer::Message"], ["sender_id", 2], ["sender_type", "User"], ["body", "yooo"], ["subject", "nothing"], ["created_at", "2015-06-17 23:45:34.556441"], ["updated_at", "2015-06-17 23:45:34.556441"], ["conversation_id", 3]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "mailboxer_receipts" ("mailbox_type", "receiver_id", "receiver_type", "notification_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["mailbox_type", "inbox"], ["receiver_id", 1], ["receiver_type", "User"], ["notification_id", 4], ["created_at", "2015-06-17 23:45:34.575228"], ["updated_at", "2015-06-17 23:45:34.575228"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "mailboxer_receipts" ("mailbox_type", "receiver_id", "receiver_type", "is_read", "notification_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["mailbox_type", "sentbox"], ["receiver_id", 2], ["receiver_type", "User"], ["is_read", "t"], ["notification_id", 4], ["created_at", "2015-06-17 23:45:34.582942"], ["updated_at", "2015-06-17 23:45:34.582942"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mMailboxer::Message Load (0.4ms)[0m  [1mSELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mMailboxer::Conversation Load (0.8ms)[0m  SELECT  "mailboxer_conversations".* FROM "mailboxer_conversations" WHERE "mailboxer_conversations"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/conversations/3
+Completed 302 Found in 38ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/conversations/3" for 127.0.0.1 at 2015-06-17 19:45:34 -0400
+Processing by ConversationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mMailboxer::Conversation Load (2.3ms)[0m  SELECT  DISTINCT "mailboxer_conversations".* FROM "mailboxer_conversations" INNER JOIN "mailboxer_notifications" ON "mailboxer_notifications"."conversation_id" = "mailboxer_conversations"."id" AND "mailboxer_notifications"."type" IN ('Mailboxer::Message') INNER JOIN "mailboxer_receipts" ON "mailboxer_receipts"."notification_id" = "mailboxer_notifications"."id" WHERE "mailboxer_notifications"."type" = 'Mailboxer::Message' AND "mailboxer_receipts"."receiver_id" = $1 AND "mailboxer_receipts"."receiver_type" = $2 AND "mailboxer_conversations"."id" = $3  ORDER BY mailboxer_conversations.updated_at DESC LIMIT 1  [["receiver_id", 2], ["receiver_type", "User"], ["id", 3]]
+  [1m[36mMailboxer::Message Load (0.4ms)[0m  [1mSELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at LIMIT 1[0m  [["conversation_id", 3]]
+  [1m[35mMailboxer::Receipt Load (0.3ms)[0m  SELECT "mailboxer_receipts".* FROM "mailboxer_receipts" WHERE "mailboxer_receipts"."notification_id" = $1  [["notification_id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered conversations/_participants.html.erb (9.4ms)
+  [1m[36mMailboxer::Receipt Load (1.0ms)[0m  [1mSELECT "mailboxer_receipts".* FROM "mailboxer_receipts" INNER JOIN "mailboxer_notifications" ON "mailboxer_notifications"."id" = "mailboxer_receipts"."notification_id" AND "mailboxer_notifications"."type" IN ('Mailboxer::Message') WHERE "mailboxer_notifications"."conversation_id" = 3 AND "mailboxer_receipts"."receiver_id" = $1 AND "mailboxer_receipts"."receiver_type" = $2  ORDER BY "mailboxer_receipts"."created_at" ASC[0m  [["receiver_id", 2], ["receiver_type", "User"]]
+  [1m[35mMailboxer::Message Load (0.3ms)[0m  SELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered conversations/show.html.erb within layouts/application (40.3ms)
+Completed 200 OK in 451ms (Views: 438.0ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/conversations" for 127.0.0.1 at 2015-06-17 19:45:44 -0400
+Processing by ConversationsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mMailboxer::Conversation Load (0.5ms)[0m  [1mSELECT DISTINCT "mailboxer_conversations".* FROM "mailboxer_conversations" INNER JOIN "mailboxer_notifications" ON "mailboxer_notifications"."conversation_id" = "mailboxer_conversations"."id" AND "mailboxer_notifications"."type" IN ('Mailboxer::Message') INNER JOIN "mailboxer_receipts" ON "mailboxer_receipts"."notification_id" = "mailboxer_notifications"."id" WHERE "mailboxer_notifications"."type" = 'Mailboxer::Message' AND "mailboxer_receipts"."receiver_id" = $1 AND "mailboxer_receipts"."receiver_type" = $2 AND "mailboxer_receipts"."mailbox_type" = $3 AND "mailboxer_receipts"."trashed" = 'f' AND "mailboxer_receipts"."deleted" = 'f'  ORDER BY mailboxer_conversations.updated_at DESC[0m  [["receiver_id", 2], ["receiver_type", "User"], ["mailbox_type", "inbox"]]
+  Rendered conversations/_conversation.html.erb (0.0ms)
+  Rendered conversations/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 314ms (Views: 310.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/conversations" for 127.0.0.1 at 2015-06-17 19:45:44 -0400
+Processing by ConversationsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mMailboxer::Conversation Load (0.4ms)[0m  [1mSELECT DISTINCT "mailboxer_conversations".* FROM "mailboxer_conversations" INNER JOIN "mailboxer_notifications" ON "mailboxer_notifications"."conversation_id" = "mailboxer_conversations"."id" AND "mailboxer_notifications"."type" IN ('Mailboxer::Message') INNER JOIN "mailboxer_receipts" ON "mailboxer_receipts"."notification_id" = "mailboxer_notifications"."id" WHERE "mailboxer_notifications"."type" = 'Mailboxer::Message' AND "mailboxer_receipts"."receiver_id" = $1 AND "mailboxer_receipts"."receiver_type" = $2 AND "mailboxer_receipts"."mailbox_type" = $3 AND "mailboxer_receipts"."trashed" = 'f' AND "mailboxer_receipts"."deleted" = 'f'  ORDER BY mailboxer_conversations.updated_at DESC[0m  [["receiver_id", 2], ["receiver_type", "User"], ["mailbox_type", "inbox"]]
+  Rendered conversations/_conversation.html.erb (0.0ms)
+  Rendered conversations/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 252ms (Views: 248.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/public/images/menu-icon.png" for 127.0.0.1 at 2015-06-17 19:45:45 -0400
+
+ActionController::RoutingError (No route matches [GET] "/public/images/menu-icon.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.6.1) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (213.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (83.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (176.4ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.5.min.map" for 127.0.0.1 at 2015-06-17 19:45:45 -0400
+
+
+Started GET "/signout" for 127.0.0.1 at 2015-06-17 19:45:54 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-17 19:45:54 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 239ms (Views: 238.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/ajax-loader.gif" for 127.0.0.1 at 2015-06-17 19:45:55 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/ajax-loader.gif"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.6.1) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (129.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (73.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (158.9ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-17 19:46:16 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-17 19:46:19 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQBsyoA0bzudLhAWwOE84YAxEQB5Rh54zVJ37w-815xURYV-yZK3DzCnwnO8g99KQ0_2Ecsj0_NPcigDWlk4D0GcAZhx60iumTrjGIAYPThHLt2RKuzoJFibCG-qOAgG1t-OmC_Wrv9W2DncDoIcCqsW-BExxlqz2nTw7SdStb0sPJ5PRI4GLm10wXX-p6VJjFXkR4yw0mcfH6Arda6U35XbNWtojkOKJbts_F1Avuy_ywU0-sRDGzR-rD4wzCX7p2WpvzD-Vks5UUpHsrRCwRzNC97tebX6qQi0zSnmNC4ExyQdTKj9Ie1QhgzlXDIzoIw&state=cf17f55328b9d3fc1165fa8fe1194bd793dd305888db898a" for 127.0.0.1 at 2015-06-17 19:46:19 -0400
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBsyoA0bzudLhAWwOE84YAxEQB5Rh54zVJ37w-815xURYV-yZK3DzCnwnO8g99KQ0_2Ecsj0_NPcigDWlk4D0GcAZhx60iumTrjGIAYPThHLt2RKuzoJFibCG-qOAgG1t-OmC_Wrv9W2DncDoIcCqsW-BExxlqz2nTw7SdStb0sPJ5PRI4GLm10wXX-p6VJjFXkR4yw0mcfH6Arda6U35XbNWtojkOKJbts_F1Avuy_ywU0-sRDGzR-rD4wzCX7p2WpvzD-Vks5UUpHsrRCwRzNC97tebX6qQi0zSnmNC4ExyQdTKj9Ie1QhgzlXDIzoIw", "state"=>"cf17f55328b9d3fc1165fa8fe1194bd793dd305888db898a", "provider"=>"facebook"}
+  [1m[35mUser Load (4.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10206339728668711"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-06-17 19:46:19 -0400
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQDPmfhV3nVIz9iYFAF8Zhx07VK0suEI7F8cGN_7_VlMNjqDsZ81UTuALbUYCEvZdRi_P-rHxuIS_gzHhAB9vPBVcxZLqtuZomAoAxnpbPjDiRq0zr8hoTGx-iiRIn4d4XVBCxPNCCOA2ZGwwsU1mNpTQJblqHbVRsJypM4mEHM8PHwmOWF5cvs6I2Mpqifrx_57KZBUzwW5xXqIWVyJL_mSgl0hFc-Vu57d7e1XCtpY7uB1xLdmJdmwxdaKXFARER994xqgXQWNVRTK_GgSv7VjxeemrVXX3qpjlteld1vdK6p3vLmlzaSqWJBWxbpcfgE&state=7c543f316a20697eeb065322a1136ebafbe16a6d368d27fc" for 127.0.0.1 at 2015-06-17 19:46:20 -0400
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQDPmfhV3nVIz9iYFAF8Zhx07VK0suEI7F8cGN_7_VlMNjqDsZ81UTuALbUYCEvZdRi_P-rHxuIS_gzHhAB9vPBVcxZLqtuZomAoAxnpbPjDiRq0zr8hoTGx-iiRIn4d4XVBCxPNCCOA2ZGwwsU1mNpTQJblqHbVRsJypM4mEHM8PHwmOWF5cvs6I2Mpqifrx_57KZBUzwW5xXqIWVyJL_mSgl0hFc-Vu57d7e1XCtpY7uB1xLdmJdmwxdaKXFARER994xqgXQWNVRTK_GgSv7VjxeemrVXX3qpjlteld1vdK6p3vLmlzaSqWJBWxbpcfgE", "state"=>"7c543f316a20697eeb065322a1136ebafbe16a6d368d27fc", "provider"=>"facebook"}
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10206339728668711"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-17 19:46:20 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/quotes/new
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/quotes/new" for 127.0.0.1 at 2015-06-17 19:46:20 -0400
+Processing by QuotesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered quotes/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 261ms (Views: 259.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/quotes/images/menu-icon.png" for 127.0.0.1 at 2015-06-17 19:46:20 -0400
+
+ActionController::RoutingError (No route matches [GET] "/quotes/images/menu-icon.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.6.1) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (144.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (82.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (178.1ms)
+
+
+Started GET "/conversations" for 127.0.0.1 at 2015-06-17 19:46:25 -0400
+Processing by ConversationsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMailboxer::Conversation Load (0.5ms)[0m  [1mSELECT DISTINCT "mailboxer_conversations".* FROM "mailboxer_conversations" INNER JOIN "mailboxer_notifications" ON "mailboxer_notifications"."conversation_id" = "mailboxer_conversations"."id" AND "mailboxer_notifications"."type" IN ('Mailboxer::Message') INNER JOIN "mailboxer_receipts" ON "mailboxer_receipts"."notification_id" = "mailboxer_notifications"."id" WHERE "mailboxer_notifications"."type" = 'Mailboxer::Message' AND "mailboxer_receipts"."receiver_id" = $1 AND "mailboxer_receipts"."receiver_type" = $2 AND "mailboxer_receipts"."mailbox_type" = $3 AND "mailboxer_receipts"."trashed" = 'f' AND "mailboxer_receipts"."deleted" = 'f'  ORDER BY mailboxer_conversations.updated_at DESC[0m  [["receiver_id", 1], ["receiver_type", "User"], ["mailbox_type", "inbox"]]
+  [1m[35mMailboxer::Message Load (0.3ms)[0m  SELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at LIMIT 1  [["conversation_id", 3]]
+  [1m[36mMailboxer::Receipt Load (0.3ms)[0m  [1mSELECT "mailboxer_receipts".* FROM "mailboxer_receipts" WHERE "mailboxer_receipts"."notification_id" = $1[0m  [["notification_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mMailboxer::Message Load (0.3ms)[0m  SELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at DESC LIMIT 1  [["conversation_id", 3]]
+  [1m[36mMailboxer::Message Load (0.3ms)[0m  [1mSELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at LIMIT 1[0m  [["conversation_id", 2]]
+  [1m[35mMailboxer::Receipt Load (0.2ms)[0m  SELECT "mailboxer_receipts".* FROM "mailboxer_receipts" WHERE "mailboxer_receipts"."notification_id" = $1  [["notification_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mMailboxer::Message Load (0.3ms)[0m  [1mSELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["conversation_id", 2]]
+  [1m[35mMailboxer::Message Load (0.3ms)[0m  SELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at LIMIT 1  [["conversation_id", 1]]
+  [1m[36mMailboxer::Receipt Load (0.3ms)[0m  [1mSELECT "mailboxer_receipts".* FROM "mailboxer_receipts" WHERE "mailboxer_receipts"."notification_id" = $1[0m  [["notification_id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMailboxer::Message Load (0.3ms)[0m  SELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at DESC LIMIT 1  [["conversation_id", 1]]
+  Rendered conversations/_conversation.html.erb (19.6ms)
+  Rendered conversations/index.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 374ms (Views: 368.4ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/conversations" for 127.0.0.1 at 2015-06-17 19:46:25 -0400
+Processing by ConversationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMailboxer::Conversation Load (0.7ms)[0m  SELECT DISTINCT "mailboxer_conversations".* FROM "mailboxer_conversations" INNER JOIN "mailboxer_notifications" ON "mailboxer_notifications"."conversation_id" = "mailboxer_conversations"."id" AND "mailboxer_notifications"."type" IN ('Mailboxer::Message') INNER JOIN "mailboxer_receipts" ON "mailboxer_receipts"."notification_id" = "mailboxer_notifications"."id" WHERE "mailboxer_notifications"."type" = 'Mailboxer::Message' AND "mailboxer_receipts"."receiver_id" = $1 AND "mailboxer_receipts"."receiver_type" = $2 AND "mailboxer_receipts"."mailbox_type" = $3 AND "mailboxer_receipts"."trashed" = 'f' AND "mailboxer_receipts"."deleted" = 'f'  ORDER BY mailboxer_conversations.updated_at DESC  [["receiver_id", 1], ["receiver_type", "User"], ["mailbox_type", "inbox"]]
+  [1m[36mMailboxer::Message Load (0.5ms)[0m  [1mSELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at LIMIT 1[0m  [["conversation_id", 3]]
+  [1m[35mMailboxer::Receipt Load (0.4ms)[0m  SELECT "mailboxer_receipts".* FROM "mailboxer_receipts" WHERE "mailboxer_receipts"."notification_id" = $1  [["notification_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mMailboxer::Message Load (0.3ms)[0m  [1mSELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["conversation_id", 3]]
+  [1m[35mMailboxer::Message Load (0.3ms)[0m  SELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at LIMIT 1  [["conversation_id", 2]]
+  [1m[36mMailboxer::Receipt Load (0.2ms)[0m  [1mSELECT "mailboxer_receipts".* FROM "mailboxer_receipts" WHERE "mailboxer_receipts"."notification_id" = $1[0m  [["notification_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mMailboxer::Message Load (0.4ms)[0m  SELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at DESC LIMIT 1  [["conversation_id", 2]]
+  [1m[36mMailboxer::Message Load (0.3ms)[0m  [1mSELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at LIMIT 1[0m  [["conversation_id", 1]]
+  [1m[35mMailboxer::Receipt Load (0.2ms)[0m  SELECT "mailboxer_receipts".* FROM "mailboxer_receipts" WHERE "mailboxer_receipts"."notification_id" = $1  [["notification_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMailboxer::Message Load (0.3ms)[0m  [1mSELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["conversation_id", 1]]
+  Rendered conversations/_conversation.html.erb (21.8ms)
+  Rendered conversations/index.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 305ms (Views: 298.2ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/public/images/menu-icon.png" for 127.0.0.1 at 2015-06-17 19:46:25 -0400
+
+ActionController::RoutingError (No route matches [GET] "/public/images/menu-icon.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.6.1) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.1ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (150.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (77.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (164.9ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.5.min.map" for 127.0.0.1 at 2015-06-17 19:48:12 -0400
+
+
+Started GET "/conversations" for 127.0.0.1 at 2015-06-17 19:51:22 -0400
+Processing by ConversationsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMailboxer::Conversation Load (0.5ms)[0m  [1mSELECT DISTINCT "mailboxer_conversations".* FROM "mailboxer_conversations" INNER JOIN "mailboxer_notifications" ON "mailboxer_notifications"."conversation_id" = "mailboxer_conversations"."id" AND "mailboxer_notifications"."type" IN ('Mailboxer::Message') INNER JOIN "mailboxer_receipts" ON "mailboxer_receipts"."notification_id" = "mailboxer_notifications"."id" WHERE "mailboxer_notifications"."type" = 'Mailboxer::Message' AND "mailboxer_receipts"."receiver_id" = $1 AND "mailboxer_receipts"."receiver_type" = $2 AND "mailboxer_receipts"."mailbox_type" = $3 AND "mailboxer_receipts"."trashed" = 'f' AND "mailboxer_receipts"."deleted" = 'f'  ORDER BY mailboxer_conversations.updated_at DESC[0m  [["receiver_id", 1], ["receiver_type", "User"], ["mailbox_type", "inbox"]]
+  [1m[35mMailboxer::Message Load (0.3ms)[0m  SELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at LIMIT 1  [["conversation_id", 3]]
+  [1m[36mMailboxer::Receipt Load (0.3ms)[0m  [1mSELECT "mailboxer_receipts".* FROM "mailboxer_receipts" WHERE "mailboxer_receipts"."notification_id" = $1[0m  [["notification_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mMailboxer::Message Load (0.3ms)[0m  SELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at DESC LIMIT 1  [["conversation_id", 3]]
+  [1m[36mMailboxer::Message Load (0.3ms)[0m  [1mSELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at LIMIT 1[0m  [["conversation_id", 2]]
+  [1m[35mMailboxer::Receipt Load (0.3ms)[0m  SELECT "mailboxer_receipts".* FROM "mailboxer_receipts" WHERE "mailboxer_receipts"."notification_id" = $1  [["notification_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mMailboxer::Message Load (0.4ms)[0m  [1mSELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at DESC LIMIT 1[0m  [["conversation_id", 2]]
+  [1m[35mMailboxer::Message Load (0.3ms)[0m  SELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at LIMIT 1  [["conversation_id", 1]]
+  [1m[36mMailboxer::Receipt Load (0.2ms)[0m  [1mSELECT "mailboxer_receipts".* FROM "mailboxer_receipts" WHERE "mailboxer_receipts"."notification_id" = $1[0m  [["notification_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMailboxer::Message Load (0.4ms)[0m  SELECT  "mailboxer_notifications".* FROM "mailboxer_notifications" WHERE "mailboxer_notifications"."type" IN ('Mailboxer::Message') AND "mailboxer_notifications"."conversation_id" = $1  ORDER BY created_at DESC LIMIT 1  [["conversation_id", 1]]
+  Rendered conversations/_conversation.html.erb (24.7ms)
+  Rendered conversations/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 272ms (Views: 264.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/bootstrap-responsive.self-7aec967fe6c35014583deb6409b0e156c9fc1cecf10f2b12145b81603fb59e49.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/bootstrap.self-d6d24f0d3789ac197c52786d81d67135060c5f99253ffc229715edd50ca308df.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/conversations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/documenter_style.self-dd0a7aa8de4bc62ad2c291e8b6905b95f73539c00c5ec2b0ca221e1c8db45632.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/font-awesome.min.self-6bb04114c00dc0f2115b700bce976c1d368c4c641247d3f2bd520b3067efef45.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/going.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/jqeury.mobile.theme.min.self-54ad58ce57c576f45816a27f3aa698212fd24c97b1d8c3cac45a19d66eed1a50.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/jquery.mobile.icons.min.self-3943b4b3d41077173eec0adacbdd4e2fe12e50c214b645921c8af5ed03550702.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/jquery.mobile.min.self-bf1ef8875377386a8f36d3c0e68731b1a0430a5e3baaaa5fa535c773f445ee75.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/nightly.self-95185cecbf988ce111ce4213bef1fdd11bbe84f76176369b9d933878019a6a99.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/nightly.min.self-838f2b9912f14e4e304a1a138cfaeed140d534a57c2a0eba3ebd757f79c8ad41.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/owl.carousel.self-3df04887cebbebc905197e8895b176c86ba8bb23f0e2aabe056c8e3b44228ea3.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/owl.theme.self-348ecff3875077f9321e4e689d0a64e0d4c5b218cb756ac89988eaf62806c4d1.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/owl.transitions.self-fff066b05183538ba375ba3d7ae9c4c36c39fdde07d62583aff0d564447b256c.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/prettify.self-4315bfdea980ad9630d48fbefe87fbe5130df5b7bba3481bb51ee5b06f55ae9d.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/promotor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/quotes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/venues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/application.self-5955161e5cb6adfe7ddde436ddd1722cc6ecc69d5854213e6c515cc2af6842c3.css?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/jquery.self-148161716efd1fc9d7c93689927303502a3be47f7d8965d0e8ddcb17ec485140.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/bootstrap-min.self-38375e8574812cc2ab3720af2de647dec5ee8193a67f4fc82b1ee704f2273bf8.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/conversations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/device.detect.self-07bf7f13db6b9314740fdaf808a67c31a68cfacfe389eed285ffbb02dec83242.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/going.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/iscroll.self-628258f3d1cdfa9dab6b591db683b7c9d279e46124241b0124961789ef64edc7.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/jquery.easing.self-c85028b4485f3b7e91508aa9891cfeb41a8884efd87672715de3fa1ae2173948.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/jquery.min.self-aedf0b4f9535e7b1d01d6a9ad81e6ecdb5b9a82acf17f3798645b7dbca2d86a1.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/jquery.mobile.min.self-0992687978c26b8a46c10e3a967ecc74a912bbcfb81a8186bb0e0c3a1fea6009.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/jquery.scrollTo.self-3918cb088fb22b1613dd1c11b888e8aa1bb65a65f54f90acf91aaf2ac49bf996.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/likes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/nightly.self-47b9ac55c1b7d535b6ca5cde9604b86e50163e9c1dca9139e7540e7cb4988b22.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/owl.carousel.min.self-ee217c0bc23f4d8dd78f1859aa30cfc915864228ad3d2077f9ad2befc8c4626e.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/prettify.self-e2e576e3bc607cd179ff511947010f645d3441a35313aec0dbd06c4437f83b77.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/promotor.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/quotes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/scripts.self-2a09703638a94afe6ab9dabbcbf3bcfa4a53168529527aa8c0d7fa5e23819d82.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+
+Started GET "/public/images/menu-icon.png" for 127.0.0.1 at 2015-06-17 19:51:23 -0400
+
+ActionController::RoutingError (No route matches [GET] "/public/images/menu-icon.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.7) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.6.1) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (160.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (80.8ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kennethgeiler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (173.1ms)
+
+
+Started GET "/assets/jquery.mobile-1.4.5.min.map" for 127.0.0.1 at 2015-06-17 19:51:24 -0400
