@@ -2,8 +2,10 @@
    <a href='#sidebar' data-role="none"><img src="public/images/menu-icon.png" alt="sidebar" id="header-menu-icon" /></a>
   <h1 class="header-title">Messages</h1>
 </div>
+<div class="myBox">
 <div data-role="content">
   <ul class="list-group convolist">
     <%= render partial: 'conversations/conversation', collection: @conversations %>
   </ul>
+</div>
 </div>

@@ -3,7 +3,7 @@
                 <h1 class="header-title">[header title]</h1>
             </div>
 
-<p>Required Fields: Date, City, min $</p>
+Required Fields: Date, City, min $
   <%= form_for @quote do |f| %>
   <%= f.hidden_field :user_id, :value => current_user.id %><br />
   <%= f.label "Date" %>
