@@ -12,6 +12,8 @@ class QuotesController < ApplicationController
     @quote = Quote.new(quote_params)
     if @quote.save
       redirect_to conversations_path
+    else
+      redirect_to new_quote_path
     end
   end
 
