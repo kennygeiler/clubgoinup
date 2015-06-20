@@ -3,11 +3,13 @@
                 <h1 class="header-title">[header title]</h1>
             </div>
 
-  <% @quotes.each do |quote| %>
+<% @quotes.each do |quote| %>
+  <% if quote.created_at >= Date.today %>
     <% if current_user.promotor.location.downcase == quote.location.downcase %>
       <%= link_to quote.user.name, quote_path(quote.id) %>
       <%= quote.date %>
       <%= quote.location %>
       <%= quote.venues %> <br>
     <% end %>
+  <% end %>
 <% end %>
