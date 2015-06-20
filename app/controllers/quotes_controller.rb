@@ -11,6 +11,7 @@ class QuotesController < ApplicationController
   def create
     @quote = Quote.new(quote_params)
     if @quote.save
+      flash[:notice] = "Request successfully created"
       redirect_to conversations_path
     else
       redirect_to new_quote_path
