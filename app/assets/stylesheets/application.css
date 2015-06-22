@@ -29,7 +29,6 @@
 }
 
 
-
 #goingup {
   color: black;
   text-transform: capitalize;
@@ -39,4 +38,16 @@
   color: white;
 }
 
+#new_form {
+  font-size: 4px;
+  text-transform: capitalize;
+}
 
+.ui-input-text {
+  border-style: none;
+  border-bottom: 1px solid yellow;
+}
+
+#bottles {
+  display: inline-flex;
+}
