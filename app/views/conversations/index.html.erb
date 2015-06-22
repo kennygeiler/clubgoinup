@@ -1,9 +1,13 @@
+<div data-role="header" data-tap-toggle="false" data-theme='a'>
+   <a href='#sidebar' data-role="none"><img src="public/images/menu-icon.png" alt="sidebar" id="header-menu-icon" /></a>
+  <h1 class="header-title">Messages</h1>
+</div>
+<div class="myBox">
+<div data-role="content">
+  <ul class="list-group convolist">
+    <%= render partial: 'conversations/conversation', collection: @conversations %>
+  </ul>
+</div>
+</div>
 
-<h3> Your Conversations </h3>
-<ul class="list-group">
-  <%= render partial: 'conversations/conversation', collection: @conversations %>
-</ul>
-
-<% if current_user.promotor %>
-<p><%= link_to 'Start conversation', new_message_path, class: 'btn btn-lg btn-primary' %></p>
-<% end %>
+<%= @unread_messages %>

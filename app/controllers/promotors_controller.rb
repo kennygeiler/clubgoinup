@@ -6,7 +6,10 @@ class PromotorsController < ApplicationController
   def create
     @promotor = Promotor.new(promotor_params)
     if @promotor.save
+      flash[:notice] = "Account successfully created"
       redirect_to quotes_path
+    else
+      redirect_to new_promotor_path
     end
   end
 

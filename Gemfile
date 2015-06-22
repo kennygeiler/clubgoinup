@@ -9,7 +9,7 @@ gem 'rails', '4.2.1'
 gem "thin", :group => :production
 gem 'pg'
 gem 'mailboxer', :git => 'git://github.com/div/mailboxer.git', :branch => 'rails42-foreigner'
-gem 'omniauth-facebook', '~> 1.4.1'
+gem 'omniauth-facebook', '~> 2.0.0'
 gem "koala", "~> 2.0"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
