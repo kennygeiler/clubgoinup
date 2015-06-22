@@ -1,8 +1,3 @@
-            <div data-role="header" data-tap-toggle="false" data-theme='a'>
-                <a href='#sidebar' data-role="none"><img src="images/menu-icon.png" alt="sidebar" id="header-menu-icon" /></a>
-                <h1 class="header-title">[header title]</h1>
-            </div>
-
 <p>
   <%= render 'conversations/participants', conversation: @conversation %>
 </p>
@@ -22,8 +17,10 @@
 </div>
 
 <%= form_tag reply_conversation_path(@conversation), method: :post do %>
+ <div data-role="footer"  data-position="fixed">
   <div class="form-group">
-    <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', placeholder: 'Type something...', required: true %>
+    <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', required: true %>
   </div>
   <%= submit_tag "Send", class: 'btn btn-primary' %>
+</div>
 <% end %>
