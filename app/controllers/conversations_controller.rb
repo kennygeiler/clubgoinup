@@ -3,11 +3,11 @@ class ConversationsController < ApplicationController
   before_action :get_conversation, except: [:index]
 
   def index
+    @unread_messages = @mailbox.inbox(unread: true).count
     @conversations = @mailbox.inbox(page: params[:page], per_page: 10)
   end
 
   def show
-     @message_quote = Quote.find(params[:message][:quote_id])
   end
 
   def reply

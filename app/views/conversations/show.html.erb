@@ -1,3 +1,8 @@
+            <div data-role="header" data-tap-toggle="false" data-theme='a'>
+                <a href='#sidebar' data-role="none"><img src="images/menu-icon.png" alt="sidebar" id="header-menu-icon" /></a>
+                <h1 class="header-title">[header title]</h1>
+            </div>
+
 <p>
   <%= render 'conversations/participants', conversation: @conversation %>
 </p>
@@ -22,14 +27,3 @@
   </div>
   <%= submit_tag "Send", class: 'btn btn-primary' %>
 <% end %>
-
-<p>Request</p>
-men: <%= @message_quote.men %> <br>
-women: <%= @message_quote.women %> <br>
-min: <%= @message_quote.min %> <br>
-max: <%= @message_quote.max %> <br>
-bottles: <%= @message_quote.bottles %> <br>
-venues: <%= @message_quote.venues %> <br>
-date: <%= @message_quote.date %> <br>
-comments: <%= @message_quote.comments %> <br>
-city: <%= @message_quote.location %>

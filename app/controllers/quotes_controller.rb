@@ -1,19 +1,26 @@
 class QuotesController < ApplicationController
 
   def new
-    @quote = Quote.new()
+    if current_user
+      @quote = Quote.new()
+    else
+      redirect_to root_path
+    end
   end
 
   def create
     @quote = Quote.new(quote_params)
     if @quote.save
+      flash[:notice] = "Request successfully created"
       redirect_to conversations_path
+    else
+      redirect_to new_quote_path
     end
   end
 
   def index
     if current_user.promotor == nil
-      redirect_to new_quote_path
+      redirect_to new_promotor_path
     else
       @quotes = Quote.all
     end
