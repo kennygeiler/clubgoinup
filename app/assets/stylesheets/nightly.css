@@ -46,9 +46,9 @@ a {
 }
 
 code, pre {
-    white-space: pre-wrap;     
-    white-space: -moz-pre-wrap;  
-    white-space: -pre-wrap;  
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
     white-space: -o-pre-wrap;
     word-wrap: break-word;
     background: #333;
@@ -260,7 +260,7 @@ button .fa, a .fa {
 .ui-listview li a {
     padding-bottom: -100px !important;
     border: none !important;
-} 
+}
 
 .ui-listview .ui-li-aside {
    right: 1em;
@@ -321,7 +321,7 @@ table[data-role=pricing-table] {
     margin: 0 auto;
 }
 
-table[data-role=pricing-table] tbody th { 
+table[data-role=pricing-table] tbody th {
     padding: 12px;
     line-height: 1.66;
 }
@@ -429,13 +429,13 @@ progress[data-theme=b]::-moz-progress-value {
 .nightly-button[data-theme=b] {
     background: #3388cc;
     border: none;
-    color: #ffffff;    
+    color: #ffffff;
 }
 
 .nightly-button[data-theme=c] {
     background: #343a4a;
     border: none;
-    color: #ffffff;    
+    color: #ffffff;
 }
 
 .nightly-input[data-theme=a] {
@@ -443,11 +443,11 @@ progress[data-theme=b]::-moz-progress-value {
 }
 
 .nightly-input[data-theme=b] {
-    border: 1px solid #3388cc;  
+    border: 1px solid #3388cc;
 }
 
 .nightly-input[data-theme=c] {
-    border: 1px solid #343a4a;  
+    border: 1px solid #343a4a;
 }
 
 .nightly-circle {
@@ -471,13 +471,13 @@ progress[data-theme=b]::-moz-progress-value {
 .nightly-circle[data-theme=b] {
     background: #3388cc;
     border: none;
-    color: #ffffff;   
+    color: #ffffff;
 }
 
 .nightly-circle[data-theme=c] {
     background: #343a4a;
     border: none;
-    color: #ffffff;   
+    color: #ffffff;
 }
 
 .nightly-circle i {
@@ -516,12 +516,12 @@ progress[data-theme=b]::-moz-progress-value {
 .nightly-text-box-b {
     background: #3388cc;
     border: none;
-    color: #ffffff;  
+    color: #ffffff;
 }
 
 .nightly-alert {
     display: block;
-    width: 1OO%;
+
     margin: 10px 0;
     color: #ffffff;
     position: relative;
@@ -642,7 +642,7 @@ progress[data-theme=b]::-moz-progress-value {
 .nightly-navigation {
     margin-top: 0px !important;
     margin-bottom: 0px !important;
-   
+
 }
 
 .nightly-navigation h2 {
@@ -658,13 +658,13 @@ progress[data-theme=b]::-moz-progress-value {
     font-weight: normal !important;
     padding-top: 1em;
     padding-bottom: 1em;
-} 
+}
 
 .nightly-navigation li a .fa {
     font-size: 22px;
     vertical-align: middle;
     margin-right: 16px;
-} 
+}
 
 .nightly-navigation li ul li a .fa {
     margin-left: 16px;
@@ -677,13 +677,13 @@ progress[data-theme=b]::-moz-progress-value {
     background-image: url('../images/angle2.png');
     background-size: 100%;
     background-repeat: no-repeat;
-    width: 40px;  
+    width: 40px;
     height: 40px;
     display: block;
-    position: absolute; 
+    position: absolute;
     right: 4px;
-    top: 17px; 
-} 
+    top: 17px;
+}
 
 .nightly-navigation li.menu-item-has-children ul li a:after {
     right: 20px;
@@ -760,14 +760,14 @@ progress[data-theme=b]::-moz-progress-value {
     margin-right: 5px;
 }
 
-#searchform 
+#searchform
 {
 	-webkit-transition: all 450ms cubic-bezier(0.665, 0.165, 0.130, 0.715);
 	   -moz-transition: all 450ms cubic-bezier(0.665, 0.165, 0.130, 0.715);
 		-ms-transition: all 450ms cubic-bezier(0.665, 0.165, 0.130, 0.715);
 		 -o-transition: all 450ms cubic-bezier(0.665, 0.165, 0.130, 0.715);
 			transition: all 450ms cubic-bezier(0.665, 0.165, 0.130, 0.715);
-	
+
 	-webkit-transition-timing-function: cubic-bezier(0.665, 0.165, 0.130, 0.715);
 	   -moz-transition-timing-function: cubic-bezier(0.665, 0.165, 0.130, 0.715);
 		-ms-transition-timing-function: cubic-bezier(0.665, 0.165, 0.130, 0.715);
@@ -900,11 +900,11 @@ progress[data-theme=b]::-moz-progress-value {
 
 #main-slider .item .text {
     position: absolute;
-    display: inline-block; 
+    display: inline-block;
     top: 0;
     width: 100%;
     text-align: center;
-    left: 0;	
+    left: 0;
     color: #fff;
     line-height: 1;
 }
@@ -920,11 +920,11 @@ progress[data-theme=b]::-moz-progress-value {
 
 #main-slider .item .text h2{
     font-size: 18px;
-    display: inline-block; 
+    display: inline-block;
     top: 0;
     width: 100%;
     text-align: center;
-    left: 0;	
+    left: 0;
     color: #fff;
     font-weight: 700;
     text-transform: uppercase;
@@ -947,7 +947,7 @@ progress[data-theme=b]::-moz-progress-value {
 
 
 @media all and (min-width: 801px) {
-    
+
     #main-slider .item .text h1{
     	font-size: 72px;
     	margin-bottom: 30px;
@@ -1054,7 +1054,7 @@ progress[data-theme=b]::-moz-progress-value {
     color: #3a3334 !important;
 }
 
-[data-role="content"].blog a { 
+[data-role="content"].blog a {
     color: #7a67c0;
     text-decoration: none;
 }
