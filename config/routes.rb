@@ -18,4 +18,6 @@ Rails.application.routes.draw do
 
   root to: "sessions#new"
 
+  match '*any' => 'application#options', :via => [:options]
+
 end
