@@ -5,5 +5,5 @@ app_secret = "d3b709645cb76d5038a384f5f2c62237"
 
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :facebook, app_id, app_secret,
-  :scope => 'email,user_friends,public_profile'
+  :scope => 'email,user_friends,public_profile', provider_ignores_state: true
 end
