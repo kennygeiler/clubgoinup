@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
@@ -17,5 +18,7 @@ Rails.application.routes.draw do
   resources :messages, only: [:new, :create]
 
   root to: "sessions#new"
+
+  match '*any' => 'application#options', :via => [:options]
 
 end

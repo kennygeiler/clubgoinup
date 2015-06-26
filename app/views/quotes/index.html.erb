@@ -1,8 +1,3 @@
-            <div data-role="header" data-tap-toggle="false" data-theme='a'>
-                <a href='#sidebar' data-role="none"><img src="images/menu-icon.png" alt="sidebar" id="header-menu-icon" /></a>
-                <h1 class="header-title">[header title]</h1>
-            </div>
-
 <% @quotes.each do |quote| %>
   <% if quote.created_at >= Date.today %>
     <% if current_user.promotor.location.downcase == quote.location.downcase %>

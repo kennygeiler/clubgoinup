@@ -1,26 +1,19 @@
-            <div data-role="header" data-tap-toggle="false" data-theme='a'>
-                <a href='#sidebar' data-role="none"><img src="images/menu-icon.png" alt="sidebar" id="header-menu-icon" /></a>
-                <h1 class="header-title">[header title]</h1>
-            </div>
-
-Required Fields: Date, City, min $
+<h5>Required Fields: Date & City</h2>
+<div id="new_form">
   <%= form_for @quote do |f| %>
   <%= f.hidden_field :user_id, :value => current_user.id %><br />
-  <%= f.label "Date" %>
   <%= f.date_select :date %><br />
   <%= f.label "City" %>
   <%= f.text_field :location, :placeholder => "New York City" %><br />
-  <%= f.label "How Many Guys" %>
-  <%= f.text_field :men %><br />
-  <%= f.label "How Many Girls" %>
-  <%= f.text_field :women %><br />
-  <%= f.label "Min $" %>
-  <%= f.text_field :min %><br />
-  <%= f.label "Max $" %>
-  <%= f.text_field :max %><br />
-  <%= f.label "Bottle Service?" %>
-  <%= f.check_box :bottles, {}, "true", "false" %> <br>
+  <%= f.text_field :men, :placeholder => "How Many Men?" %><br />
+  <%= f.text_field :women, :placeholder => "How Many Women?" %><br />
+  <div id="bottles"><%= f.label "Bottle Service?" %>
+  <%= f.check_box :bottles, {}, "true", "false" %> <br> </div>
+  <br />
+  <%= f.text_field :min, :placeholder => "Minimum $" %><br />
+  <%= f.text_field :max, :placeholder => "Maximum $" %><br />
   <%= f.label "Venues" %>
   <%= f.text_field :venues, :placeholder => "1oak, The Raven, etc" %> <br />
   <%= f.submit "Submit" %>
   <% end %>
+</div>

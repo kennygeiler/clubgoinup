@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
   has_many :goings
   has_many :venues, through: :goings
   has_many :likes, foreign_key: :liker_id
@@ -6,6 +10,7 @@ class User < ActiveRecord::Base
   has_one :promotor
   has_many :quotes
   acts_as_messageable
+  devise :omniauthable, :omniauth_providers => [:facebook]
 
 
   def self.from_omniauth(auth)
