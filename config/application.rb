@@ -13,10 +13,10 @@ module Clubgoinup
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-    config.middleware.use Rack::Cors do
+    config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
       allow do
         origins '*'
-        resource 'api/jquery', :headers => :any, :methods => [:get, :post]
+        resource '*', :headers => :any, :methods => [:get, :post, :options]
       end
     end
 

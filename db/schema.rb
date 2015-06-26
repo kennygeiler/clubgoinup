@@ -11,46 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150612142803) do
+ActiveRecord::Schema.define(version: 20150626164131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "cert", force: :cascade do |t|
-    t.string "name",  limit: 50
-    t.string "value", limit: 2500
-  end
-
-  add_index "cert", ["name"], name: "ix_cert_name", unique: true, using: :btree
-
-  create_table "friends", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "friend_id"
-  end
-
-  create_table "identity", force: :cascade do |t|
-    t.string  "phone",      limit: 50
-    t.string  "uuid",       limit: 255
-    t.integer "invited_by",             array: true
-    t.string  "likes",                  array: true
-    t.string  "dislikes",               array: true
-    t.string  "favorites",              array: true
-  end
-
-  add_index "identity", ["phone"], name: "ix_identity_phone", unique: true, using: :btree
-  add_index "identity", ["uuid"], name: "ix_identity_uuid", unique: true, using: :btree
-
-  create_table "lettuce", force: :cascade do |t|
-    t.uuid     "uuid"
-    t.string   "guests"
-    t.string   "venue",   limit: 255
-    t.datetime "date"
-    t.string   "info"
-    t.integer  "user_id"
-  end
-
-  add_index "lettuce", ["user_id"], name: "ix_lettuce_user_id", using: :btree
-  add_index "lettuce", ["uuid"], name: "lettuce_uuid_key", unique: true, using: :btree
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
     t.integer "unsubscriber_id"
@@ -131,37 +95,6 @@ ActiveRecord::Schema.define(version: 20150612142803) do
     t.datetime "updated_at",                 null: false
   end
 
-  create_table "role", force: :cascade do |t|
-    t.string "name",        limit: 80
-    t.string "description", limit: 255
-  end
-
-  add_index "role", ["name"], name: "role_name_key", unique: true, using: :btree
-
-  create_table "roles_users", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "role_id"
-  end
-
-  create_table "user", force: :cascade do |t|
-    t.string   "phone",        limit: 50
-    t.string   "name",         limit: 100
-    t.string   "password",     limit: 255
-    t.string   "token",        limit: 255
-    t.string   "device_token", limit: 255
-    t.string   "pic_url",      limit: 255
-    t.boolean  "active"
-    t.datetime "confirmed_at"
-    t.string   "invites"
-    t.string   "info_dict"
-    t.string   "token_dict"
-    t.string   "likes",                    array: true
-    t.string   "dislikes",                 array: true
-    t.string   "favorites",                array: true
-  end
-
-  add_index "user", ["phone"], name: "ix_user_phone", unique: true, using: :btree
-
   create_table "users", force: :cascade do |t|
     t.string   "provider"
     t.string   "uid"
@@ -171,16 +104,23 @@ ActiveRecord::Schema.define(version: 20150612142803) do
     t.string   "user_friends"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
   end
 
-  add_foreign_key "friends", "\"user\"", column: "friend_id", name: "friends_friend_id_fkey"
-  add_foreign_key "friends", "\"user\"", column: "user_id", name: "friends_user_id_fkey"
-  add_foreign_key "lettuce", "\"user\"", column: "user_id", name: "lettuce_user_id_fkey"
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
-  add_foreign_key "roles_users", "\"user\"", column: "user_id", name: "roles_users_user_id_fkey"
-  add_foreign_key "roles_users", "role", name: "roles_users_role_id_fkey"
 end
