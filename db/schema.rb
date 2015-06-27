@@ -13,40 +13,37 @@
 
 ActiveRecord::Schema.define(version: 20150626164131) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
-    t.integer "unsubscriber_id"
-    t.string  "unsubscriber_type"
-    t.integer "conversation_id"
+    t.integer "unsubscriber_id",   limit: 4
+    t.string  "unsubscriber_type", limit: 255
+    t.integer "conversation_id",   limit: 4
   end
 
   add_index "mailboxer_conversation_opt_outs", ["conversation_id"], name: "index_mailboxer_conversation_opt_outs_on_conversation_id", using: :btree
   add_index "mailboxer_conversation_opt_outs", ["unsubscriber_id", "unsubscriber_type"], name: "index_mailboxer_conversation_opt_outs_on_unsubscriber_id_type", using: :btree
 
   create_table "mailboxer_conversations", force: :cascade do |t|
-    t.string   "subject",    default: ""
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "subject",    limit: 255, default: ""
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   create_table "mailboxer_notifications", force: :cascade do |t|
-    t.string   "type"
-    t.text     "body"
-    t.integer  "quote_id"
-    t.string   "subject",              default: ""
-    t.integer  "sender_id"
-    t.string   "sender_type"
-    t.integer  "conversation_id"
-    t.boolean  "draft",                default: false
-    t.string   "notification_code"
-    t.integer  "notified_object_id"
-    t.string   "notified_object_type"
-    t.string   "attachment"
-    t.datetime "updated_at",                           null: false
-    t.datetime "created_at",                           null: false
-    t.boolean  "global",               default: false
+    t.string   "type",                 limit: 255
+    t.text     "body",                 limit: 65535
+    t.integer  "quote_id",             limit: 4
+    t.string   "subject",              limit: 255,   default: ""
+    t.integer  "sender_id",            limit: 4
+    t.string   "sender_type",          limit: 255
+    t.integer  "conversation_id",      limit: 4
+    t.boolean  "draft",                limit: 1,     default: false
+    t.string   "notification_code",    limit: 255
+    t.integer  "notified_object_id",   limit: 4
+    t.string   "notified_object_type", limit: 255
+    t.string   "attachment",           limit: 255
+    t.datetime "updated_at",                                         null: false
+    t.datetime "created_at",                                         null: false
+    t.boolean  "global",               limit: 1,     default: false
     t.datetime "expires"
   end
 
@@ -56,65 +53,65 @@ ActiveRecord::Schema.define(version: 20150626164131) do
   add_index "mailboxer_notifications", ["type"], name: "index_mailboxer_notifications_on_type", using: :btree
 
   create_table "mailboxer_receipts", force: :cascade do |t|
-    t.integer  "receiver_id"
-    t.string   "receiver_type"
-    t.integer  "notification_id",                            null: false
-    t.boolean  "is_read",                    default: false
-    t.boolean  "trashed",                    default: false
-    t.boolean  "deleted",                    default: false
+    t.integer  "receiver_id",     limit: 4
+    t.string   "receiver_type",   limit: 255
+    t.integer  "notification_id", limit: 4,                   null: false
+    t.boolean  "is_read",         limit: 1,   default: false
+    t.boolean  "trashed",         limit: 1,   default: false
+    t.boolean  "deleted",         limit: 1,   default: false
     t.string   "mailbox_type",    limit: 25
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
   end
 
   add_index "mailboxer_receipts", ["notification_id"], name: "index_mailboxer_receipts_on_notification_id", using: :btree
   add_index "mailboxer_receipts", ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type", using: :btree
 
   create_table "promotors", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "company"
-    t.string   "location",   null: false
-    t.string   "email",      null: false
-    t.text     "venues"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id",    limit: 4
+    t.string   "company",    limit: 255
+    t.string   "location",   limit: 255,   null: false
+    t.string   "email",      limit: 255,   null: false
+    t.text     "venues",     limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "quotes", force: :cascade do |t|
-    t.integer  "men"
-    t.integer  "women"
-    t.string   "min"
-    t.string   "max"
-    t.boolean  "bottles",    default: false
-    t.text     "venues"
-    t.date     "date",                       null: false
-    t.string   "location",                   null: false
-    t.text     "comments"
-    t.integer  "user_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.integer  "men",        limit: 4
+    t.integer  "women",      limit: 4
+    t.string   "min",        limit: 255
+    t.string   "max",        limit: 255
+    t.boolean  "bottles",    limit: 1,     default: false
+    t.text     "venues",     limit: 65535
+    t.date     "date",                                     null: false
+    t.string   "location",   limit: 255,                   null: false
+    t.text     "comments",   limit: 65535
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
-    t.string   "image"
-    t.string   "email"
-    t.string   "user_friends"
-    t.string   "oauth_token"
+    t.string   "provider",               limit: 255
+    t.string   "uid",                    limit: 255
+    t.string   "name",                   limit: 255
+    t.string   "image",                  limit: 255
+    t.string   "email",                  limit: 255
+    t.string   "user_friends",           limit: 255
+    t.string   "oauth_token",            limit: 255
     t.datetime "oauth_expires_at"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
+    t.integer  "current_sign_in_ip",     limit: 4
+    t.integer  "last_sign_in_ip",        limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
