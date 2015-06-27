@@ -1,16 +1,9 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-  has_many :goings
-  has_many :venues, through: :goings
-  has_many :likes, foreign_key: :liker_id
-  has_many :received_likes, class_name: "Like", foreign_key: :likee_id
   has_one :promotor
   has_many :quotes
   acts_as_messageable
-  devise :omniauthable, :omniauth_providers => [:facebook]
 
 
   def self.from_omniauth(auth)
@@ -26,7 +19,4 @@ class User < ActiveRecord::Base
     end
   end
 
-  def facebook()
-    @facebook ||= Koala::Facebook::API.new(oauth_token)
-  end
 end
