@@ -5,6 +5,11 @@ class ConversationsController < ApplicationController
   def index
     @unread_messages = @mailbox.inbox(unread: true).count
     @conversations = @mailbox.inbox(page: params[:page], per_page: 10)
+    if current_user.promotor == nil
+      redirect_to new_promotor_path
+    else
+      @quotes = Quote.all
+    end
   end
 
   def show
