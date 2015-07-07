@@ -8,7 +8,6 @@
           <% if current_user %>
               <a href="<%= signout_path %>" id="sign_out"><img src="<%= asset_path('f.png') %>" /></a>
           <% else %>
-              <a href="/auth/facebook" id="sign_in"><img src="<%= asset_path('f.png') %>" /></a>
           <% end %>
         </div>
     </div>

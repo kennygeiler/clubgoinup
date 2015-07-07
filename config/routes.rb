@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  get 'auth/:provider/callback', to: 'sessions#create'
-  get 'auth/failure', to: redirect('/')
-  get 'signout', to: 'sessions#destroy', as: 'signout'
 
-  resources :sessions, only: [:new, :create, :destroy]
-  resources :users, only: [:index]
+  resource :session, only: [:new, :create, :destroy]
+  get 'signin' => 'sessions#new'
+  post 'signin' => 'sessions#create'
+  get 'signout' => 'sessions#destroy'
+  get 'signup' => 'users#new'
+  resources :users
 
   resources :quotes, only: [:new, :create, :index, :show, :delete]
   resources :promotors, only: [:new, :create, :delete]
