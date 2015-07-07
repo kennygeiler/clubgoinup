@@ -1,19 +1,22 @@
-<h5>Required Fields: Date & City</h2>
+<h2>Required: City & Date</h2>
 <div id="new_form">
   <%= form_for @quote do |f| %>
   <%= f.hidden_field :user_id, :value => current_user.id %><br />
-  <%= f.date_select :date %><br />
-  <%= f.label "City" %>
-  <%= f.text_field :location, :placeholder => "New York City" %><br />
-  <%= f.text_field :men, :placeholder => "How Many Men?" %><br />
+  <div id="bottles"><%= f.date_select :date %></div><br/>
+  <div><%= f.label "City" %><%= f.text_field :location, :placeholder => "New York City" %></div><br />
+  <%= f.text_field :men, :placeholder => "How Many Men?" %>
   <%= f.text_field :women, :placeholder => "How Many Women?" %><br />
-  <div id="bottles"><%= f.label "Bottle Service?" %>
+  <div id="bottles"><%= f.label "Bottle Service :   " %>
   <%= f.check_box :bottles, {}, "true", "false" %> <br> </div>
   <br />
-  <%= f.text_field :min, :placeholder => "Minimum $" %><br />
-  <%= f.text_field :max, :placeholder => "Maximum $" %><br />
+  <%= f.text_field :min, :placeholder => "Minimum $" %>
+  <%= f.text_field :max, :placeholder => "Maximum $" %>
   <%= f.label "Venues" %>
   <%= f.text_field :venues, :placeholder => "1oak, The Raven, etc" %> <br />
   <%= f.submit "Submit" %>
   <% end %>
+
 </div>
+<script>
+  $("h1.header-title").html("New Request");
+</script>
