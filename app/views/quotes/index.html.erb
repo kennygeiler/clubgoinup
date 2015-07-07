@@ -1,20 +1,20 @@
 <% @quotes.each do |quote| %>
-  <%# if quote.created_at >= Date.today %>
-    <%# if current_user.promotor.location.downcase != quote.location.downcase %>
+  <% if quote.created_at >= Date.today %>
+    <% if current_user.promotor.location.downcase == quote.location.downcase %>
 <div style='border-bottom:1px solid darkgrey;'>
   <form name="<%= quote.id %>" action="#">
-    <label><%= link_to quote.id, quote_path(quote.id) %>. &nbsp;Kenny Geiler &nbsp&nbsp&nbsp&nbsp&nbsp Date : <%= quote.date %> </label>
+    <label><%= link_to quote.user.username, quote_path(quote.id) %> &nbsp&nbsp&nbsp&nbsp&nbsp Date : <%= quote.date %> </label>
     <p>Guys : <%= quote.men %>&nbsp;&nbsp;&nbsp;Girls : <%= quote.women %></p>
     <p>Bottles :  <%= if quote.bottles.to_s =='true'
                                           'Yes'
                                         else
                                           'No'
-                                        end %> &nbsp;| <%= quote.min %>-<%= quote.max %></p>
+                                        end %> &nbsp;|$<%= quote.min %>-<%= quote.max %></p>
     <p>Venues : <%= quote.venues %></p>
   </form>
 </div>
-    <%# end %>
-  <%# end %>
+    <% end %>
+  <% end %>
 <% end %>
 
 <script>
