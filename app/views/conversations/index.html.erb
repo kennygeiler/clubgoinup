@@ -1,19 +1,10 @@
 <%= javascript_include_tag "ohsnap", "data-turbolinks-track" => true  %>
 <div data-role="content">
-  <% @quotes.each do |quote| %>
    <%= render partial: 'conversations/conversation', collection: @conversations %>
-      <div class="conversation_message" style='border-bottom:1px solid darkgrey;'>
-        <form name="<%= quote.id %>" action="#">
-          <label><%= link_to quote.user.username, messages_path()+"/new" %>  &nbsp&nbsp&nbsp&nbsp&nbsp <span style="float: right"><%= quote.date %></span></label>
-          <div><p><%= quote.venues %>Hi, How are you?</p></div>
-        </form>
-      </div>
-
-  <% end %>
 </div>
 <style>
     .conversation_message:hover { background-color: #4A89DC; }
 </style>
 <script>
-  $("h1.header-title").html("Conversation");
+  $("h1.header-title").html("Messages");
 </script>
