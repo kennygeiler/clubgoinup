@@ -11,13 +11,6 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
- <system.webServer>
-   <httpProtocol>
-     <customHeaders>
-       <add name="Access-Control-Allow-Origin" value="http://localhost:3000" />
-     </customHeaders>
-  </httpProtocol>
- </system.webServer>
 <body>
 <div data-role="page" data-theme='a'>
    <div data-role="panel" data-display="push" id="sidebar" data-theme="a">
@@ -42,19 +35,3 @@
 </div>
 </body>
 </html>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1219088654784253',
-      xfbml      : true,
-      version    : 'v2.3'
-    });
-  };
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
