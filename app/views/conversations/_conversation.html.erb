@@ -1,8 +1,18 @@
-<li class="list-group-item clearfix">
-  <% conversation.participants.each do |participant| %>
-  <% unless participant == current_user %>
-    <%= link_to participant.username, conversation_path(conversation) %> <small>(<span class="text-muted"><%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span>)</small></p>
-</li>
-  <% end %>
+<% i=0 %>
+<% conversation.participants.each do |participant| %>
+    <% i=i+1 %>
+        <li class="list-group-item clearfix">
+        <%# unless participant == current_user %>
+          <div class="conversation_message_<%= i %> itemhover" style='border-bottom:1px solid darkgrey;'>
+              <label><%= link_to participant.username, conversation_path(conversation) %> &nbsp&nbsp&nbsp&nbsp&nbsp <span class="text-muted" style="float: right">(<%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>)</span></label>
+              <div><p><%= conversation.last_message.body %></p></div>
+          </div>
+        <%# end %>
+        </li>
+    <script>
+        $("div.conversation_message_<%= i %>").click(function() {
+            window.location.href='<%= conversation_path(conversation)%>>';
+        });
+    </script>
 <% end %>
-<p><%= conversation.last_message.body %>
+

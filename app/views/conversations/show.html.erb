@@ -3,24 +3,30 @@
 </p>
 
 <div class="panel panel-default">
-
   <div class="panel-body">
-    <div class="messages">
+    <div class="messages" id="ohsnap">
       <% @conversation.receipts_for(current_user).order(created_at: :asc).each do |receipt| %>
-        <div class="media">
-          <% message = receipt.message %> <br>
-           <%= message.body %> - <%= message.sender.username %> <br>
-        </div>
+          <% message = receipt.message %>
+          <div style="width: 100%;display: block;height:60px;" class="media"><div class="alertmsg alertmsg-green"> <%= message.body %> - <%= message.sender.username %>
+          </div></div>
+          <div style="width: 100%;display: block;height:60px;" class="media"><div class="alertmsg alertmsg-blue"> <%= message.body %> - <%= message.sender.username %>
+          </div></div>
       <% end %>
-    </div>
+
+   </div>
   </div>
 </div>
 
-<%= form_tag reply_conversation_path(@conversation), method: :post do %>
- <div data-role="footer"  data-position="fixed">
-  <div class="form-group">
-    <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', required: true %>
-  </div>
-  <%= submit_tag "Send", class: 'btn btn-primary'%>
-  <% end %>
-</div>
+  <%= form_tag reply_conversation_path(@conversation), method: :post do %>
+
+  <div data-role="footer"  data-position="fixed" style="margin-left:-1em; width: 99%;">
+    <div class="form-group">
+      <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', required: true %>
+          </div>
+          <%= submit_tag "Send", class: 'btn btn-primary'%>
+              </div>
+ <% end %>
+
+<script>
+$("h1.header-title").html("Messages");
+</script>
