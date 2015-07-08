@@ -3,9 +3,9 @@
   <h1 class="intro">Club</h1>
   <h1 class="intro">Is</h1>
   <h1 id="goingup">GoingUp</h1>
-  <%= link_to "Enter", new_user_path %>
     <div id="user_nav">
         <div id="bottombanner">
+          <%= link_to "Enter", new_user_path %>
           <% if current_user %>
               <a href="<%= signout_path %>" id="sign_out"><img src="<%= asset_path('f.png') %>" /></a>
           <% else %>
