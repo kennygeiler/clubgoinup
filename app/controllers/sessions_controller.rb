@@ -7,13 +7,19 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.from_omniauth(env["omniauth.auth"])
-    session[:user_id] = user.id
-    redirect_to root_path
+    user = User.find_by(username: params[:user][:username])
+    if user && user.authenticate(params[:user][:password])
+      session[:user_id] = user.id
+      redirect_to profile_path
+    else
+      flash[:error] = "Bad username or password"
+      redirect_to signin_path
+    end
   end
 
   def destroy
-    session[:user_id] = nil
+    session.clear
     redirect_to root_path
   end
+
 end

@@ -1,12 +1,18 @@
+<div id="startup_new">
   <h1 class="intro">The</h1>
   <h1 class="intro">Club</h1>
   <h1 class="intro">Is</h1>
   <h1 id="goingup">GoingUp</h1>
-<div id="user_nav">
-  <% if current_user %>
-    Signed in as <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-  <% end %>
+    <div id="user_nav">
+        <div id="bottombanner">
+          <%= link_to "Enter", new_user_path %>
+          <% if current_user %>
+              <a href="<%= signout_path %>" id="sign_out"><img src="<%= asset_path('f.png') %>" /></a>
+          <% else %>
+          <% end %>
+        </div>
+    </div>
 </div>
+<script>
+    $("#headbar").hide();
+</script>

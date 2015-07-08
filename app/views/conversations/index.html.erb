@@ -1,7 +1,10 @@
-<div class="myBox">
+<%= javascript_include_tag "ohsnap", "data-turbolinks-track" => true  %>
 <div data-role="content">
-  <ul class="list-group convolist">
-    <%= render partial: 'conversations/conversation', collection: @conversations %>
-  </ul>
+   <%= render partial: 'conversations/conversation', collection: @conversations %>
 </div>
-</div>
+<style>
+    .conversation_message:hover { background-color: #4A89DC; }
+</style>
+<script>
+  $("h1.header-title").html("Messages");
+</script>

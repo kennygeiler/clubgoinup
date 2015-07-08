@@ -1,7 +1,7 @@
 <li class="list-group-item clearfix">
   <% conversation.participants.each do |participant| %>
   <% unless participant == current_user %>
-    <%= link_to participant.name, conversation_path(conversation) %> <small>(<span class="text-muted"><%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span>)</small></p>
+    <%= link_to participant.username, conversation_path(conversation) %> <small>(<span class="text-muted"><%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span>)</small></p>
 </li>
   <% end %>
 <% end %>

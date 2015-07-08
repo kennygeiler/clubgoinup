@@ -1,10 +1,25 @@
 <% @quotes.each do |quote| %>
   <% if quote.created_at >= Date.today %>
     <% if current_user.promotor.location.downcase == quote.location.downcase %>
-      <%= link_to quote.user.name, quote_path(quote.id) %>
-      <%= quote.date %>
-      <%= quote.location %>
-      <%= quote.venues %> <br>
+<div style='border-bottom:1px solid darkgrey;'>
+  <form name="<%= quote.id %>" action="#">
+    <label for=""></label>
+    <label><%= quote.user.username %> &nbsp&nbsp&nbsp&nbsp&nbsp Date : <%= quote.date %> </label>
+    <p>Guys : <%= quote.men %>&nbsp;&nbsp;&nbsp;Girls : <%= quote.women %> &nbsp&nbsp&nbsp&nbsp&nbsp  Bottles :  <%= if quote.bottles.to_s =='true'
+                                          'Yes  | $'
+                                        else
+                                          'No'
+                                        end %>&nbsp;<%=quote.min %>-<%= quote.max %></p>
+    <% if quote.venues == nil %>
+    <p>Venues : <%= quote.venues %></p>
+    <% end %>
+    <p><%= link_to 'Send Message', new_message_path(quote_id: quote.id) %></p>
+  </form>
+</div>
     <% end %>
   <% end %>
 <% end %>
+
+<script>
+    $("h1.header-title").html("Requests");
+</script>

@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Clubgoinup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <!-- Load Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic|Oswald:400,700' rel='stylesheet' type='text/css'>
@@ -10,46 +11,27 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
- <system.webServer>
-   <httpProtocol>
-     <customHeaders>
-       <add name="Access-Control-Allow-Origin" value="http://localhost:3000" />
-     </customHeaders>
-  </httpProtocol>
- </system.webServer>
 <body>
-  <div data-role="page" data-theme='a'>
-      <div data-role="panel" data-display="push" id="sidebar" data-theme="a">
+<div data-role="page" data-theme='a'>
+   <div data-role="panel" data-display="push" id="sidebar" data-theme="a">
         <ul data-role="listview">
           <li data-icon='false'><a data-ajax="true" href="/quotes/new">New Request</a></li>
           <li data-icon='false'><a data-ajax="true" href="/conversations">Messages</a></li>
           <li data-icon='false'><a data-ajax="true" href="/quotes">Promoters Only</a></li>
           <li data-icon='false'><a data-ajax="true" href="/signout">Signout</a></li>
         </ul>
-      </div>
-   <div data-role="header" data-tap-toggle="false" data-theme='a'>
-                <a href='#sidebar' data-role="none">nav</a>
+   </div>
+   <div data-role="header" data-tap-toggle="false" data-theme='a' id="headbar">
+                <a href='#sidebar' data-role="none" id="sitcky_menu">
+                  <span class="top"></span>
+                  <span class="middle"></span>
+                  <span class="bottom"></span>
+                </a>
                 <h1 class="header-title">GoingUP</h1>
   </div>
   <div data-role="content">
     <%= yield %>
   </div>
+</div>
 </body>
 </html>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1219088654784253',
-      xfbml      : true,
-      version    : 'v2.3'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>

@@ -1,29 +1,30 @@
-<p>Start Convo with <%= @message_quote.user.name %> </p>
+<%= javascript_include_tag "ohsnap", "data-turbolinks-track" => true  %>
+<div class="myBox">
+  <div data-role="content">
+    <div id="ohsnap"></div>
+  </div>
+  <div class="containmsg">
+    <div>
 
-<%= form_tag messages_path, method: :post do %>
+        <div style="display:flex;"><label for="tofield">To &nbsp;</label> <%= @message_quote.user.username %></div>
+        <div class="break"></div>
+       <%= form_tag messages_path, method: :post do %>
   <div class="form-group">
     <%= hidden_field_tag 'message[subject]', "nothing" %>
   </div>
 
   <div class="form-group">
     <%= label_tag 'message[body]', 'Message' %>
-    <%= text_area_tag 'message[body]', nil, cols: 3, class: 'form-control', required: true %>
+    <%= text_area_tag 'message[body]', nil, cols: 3, class: 'form-control mymsg', required: true %>
   </div>
 
     <%= hidden_field_tag 'recipients', @message_quote.user.id %>
-     <%= hidden_field_tag 'message[quote_id]', @message_quote.id %>
-
-
   <%= submit_tag('Send')%>
 <% end %>
+              </div>
+              </div>
+              </div>
+              <script>
+                  $("h1.header-title").html("Messages");
+              </script>
 
-<p>Request</p>
-men: <%= @message_quote.men %> <br>
-women: <%= @message_quote.women %> <br>
-min: <%= @message_quote.min %> <br>
-max: <%= @message_quote.max %> <br>
-bottles: <%= @message_quote.bottles %> <br>
-venues: <%= @message_quote.venues %> <br>
-date: <%= @message_quote.date %> <br>
-comments: <%= @message_quote.comments %> <br>
-city: <%= @message_quote.location %>

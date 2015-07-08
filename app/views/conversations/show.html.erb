@@ -9,7 +9,7 @@
       <% @conversation.receipts_for(current_user).order(created_at: :asc).each do |receipt| %>
         <div class="media">
           <% message = receipt.message %> <br>
-           <%= message.body %> - <%= message.sender.name %> <br>
+           <%= message.body %> - <%= message.sender.username %> <br>
         </div>
       <% end %>
     </div>
@@ -21,6 +21,6 @@
   <div class="form-group">
     <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', required: true %>
   </div>
-  <%= submit_tag "Send", class: 'btn btn-primary' %>
+  <%= submit_tag "Send", class: 'btn btn-primary'%>
+  <% end %>
 </div>
-<% end %>

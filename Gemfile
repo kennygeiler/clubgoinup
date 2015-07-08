@@ -9,9 +9,6 @@ gem 'rails', '4.2.1'
 gem "thin", :group => :production
 gem 'pg'
 gem 'mailboxer', :git => 'git://github.com/div/mailboxer.git', :branch => 'rails42-foreigner'
-gem 'omniauth-facebook', '~> 2.0.1'
-#gem 'rack-cors', :require => 'rack/cors'
-gem "koala", "~> 2.0"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -31,8 +28,9 @@ gem 'jquery_mobile_rails'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'bcrypt', '~> 3.1.7'
 
-gem 'devise'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -53,4 +51,3 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
