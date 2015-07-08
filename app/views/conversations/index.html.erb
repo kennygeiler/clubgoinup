@@ -1,11 +1,11 @@
 <%= javascript_include_tag "ohsnap", "data-turbolinks-track" => true  %>
 <div data-role="content">
   <% @quotes.each do |quote| %>
-
+   <%= render partial: 'conversations/conversation', collection: @conversations %>
       <div class="conversation_message" style='border-bottom:1px solid darkgrey;'>
         <form name="<%= quote.id %>" action="#">
-          <label><%= link_to 'Kenny Geiler', messages_path()+"/new" %>  &nbsp&nbsp&nbsp&nbsp&nbsp <span style="float: right"><%= quote.date %></span> </label>
-          <div><img src="<%= asset_path('business-man-avatar.jpg') %>" alt="avatar" style="width: 30px;height: 30px; float: left;" /><p>&nbsp;&nbsp;&nbsp;<%= quote.venues %>Hi, How are you?</p></div>
+          <label><%= link_to quote.user.username, messages_path()+"/new" %>  &nbsp&nbsp&nbsp&nbsp&nbsp <span style="float: right"><%= quote.date %></span></label>
+          <div><p><%= quote.venues %>Hi, How are you?</p></div>
         </form>
       </div>
 
