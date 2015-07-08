@@ -108,6 +108,18 @@
   color: white;
 }
 
+#sidebar {
+  background-color: black;
+}
+
+.ui-content {
+  background-color: white;
+}
+
+#headbar {
+  background-color: black;
+  color: white;
+}
 
 
 .alertmsg {
