@@ -11,6 +11,7 @@
                                           'No'
                                         end %> &nbsp;|$<%= quote.min %>-<%= quote.max %></p>
     <p>Venues : <%= quote.venues %></p>
+    <p><%= link_to 'Send Message', new_message_path(quote_id: quote.id) %></p>
   </form>
 </div>
     <% end %>
