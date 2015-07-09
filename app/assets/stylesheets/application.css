@@ -124,12 +124,12 @@
 
 .alertmsg {
     padding: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     border: 1px solid #eed3d7;
     border-radius: 4px;
     /* Each alertmsg has its own width */
+    display: block;
     float: right;
-    clear: right;
 }
 
 .alertmsg-red {
@@ -140,10 +140,15 @@
     color: white;
     background-color: #37BC9B;
     float: left;
+    left:0;
+    display: block;
 }
 .alertmsg-blue {
     color: white;
     background-color: #4A89DC;
+    float: right;
+    right:0;
+    display: block;
 }
 .alertmsg-yellow {
     color: white;
@@ -169,3 +174,14 @@
     height: 455px;
     overflow: scroll;
 }
+.conversations_list{
+    padding: 0;
+    margin: 0px auto;
+    list-style: none;
+    width: 100%;
+}
+
+div.itemhover:hover {
+     background-color: #4A89DC;
+     cursor:pointer;
+ }

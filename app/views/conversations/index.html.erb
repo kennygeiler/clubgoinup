@@ -1,10 +1,12 @@
 <%= javascript_include_tag "ohsnap", "data-turbolinks-track" => true  %>
 <div data-role="content">
-   <%= render partial: 'conversations/conversation', collection: @conversations %>
+  <div class="col-sm-9">
+    <ul class="list-group conversations_list">
+      <%= render partial: 'conversations/conversation', collection: @conversations %>
+    </ul>
+  </div>
 </div>
-<style>
-    .conversation_message:hover { background-color: #4A89DC; }
-</style>
+
 <script>
-  $("h1.header-title").html("Messages");
+  $("h1.header-title").html("Conversations");
 </script>
