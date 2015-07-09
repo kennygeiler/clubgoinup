@@ -7,9 +7,9 @@
     <div class="messages" id="ohsnap">
       <% @conversation.receipts_for(current_user).order(created_at: :asc).each do |receipt| %>
           <% message = receipt.message %>
-          <div style="width: 100%;display: block;height:60px;" class="media"><div class="alertmsg alertmsg-green"> <%= message.body %> - <%= message.sender.username %>
+          <div style="width: 100%;display: block;height:60px;" class="media"><div class="alertmsg alertmsg-green"> <%= message.body %>
           </div></div>
-          <div style="width: 100%;display: block;height:60px;" class="media"><div class="alertmsg alertmsg-blue"> <%= message.body %> - <%= message.sender.username %>
+          <div style="width: 100%;display: block;height:60px;" class="media"><div class="alertmsg alertmsg-blue"> <%= message.body %>
           </div></div>
       <% end %>
 
