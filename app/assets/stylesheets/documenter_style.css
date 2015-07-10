@@ -7,7 +7,9 @@
  *
  */
 html, body{max-width:100%;}
-body{ padding-bottom: 40px;}
+body{
+
+}
 
 #documenter_content{
 	padding-top: 200px;
@@ -50,7 +52,7 @@ section table th{
 hr.notop{
 	margin-top:3px;
 }
-	
+
 footer{
 	padding-bottom:500px;
 }
