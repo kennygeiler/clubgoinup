@@ -97,11 +97,17 @@
 }
 
 #bottombanner{
+    display: block;
   margin: 0px auto;
-  width: 30px;
-  height: 63px;
   background-color: #5382bd;
   margin-top: 15px;
+  width: 140px;
+    padding-top:10px;
+}
+#bottombanner a{
+    font-size: 32px;
+    align-content: center;
+    width: 80%;
 }
 
 #bottombanner a {
@@ -113,12 +119,14 @@
 }
 
 .ui-content {
-  background-color: white;
+
+
 }
 
 #headbar {
   background-color: black;
   color: white;
+    padding-top: 10px;
 }
 
 
@@ -185,3 +193,12 @@ div.itemhover:hover {
      background-color: #4A89DC;
      cursor:pointer;
  }
+
+div.backgroundcity {
+    background: no-repeat;
+    background-image:url(city.png) !important;
+}
+
+.ui-page-theme-a .ui-panel-wrapper {
+    background-color: transparent !important;
+}
